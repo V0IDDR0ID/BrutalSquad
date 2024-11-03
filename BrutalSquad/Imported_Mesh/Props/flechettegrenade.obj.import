@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/flechettegrenade.obj-585e06ce6c01fde4bb26b547d7e0008e.mesh"
+
+[deps]
+
+files=[ "res://.import/flechettegrenade.obj-585e06ce6c01fde4bb26b547d7e0008e.mesh" ]
+
+source_file="res://Imported_Mesh/Props/flechettegrenade.obj"
+dest_files=[ "res://.import/flechettegrenade.obj-585e06ce6c01fde4bb26b547d7e0008e.mesh", "res://.import/flechettegrenade.obj-585e06ce6c01fde4bb26b547d7e0008e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

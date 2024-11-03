@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Shaders/PaletteLimiter.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/water = false
+shader_param/drugs = false
+shader_param/nightmare_vision = false
+shader_param/noir_vision = true
+shader_param/rain = false
+shader_param/holy_mode = false
+shader_param/intro = false
+shader_param/scope = false
+shader_param/hit_red = 0.0
+shader_param/health_green = 0.0
+shader_param/amplitude = 1.0
+shader_param/gamma = 1.0
+shader_param/size_x = 0.001
+shader_param/size_y = 0.001
+shader_param/u_amount = 0.002

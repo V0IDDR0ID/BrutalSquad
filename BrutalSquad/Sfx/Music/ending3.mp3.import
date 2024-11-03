@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ending3.mp3-d71c72273db0e8a600d4584596e1d3b4.mp3str"
+
+[deps]
+
+source_file="res://Sfx/Music/ending3.mp3"
+dest_files=[ "res://.import/ending3.mp3-d71c72273db0e8a600d4584596e1d3b4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Pickup.gd" type="Script" id=1]
+[ext_resource path="res://Imported_Mesh/Medkit2.glb" type="PackedScene" id=2]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( -0.0695, 0.054, 0.126, 0.0695, 0.054, -0.126, 0.0695, 0.054, 0.126, -0.0695, 0.054, -0.126, -0.0695, -0.054, 0.126, 0.0695, -0.054, -0.126, 0.0695, -0.054, 0.126, -0.0695, -0.054, -0.126, 0.0695, 0.054, 0.126, -0.0695, 0.054, -0.126, 0.0695, 0.054, -0.126, -0.0695, 0.054, 0.126, 0.0695, -0.054, 0.126, -0.0695, -0.054, -0.126, 0.0695, -0.054, -0.126, -0.0695, -0.054, 0.126, 0.0695, 0.054, 0.126, -0.0695, -0.054, 0.126, -0.0695, 0.054, 0.126, 0.0695, -0.054, 0.126, 0.0695, 0.054, -0.126, -0.0695, -0.054, -0.126, -0.0695, 0.054, -0.126, 0.0695, -0.054, -0.126 )
+
+[sub_resource type="SphereShape" id=2]
+radius = 0.2
+
+[node name="Health_Kit_S" type="KinematicBody"]
+collision_layer = 0
+script = ExtResource( 1 )
+health_kit = true
+health = 25
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0554992, 0 )
+shape = SubResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 2 )
+
+[node name="Medkit2" parent="." instance=ExtResource( 2 )]
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

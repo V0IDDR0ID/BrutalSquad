@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Weapon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Playercamera.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.22
+
+[node name="Rotation_Helper" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48103, 0 )
+
+[node name="Weapon" parent="." instance=ExtResource( 2 )]
+player = true
+
+[node name="Camera" parent="." instance=ExtResource( 4 )]
+
+[node name="Water_Check" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265607, 0 )
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="Water_Check"]
+shape = SubResource( 1 )

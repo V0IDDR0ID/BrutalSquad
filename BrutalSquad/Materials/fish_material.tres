@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial; 
+render_mode skip_vertex_transform, cull_disabled, ambient_light_disabled, vertex_lighting;
+
+//Albedo texture 
+uniform sampler2D albedoTex : hint_albedo;
+uniform bool paletteswap = false;
+//Geometric resolution for vert snap
+uniform float snapRes = 50.0; 
+
+//vec4 for UV recalculation 
+varying vec4 vertCoord;
+
+
+
+void vertex() {
+	VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	VERTEX.xyz = floor(VERTEX.xyz * snapRes) / snapRes;
+	vertCoord = vec4(UV * VERTEX.z, VERTEX.z, 0); 
+} 
+ 
+void fragment() {
+	
+	ALBEDO = vec3(COLOR.r,COLOR.g,COLOR.b);
+}
+
+"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/paletteswap = false
+shader_param/snapRes = 100.0

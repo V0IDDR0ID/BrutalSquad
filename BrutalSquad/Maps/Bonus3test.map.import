@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/Bonus3test.map-421d6c3c74cf6158b59362eee1094803.tres"
+
+[deps]
+
+source_file="res://Maps/Bonus3test.map"
+dest_files=["res://.import/Bonus3test.map-421d6c3c74cf6158b59362eee1094803.tres"]
+
+[params]
+
+dummy_value_ignore_me=0

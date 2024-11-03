@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/Bonus1.map-b0e4d736855b0ce4d68aa7e0d0d906a8.tres"
+
+[deps]
+
+source_file="res://Maps/Bonus1.map"
+dest_files=["res://.import/Bonus1.map-b0e4d736855b0ce4d68aa7e0d0d906a8.tres"]
+
+[params]
+
+dummy_value_ignore_me=0

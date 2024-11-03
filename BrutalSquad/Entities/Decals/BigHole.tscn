@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Materials/bloodmaterial.tres" type="Material" id=1]
+[ext_resource path="res://Entities/Decals/Blooddecal.gd" type="Script" id=2]
+[ext_resource path="res://Textures/Decals/bighole.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_vertex_lighting = true
+flags_disable_ambient_light = true
+albedo_texture = ExtResource( 3 )
+metallic_specular = 0.0
+
+[sub_resource type="PlaneMesh" id=2]
+size = Vector2( 1, 1 )
+
+[node name="Decal" type="MeshInstance"]
+material_override = SubResource( 1 )
+cast_shadow = 0
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="RayCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.451308, 0.12361, 0.329395 )
+enabled = true
+cast_to = Vector3( 0, -0.137, 0 )
+
+[node name="RayCast2" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.266906, 0.12361, 0.300241 )
+enabled = true
+cast_to = Vector3( 0, -0.137, 0 )
+
+[node name="RayCast3" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.434689, 0.12361, -0.395869 )
+enabled = true
+cast_to = Vector3( 0, -0.137, 0 )
+
+[node name="RayCast4" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.423535, 0.12361, -0.250963 )
+enabled = true
+cast_to = Vector3( 0, -0.137, 0 )

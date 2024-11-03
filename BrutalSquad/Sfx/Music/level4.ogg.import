@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/level4.ogg-ed08b68f03a6547584638c8ad8089b48.oggstr"
+
+[deps]
+
+source_file="res://Sfx/Music/level4.ogg"
+dest_files=[ "res://.import/level4.ogg-ed08b68f03a6547584638c8ad8089b48.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

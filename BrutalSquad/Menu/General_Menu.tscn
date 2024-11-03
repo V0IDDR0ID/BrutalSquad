@@ -1,0 +1,1079 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://Menu/Main_Menu.gd" type="Script" id=1]
+[ext_resource path="res://Menu/menu_theme.tres" type="Theme" id=2]
+[ext_resource path="res://Fonts/new_bitmapfont.tres" type="BitmapFont" id=3]
+[ext_resource path="res://Textures/Items/medkit2.png" type="Texture" id=4]
+[ext_resource path="res://Menu/ScrollContainerDynamic.gd" type="Script" id=5]
+[ext_resource path="res://Textures/Weapons/SMG.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/Weapon_Pickup.gd" type="Script" id=7]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/SMG.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://Sfx/UI/Slosh.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sfx/UI/UI_selection.wav" type="AudioStream" id=10]
+[ext_resource path="res://Textures/Weapons/Shotgun.png" type="Texture" id=11]
+[ext_resource path="res://Menu/weapon_button_theme.tres" type="Theme" id=12]
+[ext_resource path="res://Textures/Weapons/Rocketlauncher.png" type="Texture" id=13]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/RL.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/Shotgun.obj" type="ArrayMesh" id=15]
+[ext_resource path="res://Sfx/NPCs/Military grunt/grunt_pain_2.wav" type="AudioStream" id=16]
+[ext_resource path="res://Textures/Misc/corpse_texture.png" type="Texture" id=17]
+[ext_resource path="res://Menu/PanelContainerEffect.gd" type="Script" id=18]
+[ext_resource path="res://Menu/Level_End_Menu.gd" type="Script" id=19]
+[ext_resource path="res://Textures/Menu/Main_menu.png" type="Texture" id=20]
+
+[sub_resource type="World" id=1]
+
+[sub_resource type="Environment" id=2]
+ambient_light_energy = 0.0
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_name = "SMG_Material"
+params_cull_mode = 2
+albedo_texture = ExtResource( 6 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.131535, 0.148896, 0.168345 )
+
+[sub_resource type="SpatialMaterial" id=5]
+resource_name = "SMG_Material"
+params_cull_mode = 2
+albedo_texture = ExtResource( 11 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.131535, 0.148896, 0.168345 )
+
+[sub_resource type="SpatialMaterial" id=7]
+resource_name = "RL_Material"
+params_cull_mode = 2
+albedo_texture = ExtResource( 13 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.131535, 0.148896, 0.168345 )
+
+[sub_resource type="Shader" id=9]
+code = "shader_type canvas_item;
+
+
+uniform float size_x = 0.001;
+uniform float size_y = 0.001;
+
+void fragment(){
+	vec2 uv = SCREEN_UV;
+	uv.x = cos(SCREEN_UV.y * 2.0 + TIME) * 0.05;
+	uv.y = sin(SCREEN_UV.x * 4.0 + TIME) * 0.03;
+	COLOR = texture(TEXTURE, UV + uv);
+	COLOR /= cos(UV.x+sin(TIME)*5.0);
+	COLOR /= sin(UV.y+cos(TIME*2.0)*5.0);
+	COLOR.r += sin(UV.x+TIME*5.0);
+	COLOR*=0.5;
+	
+	COLOR.r = clamp(COLOR.r, 0.2, 1.0);
+	COLOR.g = clamp(COLOR.g, 0.4, 0.8);
+	COLOR.b = clamp(COLOR.b, 0.1, 0.8);
+	COLOR.a = 1.0;
+	
+	}"
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 9 )
+shader_param/size_x = 0.001
+shader_param/size_y = 0.001
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0156863, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.0156863, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.105882, 0.141176, 0.0352941, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.317647, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 0, 0, 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SMG_Viewport" type="ViewportContainer" parent="."]
+margin_left = -1414.05
+margin_top = -855.069
+margin_right = -134.047
+margin_bottom = -135.069
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="SMG_Viewport"]
+size = Vector2( 1280, 720 )
+own_world = true
+world = SubResource( 1 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="SMG_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.158256, 0.615032 )
+projection = 1
+current = true
+size = 0.9
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SMG_Viewport/Viewport"]
+environment = SubResource( 2 )
+
+[node name="Red_Light" type="OmniLight" parent="SMG_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.584482, 1.12215 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 4.0
+
+[node name="Green_Light" type="OmniLight" parent="SMG_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.768, 0.535153 )
+light_color = Color( 0.101961, 1, 0, 1 )
+light_energy = 4.0
+omni_range = 5.17263
+
+[node name="Weapon_Mesh" type="Area" parent="SMG_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.582441, 0 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="SMG_Viewport/Viewport/Weapon_Mesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.763855, 0 )
+material_override = SubResource( 3 )
+mesh = ExtResource( 8 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="SMG_Viewport/Viewport/Weapon_Mesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.763855, 0 )
+shape = SubResource( 4 )
+
+[node name="Shotgun_Viewport" type="ViewportContainer" parent="."]
+margin_left = -1414.05
+margin_top = -855.069
+margin_right = -134.047
+margin_bottom = -135.069
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Shotgun_Viewport"]
+size = Vector2( 1280, 720 )
+own_world = true
+world = SubResource( 1 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="Shotgun_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232257, 0.919488 )
+projection = 1
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Shotgun_Viewport/Viewport"]
+environment = SubResource( 2 )
+
+[node name="Red_Light" type="OmniLight" parent="Shotgun_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.584482, 1.12215 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 4.0
+
+[node name="Green_Light" type="OmniLight" parent="Shotgun_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.768, 0.535153 )
+light_color = Color( 0.101961, 1, 0, 1 )
+light_energy = 4.0
+omni_range = 5.17263
+
+[node name="Weapon_Mesh" type="Area" parent="Shotgun_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.503966, 0 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 7 )
+weapon_index = 2
+
+[node name="MeshInstance" type="MeshInstance" parent="Shotgun_Viewport/Viewport/Weapon_Mesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.763855, 0 )
+material_override = SubResource( 5 )
+mesh = ExtResource( 15 )
+material/0 = null
+material/1 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Shotgun_Viewport/Viewport/Weapon_Mesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.763855, 0 )
+shape = SubResource( 6 )
+
+[node name="RL_Viewport" type="ViewportContainer" parent="."]
+margin_left = -1414.05
+margin_top = -855.069
+margin_right = -134.047
+margin_bottom = -135.069
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="RL_Viewport"]
+size = Vector2( 1280, 720 )
+own_world = true
+world = SubResource( 1 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="RL_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232257, 0.958493 )
+projection = 1
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="RL_Viewport/Viewport"]
+environment = SubResource( 2 )
+
+[node name="Red_Light" type="OmniLight" parent="RL_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.584482, 1.12215 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 4.0
+
+[node name="Green_Light" type="OmniLight" parent="RL_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.768, 0.535153 )
+light_color = Color( 0.101961, 1, 0, 1 )
+light_energy = 4.0
+omni_range = 5.17263
+
+[node name="Weapon_Mesh" type="Area" parent="RL_Viewport/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.582, 0 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 7 )
+weapon_index = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="RL_Viewport/Viewport/Weapon_Mesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.763855, 0 )
+material_override = SubResource( 7 )
+mesh = ExtResource( 14 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RL_Viewport/Viewport/Weapon_Mesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.763855, 0 )
+shape = SubResource( 8 )
+
+[node name="Menu" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="Logo" type="TextureRect" parent="Menu/VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 360.0
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/VBoxContainer"]
+margin_top = 360.0
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Menu/VBoxContainer/HBoxContainer"]
+margin_bottom = 360.0
+size_flags_horizontal = 2
+color = Color( 1, 0, 0, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/VBoxContainer/HBoxContainer"]
+margin_left = 426.0
+margin_right = 852.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="Menu/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 426.0
+margin_bottom = 180.0
+size_flags_horizontal = 7
+size_flags_vertical = 3
+texture = ExtResource( 20 )
+expand = true
+
+[node name="VBoxContainer" type="GridContainer" parent="Menu/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 180.0
+margin_right = 426.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Start_Button" type="Button" parent="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_right = 426.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "START GAME"
+
+[node name="Settings_Button" type="Button" parent="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 426.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "SETTINGS"
+
+[node name="Quit_Button" type="Button" parent="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 120.0
+margin_right = 426.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "QUIT GAME"
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/VBoxContainer/HBoxContainer"]
+margin_left = 852.0
+margin_right = 852.0
+margin_bottom = 360.0
+
+[node name="ColorRect" type="ColorRect" parent="Menu/VBoxContainer/HBoxContainer"]
+margin_left = 852.0
+margin_right = 852.0
+margin_bottom = 360.0
+size_flags_horizontal = 2
+color = Color( 1, 0, 0, 0 )
+
+[node name="In_Game_Menu" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="In_Game_Menu"]
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="In_Game_Menu/HBoxContainer"]
+margin_right = 609.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="ColorRect2" type="ColorRect" parent="In_Game_Menu/HBoxContainer/VBoxContainer"]
+margin_right = 609.0
+margin_bottom = 219.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0313726, 1, 0, 0.141176 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="In_Game_Menu/HBoxContainer/VBoxContainer"]
+margin_top = 219.0
+margin_right = 609.0
+margin_bottom = 438.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Resume_Button" type="Button" parent="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_right = 609.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "RESUME GAME"
+
+[node name="Settings_Button" type="Button" parent="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 609.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "SETTINGS"
+
+[node name="Level_Select" type="Button" parent="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 609.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "LEVEL SELECT"
+
+[node name="Quit_To_Menu" type="Button" parent="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 132.0
+margin_right = 609.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "EXIT TO MAIN MENU"
+
+[node name="Quit_Button" type="Button" parent="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 176.0
+margin_right = 609.0
+margin_bottom = 219.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "QUIT GAME"
+
+[node name="ColorRect3" type="ColorRect" parent="In_Game_Menu/HBoxContainer/VBoxContainer"]
+margin_top = 438.0
+margin_right = 609.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.501961, 0.501961, 0.501961, 0.0980392 )
+
+[node name="CenterContainer" type="CenterContainer" parent="In_Game_Menu/HBoxContainer"]
+margin_left = 609.0
+margin_right = 609.0
+margin_bottom = 657.0
+
+[node name="ColorRect" type="ColorRect" parent="In_Game_Menu/HBoxContainer"]
+margin_left = 609.0
+margin_right = 1218.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0, 0.0823529 )
+
+[node name="Settings" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings"]
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/HBoxContainer"]
+margin_right = 609.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="ColorRect2" type="ColorRect" parent="Settings/HBoxContainer/VBoxContainer"]
+margin_right = 609.0
+margin_bottom = 219.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0313726, 1, 0, 0.141176 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/HBoxContainer/VBoxContainer"]
+margin_top = 219.0
+margin_right = 609.0
+margin_bottom = 438.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Start_Button" type="Button" parent="Settings/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_right = 609.0
+margin_bottom = 107.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "START GAME"
+
+[node name="Quit_Button" type="Button" parent="Settings/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 111.0
+margin_right = 609.0
+margin_bottom = 219.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "QUIT GAME"
+
+[node name="ColorRect3" type="ColorRect" parent="Settings/HBoxContainer/VBoxContainer"]
+margin_top = 438.0
+margin_right = 609.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.501961, 0.501961, 0.501961, 0.0980392 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Settings/HBoxContainer"]
+margin_left = 609.0
+margin_right = 609.0
+margin_bottom = 657.0
+
+[node name="Tabs" type="TabContainer" parent="Settings/HBoxContainer"]
+margin_left = 609.0
+margin_right = 1218.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="VBoxContainer" parent="Settings/HBoxContainer/Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 39.0
+margin_right = -7.0
+margin_bottom = -7.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sensitivity_Text" type="Label" parent="Settings/HBoxContainer/Tabs/Control"]
+margin_right = 595.0
+margin_bottom = 26.0
+text = "Mouse Sensitivity"
+
+[node name="HSlider" type="HSlider" parent="Settings/HBoxContainer/Tabs/Control"]
+margin_top = 30.0
+margin_right = 595.0
+margin_bottom = 46.0
+min_value = 0.05
+step = 0.25
+value = 0.5
+tick_count = 200
+
+[node name="Sensitivity_Label" type="Label" parent="Settings/HBoxContainer/Tabs/Control"]
+margin_top = 50.0
+margin_right = 595.0
+margin_bottom = 76.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FOV_text" type="Label" parent="Settings/HBoxContainer/Tabs/Control"]
+margin_top = 80.0
+margin_right = 595.0
+margin_bottom = 106.0
+text = "Field of View"
+
+[node name="FOV_Slider" type="HSlider" parent="Settings/HBoxContainer/Tabs/Control"]
+margin_top = 110.0
+margin_right = 595.0
+margin_bottom = 126.0
+min_value = 65.0
+step = 0.25
+value = 75.0
+tick_count = 200
+
+[node name="FOV_Label" type="Label" parent="Settings/HBoxContainer/Tabs/Control"]
+margin_top = 130.0
+margin_right = 595.0
+margin_bottom = 156.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volume" type="VBoxContainer" parent="Settings/HBoxContainer/Tabs"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 39.0
+margin_right = -7.0
+margin_bottom = -7.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Master_Volume_Text" type="Label" parent="Settings/HBoxContainer/Tabs/Volume"]
+margin_right = 601.0
+margin_bottom = 14.0
+text = "Master"
+
+[node name="Master_Volume" type="HSlider" parent="Settings/HBoxContainer/Tabs/Volume"]
+margin_top = 18.0
+margin_right = 601.0
+margin_bottom = 34.0
+min_value = 50.0
+step = 0.0
+value = 100.0
+tick_count = 200
+
+[node name="Music_Volume_Text" type="Label" parent="Settings/HBoxContainer/Tabs/Volume"]
+margin_top = 38.0
+margin_right = 601.0
+margin_bottom = 52.0
+text = "Music"
+
+[node name="Music_Volume" type="HSlider" parent="Settings/HBoxContainer/Tabs/Volume"]
+margin_top = 56.0
+margin_right = 601.0
+margin_bottom = 72.0
+min_value = 50.0
+step = 0.0
+value = 100.0
+tick_count = 200
+
+[node name="Level_End_Menu" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Level_End_Menu"]
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="Level_End_Menu/HBoxContainer"]
+margin_right = 406.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Level_End_Menu/HBoxContainer"]
+margin_left = 406.0
+margin_right = 812.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Level_End_Info" type="VBoxContainer" parent="Level_End_Menu/HBoxContainer/VBoxContainer"]
+margin_right = 406.0
+margin_bottom = 219.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Time_Label" type="Label" parent="Level_End_Menu/HBoxContainer/VBoxContainer/Level_End_Info"]
+margin_right = 40.0
+margin_bottom = 26.0
+text = "0:00"
+
+[node name="Enemy_HBOX" type="HBoxContainer" parent="Level_End_Menu/HBoxContainer/VBoxContainer/Level_End_Info"]
+margin_right = 406.0
+margin_bottom = 26.0
+alignment = 1
+
+[node name="Enemies_Label" type="Label" parent="Level_End_Menu/HBoxContainer/VBoxContainer/Level_End_Info/Enemy_HBOX"]
+margin_left = 119.0
+margin_right = 238.0
+margin_bottom = 26.0
+text = "Enemies:"
+
+[node name="Enemies_Value" type="Label" parent="Level_End_Menu/HBoxContainer/VBoxContainer/Level_End_Info/Enemy_HBOX"]
+margin_left = 242.0
+margin_right = 286.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0.87451, 1, 0, 1 )
+text = "0/0"
+
+[node name="Civ_HBOX2" type="HBoxContainer" parent="Level_End_Menu/HBoxContainer/VBoxContainer/Level_End_Info"]
+margin_top = 30.0
+margin_right = 406.0
+margin_bottom = 56.0
+alignment = 1
+
+[node name="Civ_Label" type="Label" parent="Level_End_Menu/HBoxContainer/VBoxContainer/Level_End_Info/Civ_HBOX2"]
+margin_left = 97.0
+margin_right = 261.0
+margin_bottom = 26.0
+text = "War Crimes:"
+
+[node name="Civ_Value" type="Label" parent="Level_End_Menu/HBoxContainer/VBoxContainer/Level_End_Info/Civ_HBOX2"]
+margin_left = 265.0
+margin_right = 309.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0.87451, 1, 0, 1 )
+text = "0/0"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Level_End_Menu/HBoxContainer/VBoxContainer"]
+visible = false
+margin_top = 219.0
+margin_right = 406.0
+margin_bottom = 438.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Next_Mission" type="Button" parent="Level_End_Menu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_right = 406.0
+margin_bottom = 107.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "NEXT MISSION"
+
+[node name="Level_Select" type="Button" parent="Level_End_Menu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 111.0
+margin_right = 406.0
+margin_bottom = 219.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "LEVEL SELECT"
+
+[node name="ColorRect3" type="ColorRect" parent="Level_End_Menu/HBoxContainer/VBoxContainer"]
+margin_top = 438.0
+margin_right = 406.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.501961, 0.501961, 0.501961, 0.0980392 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Level_End_Menu/HBoxContainer"]
+margin_left = 812.0
+margin_right = 812.0
+margin_bottom = 657.0
+
+[node name="ColorRect" type="ColorRect" parent="Level_End_Menu/HBoxContainer"]
+margin_left = 812.0
+margin_right = 1218.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0, 0.0823529 )
+
+[node name="Level_Menu" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Level_Menu"]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Level_Menu/VBoxContainer2"]
+margin_right = 1218.0
+margin_bottom = 627.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level_VBox" type="GridContainer" parent="Level_Menu/VBoxContainer2/HBoxContainer"]
+margin_right = 526.0
+margin_bottom = 627.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Level_Menu/VBoxContainer2/HBoxContainer"]
+margin_left = 526.0
+margin_right = 1052.0
+margin_bottom = 627.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Level_Name" type="Label" parent="Level_Menu/VBoxContainer2/HBoxContainer/VBoxContainer"]
+margin_right = 526.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "FUCK OFF"
+autowrap = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Level_Menu/VBoxContainer2/HBoxContainer/VBoxContainer"]
+margin_top = 64.0
+margin_right = 526.0
+margin_bottom = 601.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+script = ExtResource( 5 )
+
+[node name="Level_Info" type="RichTextLabel" parent="Level_Menu/VBoxContainer2/HBoxContainer/VBoxContainer/ScrollContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 521.0
+margin_bottom = 486.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.733333, 0.733333, 0.733333, 1 )
+
+[node name="Record_Container" type="HBoxContainer" parent="Level_Menu/VBoxContainer2/HBoxContainer/VBoxContainer"]
+margin_top = 601.0
+margin_right = 526.0
+margin_bottom = 627.0
+
+[node name="Record_Label" type="Label" parent="Level_Menu/VBoxContainer2/HBoxContainer/VBoxContainer/Record_Container"]
+margin_right = 104.0
+margin_bottom = 26.0
+text = "Record:"
+
+[node name="Record_Value" type="Label" parent="Level_Menu/VBoxContainer2/HBoxContainer/VBoxContainer/Record_Container"]
+margin_left = 108.0
+margin_right = 182.0
+margin_bottom = 26.0
+text = "0:0.0"
+
+[node name="VBoxContainerRight" type="VBoxContainer" parent="Level_Menu/VBoxContainer2/HBoxContainer"]
+margin_left = 1052.0
+margin_right = 1217.0
+margin_bottom = 627.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Level_Menu/VBoxContainer2/HBoxContainer/VBoxContainerRight"]
+margin_right = 165.0
+margin_bottom = 568.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level_Image" type="TextureRect" parent="Level_Menu/VBoxContainer2/HBoxContainer/VBoxContainerRight/PanelContainer"]
+material = SubResource( 10 )
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 164.0
+margin_bottom = 538.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 17 )
+expand = true
+stretch_mode = 1
+
+[node name="Objective_Label" type="Label" parent="Level_Menu/VBoxContainer2/HBoxContainer/VBoxContainerRight"]
+margin_top = 572.0
+margin_right = 165.0
+margin_bottom = 627.0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0.0313726, 1, 0, 1 )
+text = "OBJECTIVE 1
+OBJECTIVE 2"
+
+[node name="Current_Weapons" type="HBoxContainer" parent="Level_Menu/VBoxContainer2"]
+margin_top = 631.0
+margin_right = 1218.0
+margin_bottom = 657.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="WEAPON1" type="Button" parent="Level_Menu/VBoxContainer2/Current_Weapons"]
+margin_right = 403.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "WEAPON1"
+
+[node name="WEAPON2" type="Button" parent="Level_Menu/VBoxContainer2/Current_Weapons"]
+margin_left = 407.0
+margin_right = 810.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "WEAPON2"
+
+[node name="BEGIN" type="Button" parent="Level_Menu/VBoxContainer2/Current_Weapons"]
+margin_left = 814.0
+margin_right = 1218.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "BEGIN"
+
+[node name="Weapon_Select" type="GridContainer" parent="Level_Menu/VBoxContainer2"]
+visible = false
+margin_top = 425.0
+margin_right = 1218.0
+margin_bottom = 817.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="BACK" type="Button" parent="Level_Menu/VBoxContainer2/Weapon_Select"]
+margin_right = 301.0
+margin_bottom = 194.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "BACK"
+
+[node name="PISTOL" type="Button" parent="Level_Menu/VBoxContainer2/Weapon_Select"]
+margin_left = 305.0
+margin_right = 606.0
+margin_bottom = 194.0
+size_flags_horizontal = 3
+theme = ExtResource( 12 )
+text = "PISTOL"
+
+[node name="SMG" type="Button" parent="Level_Menu/VBoxContainer2/Weapon_Select"]
+margin_left = 610.0
+margin_right = 911.0
+margin_bottom = 194.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 12 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+
+[node name="SMG_MESH" type="TextureRect" parent="Level_Menu/VBoxContainer2/Weapon_Select/SMG"]
+margin_right = 300.0
+margin_bottom = 399.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SHOTGUN" type="Button" parent="Level_Menu/VBoxContainer2/Weapon_Select"]
+margin_left = 915.0
+margin_right = 1216.0
+margin_bottom = 194.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 12 )
+
+[node name="SHOTGUN_MESH" type="TextureRect" parent="Level_Menu/VBoxContainer2/Weapon_Select/SHOTGUN"]
+margin_right = 300.0
+margin_bottom = 200.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ROCKET_LAUNCHER" type="Button" parent="Level_Menu/VBoxContainer2/Weapon_Select"]
+margin_top = 198.0
+margin_right = 301.0
+margin_bottom = 392.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 12 )
+
+[node name="ROCKET_LAUNCHER_MESH" type="TextureRect" parent="Level_Menu/VBoxContainer2/Weapon_Select/ROCKET_LAUNCHER"]
+margin_right = 300.0
+margin_bottom = 399.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Hover" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 9 )
+bus = "SFX"
+
+[node name="Select" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 10 )
+volume_db = -14.934
+bus = "SFX"
+
+[node name="Sound_Test" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 16 )
+[connection signal="body_entered" from="SMG_Viewport/Viewport/Weapon_Mesh" to="SMG_Viewport/Viewport/Weapon_Mesh" method="_on_P_SMG_body_entered"]
+[connection signal="body_entered" from="Shotgun_Viewport/Viewport/Weapon_Mesh" to="Shotgun_Viewport/Viewport/Weapon_Mesh" method="_on_P_SMG_body_entered"]
+[connection signal="body_entered" from="RL_Viewport/Viewport/Weapon_Mesh" to="RL_Viewport/Viewport/Weapon_Mesh" method="_on_P_SMG_body_entered"]
+[connection signal="focus_entered" from="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Start_Button" to="." method="_on_Button_focus_entered"]
+[connection signal="mouse_entered" from="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Start_Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Start_Button" to="." method="_on_Start_Button_pressed"]
+[connection signal="focus_entered" from="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Settings_Button" to="." method="_on_Button_focus_entered"]
+[connection signal="mouse_entered" from="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Settings_Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Settings_Button" to="." method="_on_Settings_Button_pressed"]
+[connection signal="focus_entered" from="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_Button_focus_entered"]
+[connection signal="mouse_entered" from="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Menu/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_Quit_Button_pressed"]
+[connection signal="mouse_entered" from="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Resume_Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Resume_Button" to="." method="_on_Resume_Game_pressed"]
+[connection signal="mouse_entered" from="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Settings_Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Settings_Button" to="." method="_on_Settings_Button_pressed"]
+[connection signal="mouse_entered" from="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Level_Select" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Level_Select" to="." method="_on_Level_Select_pressed"]
+[connection signal="mouse_entered" from="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Quit_To_Menu" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Quit_To_Menu" to="." method="_on_Exit_To_Menu_pressed"]
+[connection signal="mouse_entered" from="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="In_Game_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_Quit_Button_pressed"]
+[connection signal="mouse_entered" from="Settings/HBoxContainer/VBoxContainer/VBoxContainer/Start_Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Settings/HBoxContainer/VBoxContainer/VBoxContainer/Start_Button" to="." method="_on_Start_Button_pressed"]
+[connection signal="mouse_entered" from="Settings/HBoxContainer/VBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Settings/HBoxContainer/VBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_Quit_Button_pressed"]
+[connection signal="value_changed" from="Settings/HBoxContainer/Tabs/Control/HSlider" to="." method="_on_Mouse_Sensitivity_value_changed"]
+[connection signal="value_changed" from="Settings/HBoxContainer/Tabs/Control/FOV_Slider" to="." method="_on_FOV_value_changed"]
+[connection signal="value_changed" from="Settings/HBoxContainer/Tabs/Volume/Master_Volume" to="." method="_on_Master_Volume_value_changed"]
+[connection signal="value_changed" from="Settings/HBoxContainer/Tabs/Volume/Music_Volume" to="." method="_on_Music_Volume_value_changed"]
+[connection signal="mouse_entered" from="Level_End_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Next_Mission" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Level_End_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Next_Mission" to="." method="_on_Next_Mission_pressed"]
+[connection signal="mouse_entered" from="Level_End_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Level_Select" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Level_End_Menu/HBoxContainer/VBoxContainer/VBoxContainer/Level_Select" to="." method="_on_Level_Select_Button_pressed"]
+[connection signal="mouse_entered" from="Level_Menu/VBoxContainer2/Current_Weapons/WEAPON1" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_entered" from="Level_Menu/VBoxContainer2/Current_Weapons/WEAPON2" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_entered" from="Level_Menu/VBoxContainer2/Current_Weapons/BEGIN" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Level_Menu/VBoxContainer2/Current_Weapons/BEGIN" to="." method="_on_BEGIN_pressed"]
+[connection signal="mouse_entered" from="Level_Menu/VBoxContainer2/Weapon_Select/BACK" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Level_Menu/VBoxContainer2/Weapon_Select/BACK" to="." method="_on_BACK_pressed"]
+[connection signal="mouse_entered" from="Level_Menu/VBoxContainer2/Weapon_Select/PISTOL" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_entered" from="Level_Menu/VBoxContainer2/Weapon_Select/SMG" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_entered" from="Level_Menu/VBoxContainer2/Weapon_Select/SHOTGUN" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_entered" from="Level_Menu/VBoxContainer2/Weapon_Select/ROCKET_LAUNCHER" to="." method="_on_Button_mouse_entered"]

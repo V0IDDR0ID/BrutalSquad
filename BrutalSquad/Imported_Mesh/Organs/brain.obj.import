@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/brain.obj-21091c4da4077b1497db36171141dcd6.mesh"
+
+[deps]
+
+files=[ "res://.import/brain.obj-21091c4da4077b1497db36171141dcd6.mesh" ]
+
+source_file="res://Imported_Mesh/Organs/brain.obj"
+dest_files=[ "res://.import/brain.obj-21091c4da4077b1497db36171141dcd6.mesh", "res://.import/brain.obj-21091c4da4077b1497db36171141dcd6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

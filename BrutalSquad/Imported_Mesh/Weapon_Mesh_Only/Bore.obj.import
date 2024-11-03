@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Bore.obj-cbe050e5d2ccfc69c56f88bb50dae870.mesh"
+
+[deps]
+
+files=[ "res://.import/Bore.obj-cbe050e5d2ccfc69c56f88bb50dae870.mesh" ]
+
+source_file="res://Imported_Mesh/Weapon_Mesh_Only/Bore.obj"
+dest_files=[ "res://.import/Bore.obj-cbe050e5d2ccfc69c56f88bb50dae870.mesh", "res://.import/Bore.obj-cbe050e5d2ccfc69c56f88bb50dae870.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

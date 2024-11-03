@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sfx/Music/mall_ambient.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Entities/Ambience_Emitter.gd" type="Script" id=2]
+
+[node name="Ambience_Emitter" type="AudioStreamPlayer3D"]
+stream = ExtResource( 1 )
+unit_size = 9.4
+max_db = 1.102
+autoplay = true
+bus = "SFX"
+attenuation_filter_cutoff_hz = 2500.0
+script = ExtResource( 2 )

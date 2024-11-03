@@ -1,0 +1,462 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Menu/hide.gd" type="Script" id=1]
+[ext_resource path="res://Stocks.gd" type="Script" id=2]
+[ext_resource path="res://Textures/Menu/implant_character.png" type="Texture" id=3]
+[ext_resource path="res://Textures/Menu/Empty_Slot.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/mingliutsmall.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Sfx/UI/implant_unequip.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sfx/UI/Implant_Equip.wav" type="AudioStream" id=7]
+[ext_resource path="res://Textures/sky1.png" type="Texture" id=8]
+[ext_resource path="res://Entities/Fish/Fish_Mesh.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Entities/Fish/Organ_Mesh.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Textures/sky2.png" type="Texture" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0862745, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.427451, 0, 0, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0627451, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="AudioStreamRandomPitch" id=8]
+audio_stream = ExtResource( 7 )
+
+[sub_resource type="AudioStreamRandomPitch" id=9]
+audio_stream = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.101961, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="PanoramaSky" id=12]
+panorama = ExtResource( 11 )
+
+[sub_resource type="Environment" id=13]
+background_mode = 2
+background_sky = SubResource( 12 )
+background_energy = 0.5
+
+[node name="Stock_Menu" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = 128.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+in_game = true
+
+[node name="Character_Container" type="HBoxContainer" parent="."]
+margin_right = 1152.0
+margin_bottom = 592.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Character_Container"]
+margin_right = 574.0
+margin_bottom = 592.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/tab_fg = SubResource( 2 )
+custom_styles/tab_disabled = SubResource( 3 )
+custom_styles/tab_bg = SubResource( 4 )
+custom_styles/panel = SubResource( 5 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_bg = Color( 0, 0, 0, 1 )
+custom_colors/font_color_fg = Color( 0, 0, 0, 1 )
+
+[node name="Stocks" type="ItemList" parent="Character_Container/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/selected = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Parts" type="ItemList" parent="Character_Container/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/selected = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Fish" type="ItemList" parent="Character_Container/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/selected = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+custom_fonts/font = ExtResource( 5 )
+fixed_icon_size = Vector2( 8, 8 )
+
+[node name="Equip" type="AudioStreamPlayer" parent="Character_Container"]
+stream = SubResource( 8 )
+volume_db = -5.557
+
+[node name="Unequip" type="AudioStreamPlayer" parent="Character_Container"]
+stream = SubResource( 9 )
+volume_db = -0.784
+
+[node name="TextureRect" type="TextureRect" parent="Character_Container"]
+visible = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="Head_Button" type="TextureButton" parent="Character_Container/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Torso_Button" type="TextureButton" parent="Character_Container/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leg_Button" type="TextureButton" parent="Character_Container/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arm_Button" type="TextureButton" parent="Character_Container/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="Label" parent="Character_Container/TextureRect"]
+margin_right = 40.0
+margin_bottom = 26.0
+text = "102429"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Character_Container"]
+margin_right = 405.0
+margin_bottom = 76.0
+window_title = ""
+dialog_text = "Do you want to purchase X?"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Character_Container"]
+show_behind_parent = true
+margin_left = 578.0
+margin_right = 1152.0
+margin_bottom = 592.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Character_Container/VBoxContainer"]
+show_behind_parent = true
+margin_right = 574.0
+margin_bottom = 294.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Character_Container/VBoxContainer/ColorRect"]
+modulate = Color( 1, 1, 1, 0.768627 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Character_Container/VBoxContainer/ColorRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money_Label" type="Label" parent="Character_Container/VBoxContainer/ColorRect/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 5 )
+text = "1111"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asset_Label" type="Label" parent="Character_Container/VBoxContainer/ColorRect/VBoxContainer"]
+margin_top = 23.0
+margin_right = 40.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 5 )
+text = "1111"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Character_Container/VBoxContainer"]
+show_behind_parent = true
+margin_top = 298.0
+margin_right = 574.0
+margin_bottom = 592.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Character_Container/VBoxContainer/ColorRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stock_Value" type="Label" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer"]
+margin_right = 574.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 5 )
+text = "100"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyHBox" type="HBoxContainer" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer"]
+margin_top = 23.0
+margin_right = 574.0
+margin_bottom = 42.0
+custom_constants/separation = 3
+
+[node name="Buy_Button" type="Button" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer/BuyHBox"]
+margin_right = 27.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Buy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_2" type="Button" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer/BuyHBox"]
+margin_left = 30.0
+margin_right = 39.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_5" type="Button" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer/BuyHBox"]
+margin_left = 42.0
+margin_right = 51.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_10" type="Button" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer/BuyHBox"]
+margin_left = 54.0
+margin_right = 72.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_100" type="Button" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer/BuyHBox"]
+margin_left = 75.0
+margin_right = 102.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SellHBox" type="HBoxContainer" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer"]
+margin_top = 46.0
+margin_right = 574.0
+margin_bottom = 65.0
+custom_constants/separation = 3
+
+[node name="Sell_Button" type="Button" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer/SellHBox"]
+margin_right = 36.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sell"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sell_2" type="Button" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer/SellHBox"]
+margin_left = 39.0
+margin_right = 48.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sell_5" type="Button" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer/SellHBox"]
+margin_left = 51.0
+margin_right = 60.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sell_10" type="Button" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer/SellHBox"]
+margin_left = 63.0
+margin_right = 81.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sell_100" type="Button" parent="Character_Container/VBoxContainer/ColorRect2/VBoxContainer/SellHBox"]
+margin_left = 84.0
+margin_right = 111.0
+margin_bottom = 19.0
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 150, 150 )
+own_world = true
+transparent_bg = true
+render_target_v_flip = true
+
+[node name="Camera" type="Camera" parent="Viewport"]
+
+[node name="Fish" parent="Viewport" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.69164 )
+menu = true
+
+[node name="Organs" parent="Viewport" instance=ExtResource( 10 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.131, -1.79533 )
+
+[node name="OmniLight" type="OmniLight" parent="Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85024, -1.49361 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Viewport"]
+environment = SubResource( 13 )
+
+[connection signal="item_activated" from="Character_Container/TabContainer/Stocks" to="Character_Container" method="_on_Stock_List_item_activated"]
+[connection signal="item_selected" from="Character_Container/TabContainer/Stocks" to="Character_Container" method="_on_Stock_List_item_selected"]
+[connection signal="item_activated" from="Character_Container/TabContainer/Parts" to="Character_Container" method="_on_Stock_List_item_activated"]
+[connection signal="item_selected" from="Character_Container/TabContainer/Parts" to="Character_Container" method="_on_Stock_List_item_selected"]
+[connection signal="item_activated" from="Character_Container/TabContainer/Fish" to="Character_Container" method="_on_Stock_List_item_activated"]
+[connection signal="item_selected" from="Character_Container/TabContainer/Fish" to="Character_Container" method="_on_Stock_List_item_selected"]
+[connection signal="confirmed" from="Character_Container/ConfirmationDialog" to="Character_Container" method="_on_ConfirmationDialog_confirmed"]

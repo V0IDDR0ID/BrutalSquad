@@ -1,0 +1,402 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Imported_Mesh/intro_guy.glb" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Shader_Screen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sfx/Player/Jump.wav" type="AudioStream" id=4]
+[ext_resource path="res://Materials/mainguy.tres" type="Material" id=5]
+[ext_resource path="res://Sfx/UI/implant_unequip.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sfx/Player/IED_armed_2.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sfx/Player/IED_armed_1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sfx/Player/IED_drum.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sfx/WeaponsPickups/Rocket launcher/missile_explosion.wav" type="AudioStream" id=10]
+[ext_resource path="res://Entities/UI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Imported_Mesh/UI_MESH.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://Sfx/Player/player_pain_1.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sfx/Player/IED_hollow_laughter.wav" type="AudioStream" id=15]
+[ext_resource path="res://Scripts/Scope.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/Reticle.gd" type="Script" id=17]
+[ext_resource path="res://Textures/Menu/Grab_Hand_Anim/hand3.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Menu/Grab_Hand_Anim/hand1.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Menu/Grab_Hand_Anim/hand2.png" type="Texture" id=20]
+[ext_resource path="res://Sfx/wood01.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sfx/Flesh/flesh_chunk_impact_2.wav" type="AudioStream" id=23]
+[ext_resource path="res://Textures/Decals/vomit.png" type="Texture" id=24]
+[ext_resource path="res://Entities/Particles/Water1.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Sfx/Player/Jumpboost.wav" type="AudioStream" id=26]
+[ext_resource path="res://Kicksound.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Sfx/NPCs/applause-clapping-church-crowd-immersive.wav" type="AudioStream" id=28]
+[ext_resource path="res://Sfx/bullet_impact_metal.wav" type="AudioStream" id=29]
+[ext_resource path="res://Textures/UI/terrorsuit.png" type="Texture" id=30]
+[ext_resource path="res://Entities/Rain_Spawner.gd" type="Script" id=32]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.402745
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.311979, 0.725054, 0.289931 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.185, 0.098, 0.549 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.185, 0.098, 0.0786237 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.311979, 0.903937, 0.289931 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.311979, 0.414648, 0.289931 )
+
+[sub_resource type="CapsuleShape" id=7]
+margin = 0.001
+radius = 0.325133
+height = 1.29081
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.308, 0.032, 0.308 )
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_transparent = true
+emission_enabled = true
+emission = Color( 1, 0, 0, 1 )
+emission_energy = 0.24
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 0.049541, 0.483, 0.618715 )
+
+[sub_resource type="AnimatedTexture" id=11]
+flags = 18
+frames = 3
+fps = 9.8
+frame_0/texture = ExtResource( 19 )
+frame_1/texture = ExtResource( 20 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 18 )
+frame_2/delay_sec = 0.0
+
+[sub_resource type="AudioStreamRandomPitch" id=12]
+audio_stream = ExtResource( 21 )
+
+[sub_resource type="Curve" id=13]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=14]
+curve = SubResource( 13 )
+
+[sub_resource type="ParticlesMaterial" id=15]
+direction = Vector3( 0, 1, 0 )
+spread = 90.0
+gravity = Vector3( 0, -20, 0 )
+initial_velocity = 9.17
+initial_velocity_random = 0.54
+damping_random = 1.0
+scale = 3.05
+scale_random = 1.0
+scale_curve = SubResource( 14 )
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_transparent = true
+albedo_texture = ExtResource( 24 )
+metallic_specular = 0.0
+
+[sub_resource type="SphereMesh" id=17]
+material = SubResource( 16 )
+radius = 0.061
+height = 0.108
+radial_segments = 7
+rings = 4
+
+[sub_resource type="AudioStreamRandomPitch" id=18]
+audio_stream = ExtResource( 14 )
+
+[node name="Player" type="KinematicBody"]
+collision_layer = 2
+collision_mask = 177
+collision/safe_margin = 0.003
+script = ExtResource( 1 )
+run_deacceleration = 7
+
+[node name="Top_Checkr" type="Spatial" parent="."]
+
+[node name="RayCast" type="RayCast" parent="Top_Checkr"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0411, -0.00251776 )
+enabled = true
+cast_to = Vector3( 0, 1.262, 0 )
+
+[node name="Shader_Screen" parent="." instance=ExtResource( 3 )]
+mouse_filter = 2
+
+[node name="Crush_Checkr" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31501, -0.0348541 )
+cast_to = Vector3( 0, -0.371, 0 )
+
+[node name="Crush_Checkr2" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24735, -0.0348541 )
+cast_to = Vector3( 0, 0.065, 0 )
+
+[node name="Top_Check" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.823117, 0 )
+collision_layer = 0
+monitoring = false
+monitorable = false
+
+[node name="CrouchCollision2" type="CollisionShape" parent="Top_Check"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -4.61624e-08, -1.05607 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="CrouchCollision3" type="CollisionShape" parent="Top_Check"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -3.30103e-08, -0.755187 )
+shape = SubResource( 2 )
+
+[node name="Crush_Check" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.625179, 0 )
+collision_layer = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Crush_Check"]
+shape = SubResource( 3 )
+
+[node name="CrouchCrush" type="CollisionShape" parent="Crush_Check"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.58558e-09, -0.0362738 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.918484, 0 )
+shape = SubResource( 5 )
+
+[node name="CrouchCollision" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.918484, 0 )
+shape = SubResource( 6 )
+disabled = true
+
+[node name="Body_CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.939121, 0 )
+visible = false
+shape = SubResource( 7 )
+disabled = true
+
+[node name="Feet_CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192088, 0 )
+visible = false
+shape = SubResource( 8 )
+disabled = true
+
+[node name="UI_Quad2" type="MeshInstance" parent="."]
+transform = Transform( -2.053, 0, 6.82898e-06, 0, -1.125, 0, -6.68952e-07, 0, -20.958, 0, 1.52043, 0.155926 )
+visible = false
+material_override = SubResource( 9 )
+cast_shadow = 0
+mesh = ExtResource( 13 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -4.492
+
+[node name="Stair_Ray_Front" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.355423, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 0.5 )
+
+[node name="RayCast" type="RayCast" parent="."]
+
+[node name="Ray_Rotation" type="Position3D" parent="."]
+
+[node name="Floor_Ray" type="RayCast" parent="Ray_Rotation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.837, 0.593 )
+enabled = true
+cast_to = Vector3( 0, -0.8, 0 )
+
+[node name="Floor_Ray2" type="RayCast" parent="Ray_Rotation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.837, 0.593 )
+enabled = true
+cast_to = Vector3( 0, -0.8, 0 )
+
+[node name="Floor_Ray_Down" type="RayCast" parent="Ray_Rotation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.159593, 0.389913 )
+enabled = true
+cast_to = Vector3( 0, -0.6, 0 )
+
+[node name="Stair_Ray" type="RayCast" parent="Ray_Rotation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.987487, -0.486045 )
+enabled = true
+cast_to = Vector3( 0, -1.143, 0 )
+
+[node name="Stair_Check" type="Area" parent="Ray_Rotation"]
+collision_layer = 0
+monitoring = false
+monitorable = false
+
+[node name="StairCheck" type="CollisionShape" parent="Ray_Rotation/Stair_Check"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00100636, 1.36732, -4.35114e-06 )
+shape = SubResource( 10 )
+
+[node name="SFX" type="Spatial" parent="."]
+
+[node name="Health" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 6 )
+volume_db = 1.0
+pitch_scale = 0.75
+bus = "SFX"
+
+[node name="IED1" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 8 )
+bus = "SFX"
+
+[node name="IED2" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 7 )
+bus = "SFX"
+
+[node name="IED_alert" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 9 )
+volume_db = -2.364
+bus = "SFX"
+
+[node name="IED_explosion" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 10 )
+volume_db = -2.364
+bus = "SFX"
+
+[node name="Intro_Laugh" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 15 )
+volume_db = 0.464
+
+[node name="Reticle" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scope" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grab_Hand" type="TextureRect" parent="."]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+texture = SubResource( 11 )
+
+[node name="Foot_Step" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0193073, 0 )
+stream = SubResource( 12 )
+unit_db = 0.497
+unit_size = 4.0
+max_db = -1.0
+bus = "step"
+
+[node name="UI" parent="." instance=ExtResource( 12 )]
+
+[node name="Gunksound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 23 )
+unit_size = 2.0
+pitch_scale = 0.28
+
+[node name="Boostjump" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 26 )
+unit_size = 2.0
+pitch_scale = 1.61
+
+[node name="Particles" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0 )
+process_material = SubResource( 15 )
+draw_pass_1 = SubResource( 17 )
+
+[node name="Kicksound" parent="." instance=ExtResource( 27 )]
+
+[node name="Pain" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 18 )
+pitch_scale = 1.07
+bus = "player_pain"
+
+[node name="Curse_Torch" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19725, 0 )
+visible = false
+light_color = Color( 1, 0, 0, 1 )
+omni_range = 6.6
+
+[node name="Armorsound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76025, 0 )
+stream = ExtResource( 29 )
+pitch_scale = 0.69
+
+[node name="Soundrotator" type="Position3D" parent="."]
+
+[node name="Psychosound" type="AudioStreamPlayer3D" parent="Soundrotator"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57397, -1.26881 )
+stream = ExtResource( 28 )
+pitch_scale = 1.03
+
+[node name="Terrorsuit" type="TextureRect" parent="."]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 30 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body_Mesh" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0.854, 0 )
+
+[node name="Skeleton" parent="Body_Mesh/Armature" index="0"]
+bones/2/bound_children = [ NodePath("BoneAttachment") ]
+bones/6/bound_children = [ NodePath("BoneAttachment 2") ]
+
+[node name="BoneAttachment" parent="Body_Mesh/Armature/Skeleton" index="0"]
+transform = Transform( 0.998236, -0.00611015, -0.0590595, 0.0120001, 0.994926, 0.0998951, 0.0581494, -0.100428, 0.993244, -0.00361001, 0.61673, 0.0323869 )
+
+[node name="Plane001" parent="Body_Mesh/Armature/Skeleton/BoneAttachment" index="0"]
+layers = 8
+
+[node name="BoneAttachment 2" parent="Body_Mesh/Armature/Skeleton" index="1"]
+transform = Transform( -0.124788, -0.0962863, 0.9875, -0.581133, 0.813788, 0.00591207, -0.804185, -0.573131, -0.157506, 0.193527, 0.645021, 0.0372601 )
+
+[node name="Cube" parent="Body_Mesh/Armature/Skeleton/BoneAttachment 2" index="0"]
+visible = false
+
+[node name="Head_Mesh" parent="Body_Mesh/Armature/Skeleton" index="2"]
+layers = 8
+
+[node name="Torso_Mesh" parent="Body_Mesh/Armature/Skeleton" index="3"]
+layers = 8
+material_override = ExtResource( 5 )
+
+[node name="Rain_Spawner" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 69.5176, 0 )
+script = ExtResource( 32 )
+
+[node name="LeanRay" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6084, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 0 )
+
+[node name="NV" type="OmniLight" parent="."]
+transform = Transform( -1, -5.29396e-23, -3.25841e-07, -5.88004e-09, 0.999837, 0.0180457, 3.25788e-07, 0.0180457, -0.999837, 0, 1.81149, 0 )
+visible = false
+light_energy = 2.0
+omni_range = 500.0
+
+[node name="Aim_Point" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17827, 0 )
+
+[connection signal="body_entered" from="Top_Check" to="." method="_on_Top_Check_body_entered"]
+[connection signal="body_exited" from="Top_Check" to="." method="_on_Top_Check_body_exited"]
+[connection signal="body_entered" from="Ray_Rotation/Stair_Check" to="." method="_on_Stair_Check_body_entered"]
+[connection signal="body_exited" from="Ray_Rotation/Stair_Check" to="." method="_on_Stair_Check_body_exited"]
+
+[editable path="Body_Mesh"]

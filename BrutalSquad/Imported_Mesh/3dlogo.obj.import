@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/3dlogo.obj-120ad0e05f8dbc3d3a10a94f958e6a15.mesh"
+
+[deps]
+
+files=[ "res://.import/3dlogo.obj-120ad0e05f8dbc3d3a10a94f958e6a15.mesh" ]
+
+source_file="res://Imported_Mesh/3dlogo.obj"
+dest_files=[ "res://.import/3dlogo.obj-120ad0e05f8dbc3d3a10a94f958e6a15.mesh", "res://.import/3dlogo.obj-120ad0e05f8dbc3d3a10a94f958e6a15.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

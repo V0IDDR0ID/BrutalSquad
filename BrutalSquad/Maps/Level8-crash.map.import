@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/Level8-crash.map-2ee30ec59bd90554a337b2459b6cc4b5.tres"
+
+[deps]
+
+source_file="res://Maps/Level8-crash.map"
+dest_files=["res://.import/Level8-crash.map-2ee30ec59bd90554a337b2459b6cc4b5.tres"]
+
+[params]
+
+dummy_value_ignore_me=0

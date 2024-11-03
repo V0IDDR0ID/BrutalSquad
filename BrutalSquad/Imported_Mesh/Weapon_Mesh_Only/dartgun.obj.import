@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/dartgun.obj-41e3a8437d4e7d5c51528f10c2ffba07.mesh"
+
+[deps]
+
+files=["res://.import/dartgun.obj-41e3a8437d4e7d5c51528f10c2ffba07.mesh"]
+source_file="res://Imported_Mesh/Weapon_Mesh_Only/dartgun.obj"
+dest_files=["res://.import/dartgun.obj-41e3a8437d4e7d5c51528f10c2ffba07.mesh", "res://.import/dartgun.obj-41e3a8437d4e7d5c51528f10c2ffba07.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

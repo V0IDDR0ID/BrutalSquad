@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 0.842, 0.817, 0.094 )
+flag_align_y = true
+flag_rotate_y = true
+direction = Vector3( 0, 0, 1 )
+gravity = Vector3( 0, -13.133, 0 )
+initial_velocity = 15.79
+angle = 7.2
+angle_random = 1.0
+scale = 0.03
+scale_random = 0.3
+
+[sub_resource type="SpatialMaterial" id=3]
+
+[sub_resource type="PrismMesh" id=2]
+material = SubResource( 3 )
+size = Vector3( 0.556, 1.601, 1.427 )
+
+[node name="Destruction_Particle" type="Particles"]
+emitting = false
+amount = 38
+lifetime = 0.26
+one_shot = true
+fract_delta = false
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 2 )

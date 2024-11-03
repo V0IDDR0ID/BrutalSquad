@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Explosion.gd" type="Script" id=1]
+[ext_resource path="res://Textures/Decals/blood.png" type="Texture" id=2]
+[ext_resource path="res://Sfx/Flesh/flesh_chunk_impact_2.wav" type="AudioStream" id=3]
+[ext_resource path="res://Shaders/psx.shader" type="Shader" id=4]
+
+[sub_resource type="SphereShape" id=1]
+radius = 2.48024
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0.352941, 0, 1 )
+
+[sub_resource type="SphereMesh" id=3]
+material = SubResource( 2 )
+radius = 1.967
+height = 4.081
+
+[sub_resource type="Curve" id=4]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, -360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+width = 256
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 1.37
+flag_rotate_y = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, -10, 0 )
+initial_velocity = 49.68
+angular_velocity = 0.47
+angular_velocity_random = 0.9
+angle = 33.1
+angle_random = 0.67
+angle_curve = SubResource( 5 )
+scale = 0.21
+scale_random = 0.32
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 4 )
+shader_param/snapRes = 400.0
+shader_param/albedoTex = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=8]
+material = SubResource( 7 )
+
+[node name="Explosion_Blood" type="Area"]
+collision_layer = 0
+collision_mask = 15
+script = ExtResource( 1 )
+damage = 100
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_size = 20.0
+max_db = 2.0
+pitch_scale = 0.35
+autoplay = true
+bus = "SFX"
+
+[node name="Particle" type="Particles" parent="."]
+transform = Transform( 0.123153, 0, 0, 0, 0.123153, 0, 0, 0, 0.123153, 0, 0, 0 )
+cast_shadow = 0
+emitting = false
+amount = 200
+lifetime = 0.27
+one_shot = true
+randomness = 1.0
+fract_delta = false
+local_coords = false
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 8 )
+[connection signal="area_entered" from="." to="." method="_on_Explosion_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Explosion_body_entered"]

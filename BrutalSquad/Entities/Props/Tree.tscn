@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Maps/textures/base/Wood1.png" type="Texture" id=1]
+[ext_resource path="res://Imported_Mesh/Props/tree.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Textures/Props/leaves.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=2]
+size = Vector2( 2.411, 2.35 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_do_not_receive_shadows = true
+params_billboard_mode = 1
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_color = Color( 0.105882, 0.701961, 0, 1 )
+albedo_texture = ExtResource( 3 )
+metallic_specular = 0.0
+
+[node name="Tree" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
+material/0 = SubResource( 1 )
+
+[node name="Leaves" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.822228, 6.17742, -0.088101 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves14" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222105, 5.74303, 0.430191 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.822228, 6.17742, -1.71028 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.995443, 4.30847, -0.5876 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves9" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.845788, 3.88013, -0.886315 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves15" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.845788, 4.44306, 0.0742673 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves13" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58713, 4.39636, -2.05175 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves8" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.449041, 4.06559, -1.52433 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves7" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01863, 4.81873, 1.16659 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves12" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01863, 4.81873, 1.16659 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves11" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52317, 5.06329, 0.24274 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves10" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4833, 4.62563, -1.35352 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.409601, 6.17742, -2.33022 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.751535, 4.42757, 1.75194 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Leaves2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3822, 4.25633, 2.40475 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )

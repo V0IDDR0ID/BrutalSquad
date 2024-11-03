@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+render_mode unshaded;
+
+
+void fragment() {
+	ALPHA = clamp(VERTEX.y*0.3* TANGENT.x * 0.2, 0.0, 1.0);
+}"
+
+[resource]
+shader = SubResource( 1 )

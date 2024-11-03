@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/cutscene_ending3.map-a949686121d70281e494e3a897c7dc58.tres"
+
+[deps]
+
+source_file="res://Maps/cutscene_ending3.map"
+dest_files=["res://.import/cutscene_ending3.map-a949686121d70281e494e3a897c7dc58.tres"]
+
+[params]
+
+dummy_value_ignore_me=0

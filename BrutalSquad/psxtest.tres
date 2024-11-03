@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Textures/NPC/Enemy_Civilian.png" type="Texture" id=1]
+[ext_resource path="res://Shaders/realpsx.shader" type="Shader" id=2]
+
+[resource]
+shader = ExtResource( 2 )
+shader_param/snapRes = 50.0
+shader_param/albedoTex = ExtResource( 1 )

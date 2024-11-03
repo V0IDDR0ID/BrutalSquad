@@ -1,0 +1,49 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://Maps/textures/schizo/blue_granite_psx.png" type="Texture" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+params_blend_mode = 1
+params_grow = true
+params_grow_amount = 0.069
+proximity_fade_enable = true
+proximity_fade_distance = 3.92
+distance_fade_mode = 2
+distance_fade_min_distance = 0.0
+distance_fade_max_distance = 3.09
+
+[sub_resource type="Shader" id=2]
+code = "shader_type spatial; 
+render_mode skip_vertex_transform, cull_disabled;
+
+//Albedo texture 
+uniform sampler2D albedoTex : hint_albedo;
+uniform bool paletteswap = false;
+//Geometric resolution for vert snap
+uniform float snapRes = 50.0; 
+
+//vec4 for UV recalculation 
+varying vec4 vertCoord;
+
+
+
+void vertex() {
+	VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	VERTEX.xyz = floor(VERTEX.xyz * snapRes) / snapRes;
+	vertCoord = vec4(UV * VERTEX.z, VERTEX.z, 0); 
+} 
+ 
+void fragment() {
+	
+	ALBEDO = texture(albedoTex, vertCoord.xy / vertCoord.z).rgb;
+	EMISSION = texture(albedoTex, vertCoord.xy / vertCoord.z).rgb;
+}
+
+"
+
+[resource]
+next_pass = SubResource( 1 )
+shader = SubResource( 2 )
+shader_param/paletteswap = false
+shader_param/snapRes = 50.0
+shader_param/albedoTex = ExtResource( 1 )

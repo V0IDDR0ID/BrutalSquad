@@ -1,0 +1,92 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/Kinematic_Physics_Object.gd" type="Script" id=1]
+[ext_resource path="res://Textures/Props/super_cruncher.png" type="Texture" id=2]
+[ext_resource path="res://Sfx/bullet_impact_metal.wav" type="AudioStream" id=3]
+[ext_resource path="res://Imported_Mesh/Props/chipbag.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Scripts/Random_Mesh.gd" type="Script" id=5]
+[ext_resource path="res://Imported_Mesh/Props/can.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Scripts/Berries.gd" type="Script" id=7]
+[ext_resource path="res://Textures/Props/can1.png" type="Texture" id=8]
+[ext_resource path="res://Textures/Props/pizza.png" type="Texture" id=9]
+[ext_resource path="res://Imported_Mesh/Props/pizza.obj" type="ArrayMesh" id=10]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.0819276, 0.0288747, 0.0854029 )
+
+[sub_resource type="SphereShape" id=2]
+radius = 0.11873
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 2 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 8 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 9 )
+metallic_specular = 0.0
+
+[node name="chips" type="KinematicBody"]
+collision_layer = 256
+collision_mask = 257
+script = ExtResource( 1 )
+usable = false
+particle = false
+mass = 3
+gun_rotation = true
+rotate_b = false
+sounds = true
+
+[node name="Sound1" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+pitch_scale = 1.05
+bus = "SFX"
+
+[node name="Sound2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+pitch_scale = 0.94
+bus = "SFX"
+
+[node name="Sound3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+pitch_scale = 0.81
+bus = "SFX"
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource( 7 )
+healing = true
+healing_amount = 5
+kinematic = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 2 )
+
+[node name="Meshes" type="Spatial" parent="."]
+script = ExtResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Meshes"]
+visible = false
+material_override = SubResource( 3 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Meshes"]
+visible = false
+material_override = SubResource( 4 )
+mesh = ExtResource( 6 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Meshes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0182656, -0.048157 )
+visible = false
+material_override = SubResource( 5 )
+mesh = ExtResource( 10 )
+material/0 = null

@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Kinematic_Physics_Object.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Physics_Objects/Asset_Pickup.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Physics_Objects/flesh_sound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sfx/WeaponsPickups/ammo_shell_2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sfx/WeaponsPickups/ammo_shell_3.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sfx/bullet_impact_metal.wav" type="AudioStream" id=6]
+[ext_resource path="res://Imported_Mesh/Organs/liver.obj" type="ArrayMesh" id=7]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0627451, 0.054902, 0.156863, 1 )
+metallic = 0.39
+metallic_specular = 0.91
+roughness = 0.0
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( 0, 0.003, 0.029, 0.0205061, 0.003, 0.0205061, 0.029, 0.003, 1.77574e-18, 0.0205061, 0.003, -0.0205061, 3.55148e-18, 0.003, -0.029, -0.0205061, 0.003, -0.0205061, -0.029, 0.003, -5.32721e-18, -0.0205061, 0.003, 0.0205061, -7.10295e-18, 0.003, 0.029, 0, 0, 0.029, 0.0205061, 0, 0.0205061, 0.029, 0, 1.77574e-18, 0.0205061, 0, -0.0205061, 3.55148e-18, 0, -0.029, -0.0205061, 0, -0.0205061, -0.029, 0, -5.32721e-18, -0.0205061, 0, 0.0205061, -7.10295e-18, 0, 0.029, 0, -0.003, 0.029, 0.0205061, -0.003, 0.0205061, 0.029, -0.003, 1.77574e-18, 0.0205061, -0.003, -0.0205061, 3.55148e-18, -0.003, -0.029, -0.0205061, -0.003, -0.0205061, -0.029, -0.003, -5.32721e-18, -0.0205061, -0.003, 0.0205061, -7.10295e-18, -0.003, 0.029, 0, 0.003, 0, 0, 0.003, 0.029, 0.0205061, 0.003, 0.0205061, 0.029, 0.003, 1.77574e-18, 0.0205061, 0.003, -0.0205061, 3.55148e-18, 0.003, -0.029, -0.0205061, 0.003, -0.0205061, -0.029, 0.003, -5.32721e-18, -0.0205061, 0.003, 0.0205061, -7.10295e-18, 0.003, 0.029, 0, -0.003, 0, 0, -0.003, 0.029, 0.0205061, -0.003, 0.0205061, 0.029, -0.003, 1.77574e-18, 0.0205061, -0.003, -0.0205061, 3.55148e-18, -0.003, -0.029, -0.0205061, -0.003, -0.0205061, -0.029, -0.003, -5.32721e-18, -0.0205061, -0.003, 0.0205061, -7.10295e-18, -0.003, 0.029 )
+
+[sub_resource type="SphereShape" id=3]
+radius = 0.300669
+
+[node name="Tactical_Liver" type="KinematicBody"]
+collision_layer = 0
+script = ExtResource( 1 )
+usable = false
+particle = false
+mass = 3
+rotate_b = false
+shell = true
+sounds = true
+
+[node name="Sound1" parent="." instance=ExtResource( 3 )]
+stream = ExtResource( 6 )
+
+[node name="Sound2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Sound3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+material_override = SubResource( 1 )
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource( 2 )
+value = "Tactical Liver"
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 3 )

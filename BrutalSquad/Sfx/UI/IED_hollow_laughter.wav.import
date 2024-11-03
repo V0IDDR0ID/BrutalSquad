@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/IED_hollow_laughter.wav-b28e4b20c336ca3e3f5db8f979c5ac02.sample"
+
+[deps]
+
+source_file="res://Sfx/UI/IED_hollow_laughter.wav"
+dest_files=[ "res://.import/IED_hollow_laughter.wav-b28e4b20c336ca3e3f5db8f979c5ac02.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/nailer.obj-2016c90512a2362617392d795342cc5d.mesh"
+
+[deps]
+
+files=["res://.import/nailer.obj-2016c90512a2362617392d795342cc5d.mesh"]
+source_file="res://Imported_Mesh/Weapon_Mesh_Only/nailer.obj"
+dest_files=["res://.import/nailer.obj-2016c90512a2362617392d795342cc5d.mesh", "res://.import/nailer.obj-2016c90512a2362617392d795342cc5d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

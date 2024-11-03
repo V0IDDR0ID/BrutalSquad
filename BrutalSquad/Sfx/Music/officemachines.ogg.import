@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/officemachines.ogg-1936e01aaff163ef1fceaa8fae887c72.oggstr"
+
+[deps]
+
+source_file="res://Sfx/Music/officemachines.ogg"
+dest_files=[ "res://.import/officemachines.ogg-1936e01aaff163ef1fceaa8fae887c72.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

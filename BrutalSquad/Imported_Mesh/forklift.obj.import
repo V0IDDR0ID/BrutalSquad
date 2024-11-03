@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/forklift.obj-ed80c63b0c64d7a722eb9cd45e244bec.mesh"
+
+[deps]
+
+files=[ "res://.import/forklift.obj-ed80c63b0c64d7a722eb9cd45e244bec.mesh" ]
+
+source_file="res://Imported_Mesh/forklift.obj"
+dest_files=[ "res://.import/forklift.obj-ed80c63b0c64d7a722eb9cd45e244bec.mesh", "res://.import/forklift.obj-ed80c63b0c64d7a722eb9cd45e244bec.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

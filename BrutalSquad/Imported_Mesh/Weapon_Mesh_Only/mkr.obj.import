@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/mkr.obj-4d986cdd300410f3dfc6c49105ec2dbc.mesh"
+
+[deps]
+
+files=["res://.import/mkr.obj-4d986cdd300410f3dfc6c49105ec2dbc.mesh"]
+source_file="res://Imported_Mesh/Weapon_Mesh_Only/mkr.obj"
+dest_files=["res://.import/mkr.obj-4d986cdd300410f3dfc6c49105ec2dbc.mesh", "res://.import/mkr.obj-4d986cdd300410f3dfc6c49105ec2dbc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

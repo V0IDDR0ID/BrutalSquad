@@ -1,0 +1,218 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Scripts/E_Grunt_Movement_New.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/EnemyHandler.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Enemies/Acid_Spray_Weapon.gd" type="Script" id=3]
+[ext_resource path="res://Sfx/QuakeJump.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scripts/Enemy_Torso.gd" type="Script" id=5]
+[ext_resource path="res://Sfx/bullet_impact_metal.wav" type="AudioStream" id=6]
+[ext_resource path="res://Entities/Enemies/Objective_Indicator.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Imported_Mesh/Enemy_Flower.glb" type="PackedScene" id=9]
+[ext_resource path="res://Sfx/NPCs/Melee mutant/mutant_pain_1.wav" type="AudioStream" id=11]
+[ext_resource path="res://Entities/Enemies/Gib_Sound.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Sfx/shott.wav" type="AudioStream" id=13]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.105882, 0.388235, 0.27451, 1 )
+metallic_specular = 0.0
+
+[sub_resource type="SphereMesh" id=2]
+material = SubResource( 1 )
+radius = 0.314
+height = 0.606
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.203885
+height = 1.42894
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.084, 0.162928, 0.144975 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.179382, 0.123355, 0.147738 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.561891, 0.305927, 1.73661 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 1.07239, 0.53089, 0.56286 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 0.620864, 0.49784, 0.22453 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 0.901026, 0.20327, 0.803563 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 0.108482, 0.0996669, 0.133016 )
+
+[node name="Flower" type="Spatial"]
+script = ExtResource( 2 )
+health = 300
+flee_health = 0
+creature = true
+
+[node name="Body" type="KinematicBody" parent="."]
+collision_layer = 16
+collision_mask = 17
+collision/safe_margin = 0.005
+script = ExtResource( 1 )
+fix_helper_pos = false
+engage_distance = 5.0
+move_speed = 4.0
+
+[node name="Temporary_Mesh" type="MeshInstance" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.737681, -0.11581 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Objective_Indicator" parent="Body" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0.557447, -0.218161 )
+visible = false
+
+[node name="Body_CollisionShape" type="CollisionShape" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 0.999959, 0.00911056, 0, -0.00911056, 0.999959, 0, -0.193425, -0.305915 )
+shape = SubResource( 3 )
+
+[node name="Rotation_Helper" type="Spatial" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.664158, -1.78352 )
+
+[node name="Weapon" type="Spatial" parent="Body/Rotation_Helper"]
+transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, 0, 0, 0 )
+script = ExtResource( 3 )
+
+[node name="SMG_Sound" type="AudioStreamPlayer3D" parent="Body/Rotation_Helper/Weapon"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00578833, 0.0185949, 0.440804 )
+stream = ExtResource( 13 )
+bus = "SFX"
+
+[node name="RayCast" type="RayCast" parent="Body/Rotation_Helper/Weapon"]
+transform = Transform( 1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, -1.55941e-07, 0, -0.425855 )
+enabled = true
+cast_to = Vector3( 0, 0, 2 )
+collision_mask = 3
+collide_with_areas = true
+
+[node name="Timer" type="Timer" parent="Body/Rotation_Helper/Weapon"]
+one_shot = true
+
+[node name="Reload_Timer" type="Timer" parent="Body/Rotation_Helper/Weapon"]
+one_shot = true
+
+[node name="ShellPosition" type="Position3D" parent="Body/Rotation_Helper/Weapon"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.185724, -0.0615676, 0.402189 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Body/Rotation_Helper"]
+transform = Transform( 0.109, 0, 0, 0, 0.243, 0, 0, 0, 38.557, 0, 0, -19.142 )
+visible = false
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.292436, 0 )
+stream = ExtResource( 4 )
+
+[node name="Player_Ray" type="RayCast" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712365, -0.346726 )
+visible = false
+enabled = true
+cast_to = Vector3( 0, 0, -100 )
+collision_mask = 3
+
+[node name="Velocity_Ray" type="RayCast" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.691128, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1.446 )
+collision_mask = 17
+
+[node name="Reaction_Timer" type="Timer" parent="Body"]
+one_shot = true
+
+[node name="Shoot_Timer" type="Timer" parent="Body"]
+one_shot = true
+
+[node name="Chase_Timer" type="Timer" parent="Body"]
+one_shot = true
+
+[node name="SFX" type="Spatial" parent="Body"]
+
+[node name="Pain1" type="AudioStreamPlayer3D" parent="Body/SFX"]
+stream = ExtResource( 11 )
+unit_db = 1.0
+unit_size = 10.0
+bus = "SFX"
+
+[node name="NoDamage" type="AudioStreamPlayer3D" parent="Body/SFX"]
+stream = ExtResource( 6 )
+unit_db = 1.0
+unit_size = 10.0
+bus = "SFX"
+
+[node name="Gib" parent="Body/SFX" instance=ExtResource( 12 )]
+
+[node name="Collisions" type="Spatial" parent="."]
+
+[node name="Head" type="KinematicBody" parent="Collisions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.008 )
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 5 )
+alive_head = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0552413, -0.096 )
+shape = SubResource( 5 )
+disabled = true
+
+[node name="Legs" type="KinematicBody" parent="Collisions"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Legs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199757, -0.0289131 )
+shape = SubResource( 6 )
+disabled = true
+
+[node name="Torso" type="KinematicBody" parent="Collisions"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Torso"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0192251, 0.82528 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Collisions/Torso"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125287, -0.606961 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Collisions/Torso"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57075, -1.4305 )
+shape = SubResource( 9 )
+
+[node name="Dead_Body" type="KinematicBody" parent="Collisions"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Dead_Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.271991, 0.0789674, -0.211321 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="Dead_Head" type="KinematicBody" parent="Collisions"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Dead_Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0991363, -0.0223253, -0.0571317 )
+shape = SubResource( 11 )
+disabled = true
+
+[node name="Nemesis" parent="." instance=ExtResource( 9 )]

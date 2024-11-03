@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Entities/Particles/Smoke_1.tres" type="Material" id=1]
+[ext_resource path="res://Textures/Particles/Explosion1.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+params_blend_mode = 1
+params_billboard_mode = 1
+params_billboard_keep_scale = true
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_color = Color( 0.0431373, 0.443137, 0, 1 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 0.365, 0.292 )
+
+[node name="Smoke_Particle_1" type="Particles"]
+transform = Transform( 0.123153, 0, 0, 0, 0.123153, 0, 0, 0, 0.123153, 0, 0, 0 )
+cast_shadow = 0
+amount = 3507
+lifetime = 8.06
+speed_scale = 4.04
+randomness = 1.0
+visibility_aabb = AABB( -105.864, -82.8631, -88.9918, 211.727, 165.726, 177.984 )
+local_coords = false
+process_material = ExtResource( 1 )
+draw_pass_1 = SubResource( 2 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+light_color = Color( 0.172549, 1, 0, 1 )

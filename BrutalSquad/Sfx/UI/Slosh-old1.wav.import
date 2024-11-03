@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Slosh-old1.wav-e33fffaf9725dde2c3f5be05491de327.sample"
+
+[deps]
+
+source_file="res://Sfx/UI/Slosh-old1.wav"
+dest_files=[ "res://.import/Slosh-old1.wav-e33fffaf9725dde2c3f5be05491de327.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

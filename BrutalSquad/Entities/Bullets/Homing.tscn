@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Bore.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Particles/Blood_Particle2.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SphereMesh" id=1]
+radius = 0.059
+height = 0.137
+
+[sub_resource type="SphereShape" id=4]
+radius = 0.172712
+
+[sub_resource type="SphereShape" id=3]
+radius = 13.5064
+
+[node name="Spatial" type="KinematicBody"]
+collision_layer = 0
+collision_mask = 13
+collision/safe_margin = 0.002
+script = ExtResource( 1 )
+speed = 100
+homing = true
+
+[node name="Blood_Particle2" parent="." instance=ExtResource( 2 )]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 4 )
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 12
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="RayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, 0 )
+collision_mask = 13
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Kinematic_Physics_Object.gd" type="Script" id=1]
+[ext_resource path="res://Imported_Mesh/Head_Gib.glb" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Particles/Blood_Particle2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Entities/Physics_Objects/flesh_sound.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.15885
+
+[node name="Head_Gib" type="KinematicBody"]
+collision_layer = 4
+script = ExtResource( 1 )
+grillable = true
+flesh = true
+stay_active = true
+sounds = true
+
+[node name="Particle" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Gib" parent="." instance=ExtResource( 2 )]
+
+[node name="Sound1" parent="." instance=ExtResource( 4 )]
+
+[node name="Sound2" parent="." instance=ExtResource( 4 )]
+
+[node name="Sound3" parent="." instance=ExtResource( 4 )]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Fishing_Hook.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Fish/Fish_Mesh.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Physics_Objects/flesh_sound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sfx/WeaponsPickups/ammo_shell_2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sfx/WeaponsPickups/ammo_shell_3.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sfx/fishcatch.wav" type="AudioStream" id=6]
+[ext_resource path="res://Entities/Particles/Water1.tscn" type="PackedScene" id=7]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.1
+
+[sub_resource type="SphereMesh" id=2]
+
+[node name="Hook" type="KinematicBody"]
+collision_layer = 64
+collision_mask = 13
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sound1" parent="." instance=ExtResource( 3 )]
+stream = ExtResource( 4 )
+unit_db = 0.0
+unit_size = 2.0
+max_db = 0.0
+pitch_scale = 0.76
+
+[node name="Sound2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 6 )
+unit_size = 11.1
+max_db = 0.0
+max_distance = 150.0
+bus = "SFX"
+
+[node name="Sound3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="RayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, 0 )
+collision_mask = 32
+collide_with_areas = true
+
+[node name="Fish" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+
+[node name="Particles" parent="." instance=ExtResource( 7 )]
+script = null

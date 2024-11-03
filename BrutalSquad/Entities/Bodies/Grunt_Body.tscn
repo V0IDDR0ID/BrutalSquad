@@ -1,0 +1,136 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scripts/weapon.gd" type="Script" id=1]
+[ext_resource path="res://Sfx/Player/IED_armed_1.wav" type="AudioStream" id=2]
+[ext_resource path="res://Entities/Particles/muzzleflash.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Entities/Enemies/Objective_Indicator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Enemies/Gib_Sound.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Materials/See_Through_Red.tres" type="Material" id=6]
+[ext_resource path="res://Sfx/Player/IED_armed_2.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sfx/WeaponsPickups/SMG/SMG_fire_1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sfx/Player/IED_drum.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sfx/WeaponsPickups/Rocket launcher/missile_explosion-old1.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sfx/NPCs/Military grunt/grunt_pain_1.wav" type="AudioStream" id=17]
+[ext_resource path="res://Scripts/E_Grunt_Movement_New.gd" type="Script" id=19]
+
+[sub_resource type="QuadMesh" id=1]
+material = ExtResource( 6 )
+size = Vector2( 0.087, 0.087 )
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.23
+height = 1.39
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.15222, 0.204429, 0.90043 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.341, 0.032, 0.341 )
+
+[sub_resource type="CubeMesh" id=5]
+size = Vector3( 1, 1, 1 )
+
+[node name="Body" type="KinematicBody"]
+collision_layer = 16
+collision/safe_margin = 0.005
+script = ExtResource( 19 )
+pathing_frequency = 200.0
+move_speed = 7.0
+
+[node name="Objective_Indicator" parent="." instance=ExtResource( 4 )]
+visible = false
+mesh = SubResource( 1 )
+
+[node name="Body_CollisionShape3" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0298252, 0 )
+shape = SubResource( 2 )
+
+[node name="Body_CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0298252, 0 )
+shape = SubResource( 3 )
+
+[node name="Feet_CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.800427, 0 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="Rotation_Helper" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.638, 0 )
+
+[node name="Weapon" type="Spatial" parent="Rotation_Helper"]
+transform = Transform( -0.0592149, 0, -1.92947e-08, 0, 0.0592149, 0, 1.92947e-08, 0, -0.0592149, 0, 0, 0 )
+visible = false
+script = ExtResource( 1 )
+current_weapon = 1
+
+[node name="SMG_Sound" type="AudioStreamPlayer3D" parent="Rotation_Helper/Weapon"]
+stream = ExtResource( 8 )
+unit_size = 11.3
+pitch_scale = 0.84
+bus = "SFX"
+
+[node name="RayCast" type="RayCast" parent="Rotation_Helper/Weapon"]
+enabled = true
+cast_to = Vector3( 0, 0, 2000 )
+collision_mask = 15
+collide_with_areas = true
+
+[node name="Timer" type="Timer" parent="Rotation_Helper/Weapon"]
+one_shot = true
+
+[node name="Reload_Timer" type="Timer" parent="Rotation_Helper/Weapon"]
+one_shot = true
+
+[node name="ShellPosition" type="Position3D" parent="Rotation_Helper/Weapon"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.185724, -0.0615676, 0.402189 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rotation_Helper"]
+transform = Transform( 0.109, 0, 0, 0, 0.243, 0, 0, 0, 38.557, 0, 0, -19.142 )
+visible = false
+mesh = SubResource( 5 )
+
+[node name="Player_Ray" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712365, -0.346726 )
+enabled = true
+cast_to = Vector3( 0, 0, -100 )
+collision_mask = 3
+
+[node name="Velocity_Ray" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.691128, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1.446 )
+collision_mask = 17
+
+[node name="Reaction_Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Shoot_Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Chase_Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SFX" type="Spatial" parent="."]
+
+[node name="Pain1" type="AudioStreamPlayer3D" parent="SFX"]
+stream = ExtResource( 17 )
+unit_db = 1.0
+unit_size = 10.0
+bus = "SFX"
+
+[node name="Gib" parent="SFX" instance=ExtResource( 5 )]
+
+[node name="IED1" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 2 )
+
+[node name="IED2" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 7 )
+
+[node name="IED_alert" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 9 )
+
+[node name="Exploison" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 10 )
+
+[node name="Muzzleflash" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.0348997, 0, -0.999391, 0, 1, 0, 0.999391, 0, -0.0348997, 0.0810222, 0.541741, -0.786148 )

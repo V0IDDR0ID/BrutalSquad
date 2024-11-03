@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Textures/Props/toilet.png" type="Texture" id=1]
+[ext_resource path="res://Imported_Mesh/Props/toilet.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Scripts/Kinematic_Physics_Object.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/garbage_destroyer.gd" type="Script" id=4]
+[ext_resource path="res://Entities/Particles/Water1.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.395067
+height = 0.585312
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.255749, 0.430602, 0.107044 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 1 )
+metallic_specular = 0.0
+
+[sub_resource type="CylinderShape" id=4]
+radius = 0.232413
+height = 0.0429564
+
+[node name="Toilet" type="KinematicBody"]
+collision_layer = 65
+script = ExtResource( 3 )
+particle = false
+gas = true
+collidable = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.343418, -0.0733107 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.240732, 0.213166 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+material_override = SubResource( 3 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00752854, -0.00678761, -0.202534 )
+shape = SubResource( 4 )
+
+[node name="Particles" parent="Area" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.17934 )

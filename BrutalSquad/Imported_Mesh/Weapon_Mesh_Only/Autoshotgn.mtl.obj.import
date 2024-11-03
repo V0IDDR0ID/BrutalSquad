@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Autoshotgn.mtl.obj-59c58be88bdbe127fc637c0f1faa3b7f.mesh"
+
+[deps]
+
+files=[ "res://.import/Autoshotgn.mtl.obj-59c58be88bdbe127fc637c0f1faa3b7f.mesh" ]
+
+source_file="res://Imported_Mesh/Weapon_Mesh_Only/Autoshotgn.mtl.obj"
+dest_files=[ "res://.import/Autoshotgn.mtl.obj-59c58be88bdbe127fc637c0f1faa3b7f.mesh", "res://.import/Autoshotgn.mtl.obj-59c58be88bdbe127fc637c0f1faa3b7f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

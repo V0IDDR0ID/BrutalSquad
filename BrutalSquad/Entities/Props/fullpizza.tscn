@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Entities/Physics_Objects/pizzaslice.tscn" type="PackedScene" id=1]
+
+[node name="fullpizza" type="Spatial"]
+
+[node name="pizza" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.17424 )
+collision_layer = 0
+
+[node name="pizza2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.664017, 0, -0.747717, 0, 1, 0, 0.747717, 0, 0.664017, -0.153192, 0, 0.0963151 )
+collision_layer = 0
+
+[node name="pizza3" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.336685, 0, -0.941617, 0, 1, 0, 0.941617, 0, -0.336685, -0.153192, 0, -0.0758887 )
+collision_layer = 0
+
+[node name="pizza4" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.997257, 0, -0.0740213, 0, 1, 0, 0.0740213, 0, -0.997257, -0.00682056, 0, -0.204376 )
+collision_layer = 0
+
+[node name="pizza5" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.577544, 0, 0.81636, 0, 1, 0, -0.81636, 0, -0.577544, 0.164643, 0, -0.140537 )
+collision_layer = 0
+
+[node name="pizza6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.271357, 0, 0.962479, 0, 1, 0, -0.962479, 0, 0.271357, 0.164643, 0, 0.0332922 )
+collision_layer = 0

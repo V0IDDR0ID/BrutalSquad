@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Shaders/psx.shader" type="Shader" id=1]
+[ext_resource path="res://Textures/Decals/blood.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Particles/Blood_Particle1.tres" type="Material" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/snapRes = 400.0
+shader_param/albedoTex = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+
+[node name="Blood_Particle" type="Particles"]
+transform = Transform( 0.123153, 0, 0, 0, 0.123153, 0, 0, 0, 0.123153, 0, 0, 0 )
+cast_shadow = 0
+emitting = false
+amount = 100
+lifetime = 0.12
+one_shot = true
+randomness = 1.0
+fract_delta = false
+local_coords = false
+process_material = ExtResource( 3 )
+draw_pass_1 = SubResource( 2 )

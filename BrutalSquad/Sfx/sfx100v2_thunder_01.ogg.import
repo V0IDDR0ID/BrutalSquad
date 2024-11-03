@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sfx100v2_thunder_01.ogg-001f272c9c5f35da9ce546ee15124e3d.oggstr"
+
+[deps]
+
+source_file="res://Sfx/sfx100v2_thunder_01.ogg"
+dest_files=[ "res://.import/sfx100v2_thunder_01.ogg-001f272c9c5f35da9ce546ee15124e3d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

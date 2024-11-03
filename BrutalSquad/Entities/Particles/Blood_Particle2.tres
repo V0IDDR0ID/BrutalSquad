@@ -1,0 +1,15 @@
+[gd_resource type="ParticlesMaterial" format=2]
+
+[resource]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.12
+flag_rotate_y = true
+direction = Vector3( 0, 3.672, 2.902 )
+spread = 1.5
+gravity = Vector3( 0, -9.237, 0 )
+initial_velocity = 54.3
+initial_velocity_random = 0.06
+angular_velocity = -1.14
+angle_random = 1.0
+scale = 0.34

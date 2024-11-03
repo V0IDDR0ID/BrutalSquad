@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Shaders/realpsx.shader" type="Shader" id=1]
+[ext_resource path="res://Textures/NPC/enemy_cultist_leader.png" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/paletteswap = false
+shader_param/snapRes = 50.0
+shader_param/albedoTex = ExtResource( 2 )

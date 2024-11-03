@@ -1,0 +1,184 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Scripts/Stupid_Civilian.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/EnemyHandler.gd" type="Script" id=2]
+[ext_resource path="res://Sfx/NPCs/Civilian/civilian_pain_2_alt.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sfx/QuakeJump.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scripts/Enemy_Torso.gd" type="Script" id=5]
+[ext_resource path="res://Imported_Mesh/civilian_female.glb" type="PackedScene" id=6]
+[ext_resource path="res://Entities/Enemies/Objective_Indicator.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sfx/NPCs/Civilian/civilian_pain_3.wav" type="AudioStream" id=8]
+[ext_resource path="res://Entities/Enemies/Gib_Sound.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sfx/NPCs/Civilian/civilian_pain_4.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sfx/NPCs/Civilian/civilian_pain_5_long.wav" type="AudioStream" id=11]
+[ext_resource path="res://Materials/E_Civilian2_Mat.tres" type="Material" id=12]
+[ext_resource path="res://Materials/E_Civilian1_Mat.tres" type="Material" id=13]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.23
+height = 1.39
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.341, 0.032, 0.341 )
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.084, 0.162928, 0.144975 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.140623, 0.496696, 0.308467 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.217686, 0.265592, 0.161787 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.547506, 0.120744, 0.803563 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.108482, 0.0996669, 0.133016 )
+
+[node name="Civilian" type="Spatial"]
+script = ExtResource( 2 )
+health = 15
+flee_health = 9
+civilian = true
+stupid = true
+
+[node name="Body" type="KinematicBody" parent="."]
+collision_layer = 16
+collision/safe_margin = 0.005
+script = ExtResource( 1 )
+
+[node name="Body_CollisionShape" type="CollisionShape" parent="Body"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0298252, 0 )
+shape = SubResource( 1 )
+
+[node name="Feet_CollisionShape" type="CollisionShape" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.800427, 0 )
+shape = SubResource( 2 )
+
+[node name="Rotation_Helper" type="Spatial" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315565, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Body/Rotation_Helper"]
+transform = Transform( 0.109, 0, 0, 0, 0.243, 0, 0, 0, 38.557, 0, 0, -19.142 )
+visible = false
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.292436, 0 )
+stream = ExtResource( 4 )
+
+[node name="Player_Ray" type="RayCast" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.580681, -0.346726 )
+enabled = true
+cast_to = Vector3( 0, 0, -100 )
+collision_mask = 3
+
+[node name="Velocity_Ray" type="RayCast" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.493152, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1 )
+
+[node name="Objective_Indicator" parent="Body" instance=ExtResource( 7 )]
+visible = false
+
+[node name="SFX" type="Spatial" parent="Body"]
+
+[node name="Pain1" type="AudioStreamPlayer3D" parent="Body/SFX"]
+stream = ExtResource( 3 )
+unit_db = 1.0
+unit_size = 10.0
+pitch_scale = 1.5
+bus = "SFX"
+
+[node name="Pain2" type="AudioStreamPlayer3D" parent="Body/SFX"]
+stream = ExtResource( 8 )
+unit_db = 1.0
+unit_size = 10.0
+pitch_scale = 1.5
+bus = "SFX"
+
+[node name="Pain3" type="AudioStreamPlayer3D" parent="Body/SFX"]
+stream = ExtResource( 10 )
+unit_db = 1.0
+unit_size = 10.0
+pitch_scale = 1.5
+bus = "SFX"
+
+[node name="Pain4" type="AudioStreamPlayer3D" parent="Body/SFX"]
+stream = ExtResource( 11 )
+unit_db = 1.0
+unit_size = 10.0
+pitch_scale = 1.5
+bus = "SFX"
+
+[node name="Gib" parent="Body/SFX" instance=ExtResource( 9 )]
+
+[node name="Collisions" type="Spatial" parent="."]
+
+[node name="Head" type="KinematicBody" parent="Collisions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.008 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 5 )
+alive_head = true
+head = true
+head_health = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.752, -0.096 )
+shape = SubResource( 4 )
+
+[node name="Legs" type="KinematicBody" parent="Collisions"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Legs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.381509, -0.0564629 )
+shape = SubResource( 5 )
+
+[node name="Torso" type="KinematicBody" parent="Collisions"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Torso"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352987, 0 )
+shape = SubResource( 6 )
+
+[node name="Dead_Body" type="KinematicBody" parent="Collisions"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Dead_Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.780023, 0 )
+shape = SubResource( 7 )
+disabled = true
+
+[node name="Dead_Head" type="KinematicBody" parent="Collisions"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Dead_Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0991363, -0.764959, -0.897008 )
+shape = SubResource( 8 )
+disabled = true
+
+[node name="Nemesis" parent="." instance=ExtResource( 6 )]
+
+[node name="Head_Mesh" parent="Nemesis/Armature/Skeleton" index="0"]
+transform = Transform( 0.996783, -0.00691242, 0.0798443, 0.0108378, 0.998748, -0.0488342, -0.0794068, 0.0495425, 0.99561, -1.1586e-10, 0.000485953, -0.00443133 )
+material_override = ExtResource( 13 )
+
+[node name="Torso_Mesh" parent="Nemesis/Armature/Skeleton" index="1"]
+material_override = ExtResource( 13 )
+material/0 = ExtResource( 12 )
+
+[editable path="Nemesis"]

@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/bitmap64.png-999fb2e06114c5ee1ddd5d5f0c91af10.s3tc.stex"
+path.etc2="res://.import/bitmap64.png-999fb2e06114c5ee1ddd5d5f0c91af10.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Fonts/bitmap64.png"
+dest_files=[ "res://.import/bitmap64.png-999fb2e06114c5ee1ddd5d5f0c91af10.s3tc.stex", "res://.import/bitmap64.png-999fb2e06114c5ee1ddd5d5f0c91af10.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

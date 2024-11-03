@@ -1,0 +1,105 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Entities/Physics_Objects/ORG_Brain.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Heart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Fish/Organ_Mesh.gd" type="Script" id=3]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Liver.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Pancreas.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Intestine.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Entities/Physics_Objects/ORG_AdvPancreas.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Brain_Aug.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Kidney.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Stomach.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Appendix.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Spine.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Rotten_Spine.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Psycho_Brain.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Dog_Intestine.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Nuclear_Stomach.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Black_Heart.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Entities/Physics_Objects/ORG_Tactical_Liver.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Entities/Physics_Objects/ORG_WormBrain.tscn" type="PackedScene" id=19]
+
+[node name="Organs" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Brain" parent="." instance=ExtResource( 1 )]
+collision_mask = 0
+disabled = true
+
+[node name="Aug_Brain" parent="." instance=ExtResource( 8 )]
+visible = false
+collision_mask = 0
+disabled = true
+
+[node name="Psycho_Brain" parent="." instance=ExtResource( 14 )]
+visible = false
+disabled = true
+
+[node name="Worm_Brain" parent="." instance=ExtResource( 19 )]
+visible = false
+disabled = true
+
+[node name="Liver" parent="." instance=ExtResource( 4 )]
+visible = false
+collision_mask = 0
+disabled = true
+
+[node name="Tactical_Liver" parent="." instance=ExtResource( 18 )]
+visible = false
+disabled = true
+
+[node name="Kidney" parent="." instance=ExtResource( 9 )]
+visible = false
+collision_mask = 0
+disabled = true
+
+[node name="Heart" parent="." instance=ExtResource( 2 )]
+visible = false
+collision_mask = 0
+disabled = true
+
+[node name="Black_Heart" parent="." instance=ExtResource( 17 )]
+visible = false
+disabled = true
+
+[node name="Intestine" parent="." instance=ExtResource( 6 )]
+visible = false
+collision_mask = 0
+disabled = true
+
+[node name="Dog_Intestine" parent="." instance=ExtResource( 15 )]
+visible = false
+disabled = true
+
+[node name="Appendix" parent="." instance=ExtResource( 11 )]
+visible = false
+collision_mask = 0
+disabled = true
+
+[node name="Spine" parent="." instance=ExtResource( 12 )]
+visible = false
+disabled = true
+
+[node name="Rotten_Spine" parent="." instance=ExtResource( 13 )]
+visible = false
+disabled = true
+
+[node name="Stomach" parent="." instance=ExtResource( 10 )]
+visible = false
+collision_mask = 0
+disabled = true
+
+[node name="Nuclear_Stomach" parent="." instance=ExtResource( 16 )]
+visible = false
+disabled = true
+
+[node name="Pancreas" parent="." instance=ExtResource( 5 )]
+visible = false
+collision_mask = 0
+disabled = true
+
+[node name="Advanced Pancreas" parent="." instance=ExtResource( 7 )]
+visible = false
+collision_mask = 0
+disabled = true

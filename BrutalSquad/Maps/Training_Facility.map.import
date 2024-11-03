@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/Training_Facility.map-74282517d0bffc9c06950cbfd4c9f730.tres"
+
+[deps]
+
+source_file="res://Maps/Training_Facility.map"
+dest_files=["res://.import/Training_Facility.map-74282517d0bffc9c06950cbfd4c9f730.tres"]
+
+[params]
+
+dummy_value_ignore_me=0

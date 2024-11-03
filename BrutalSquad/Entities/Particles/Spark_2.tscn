@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Entities/Particles/autoplay.gd" type="Script" id=1]
+[ext_resource path="res://spark2.tres" type="Material" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+params_billboard_mode = 1
+albedo_color = Color( 0.0901961, 1, 0, 1 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 0.065, 0.074 )
+
+[node name="Particles" type="Particles"]
+emitting = false
+amount = 6
+lifetime = 0.43
+one_shot = true
+explosiveness = 1.0
+local_coords = false
+process_material = ExtResource( 2 )
+draw_pass_1 = SubResource( 2 )
+script = ExtResource( 1 )

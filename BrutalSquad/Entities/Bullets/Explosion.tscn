@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Explosion.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Particles/Explosion_Green1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sfx/WeaponsPickups/Rocket launcher/missile_explosion.wav" type="AudioStream" id=3]
+
+[sub_resource type="SphereShape" id=4]
+radius = 2.48024
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0.352941, 0, 1 )
+
+[sub_resource type="SphereMesh" id=3]
+material = SubResource( 2 )
+radius = 1.967
+height = 4.081
+
+[node name="Explosion" type="Area"]
+collision_layer = 0
+collision_mask = 15
+script = ExtResource( 1 )
+damage = 100
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Particle" parent="." instance=ExtResource( 2 )]
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_size = 20.0
+max_db = 2.0
+autoplay = true
+bus = "SFX"
+[connection signal="area_entered" from="." to="." method="_on_Explosion_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Explosion_body_entered"]

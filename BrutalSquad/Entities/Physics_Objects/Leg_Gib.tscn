@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Kinematic_Physics_Object.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Particles/Blood_Particle2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Imported_Mesh/Leg_Gib.glb" type="PackedScene" id=3]
+[ext_resource path="res://Entities/Physics_Objects/flesh_sound.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.1
+height = 0.371905
+
+[node name="Leg_Gib" type="KinematicBody"]
+collision_layer = 4
+script = ExtResource( 1 )
+grillable = true
+mass = 3
+flesh = true
+sounds = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.988936, 0.00691816, -0.148183, -0.00480196, 0.999881, 0.014634, 0.148267, -0.0137605, 0.988852, 0.108422, -0.00523067, -0.272643 )
+shape = SubResource( 1 )
+
+[node name="Particle" parent="." instance=ExtResource( 2 )]
+
+[node name="Gib" parent="." instance=ExtResource( 3 )]
+
+[node name="Sound1" parent="." instance=ExtResource( 4 )]
+
+[node name="Sound2" parent="." instance=ExtResource( 4 )]
+
+[node name="Sound3" parent="." instance=ExtResource( 4 )]

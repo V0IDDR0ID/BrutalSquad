@@ -1,0 +1,122 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player_Manager.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Rotation_Helper.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/Stock_Menu2.tscn" type="PackedScene" id=4]
+
+[node name="Player" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+interpolated_camera = true
+
+[node name="UI" parent="Player" index="20"]
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BoneAttachment" parent="Player/Body_Mesh/Armature/Skeleton" index="0"]
+transform = Transform( 0.998236, -0.00611015, -0.0590595, 0.0120001, 0.994926, 0.0998951, 0.0581494, -0.100428, 0.993244, -0.00361001, 0.61673, 0.0323869 )
+
+[node name="BoneAttachment 2" parent="Player/Body_Mesh/Armature/Skeleton" index="1"]
+transform = Transform( -0.124788, -0.0962863, 0.9875, -0.581133, 0.813788, 0.00591207, -0.804185, -0.573131, -0.157506, 0.193527, 0.645021, 0.0372601 )
+
+[node name="HealTimer" type="Timer" parent="Player"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Cancer_Timer" type="Timer" parent="Player"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.481, 0 )
+
+[node name="Rotation_Helper" parent="Position3D" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Camera" parent="Position3D/Rotation_Helper" index="1"]
+cull_mask = 1048567
+
+[node name="Stock_Menu" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="Stocks" parent="Stock_Menu/Character_Container/TabContainer" index="0"]
+margin_top = 23.0
+
+[node name="Money_Label" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect/VBoxContainer" index="0"]
+margin_right = 48.0
+margin_bottom = 23.0
+
+[node name="Asset_Label" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect/VBoxContainer" index="1"]
+margin_top = 27.0
+margin_right = 48.0
+margin_bottom = 50.0
+
+[node name="Stock_Value" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer" index="0"]
+margin_bottom = 23.0
+
+[node name="BuyHBox" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer" index="1"]
+margin_top = 27.0
+margin_bottom = 50.0
+
+[node name="Buy_Button" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer/BuyHBox" index="0"]
+margin_right = 36.0
+margin_bottom = 23.0
+
+[node name="Buy_2" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer/BuyHBox" index="1"]
+margin_left = 39.0
+margin_right = 51.0
+margin_bottom = 23.0
+
+[node name="Buy_5" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer/BuyHBox" index="2"]
+margin_left = 54.0
+margin_right = 66.0
+margin_bottom = 23.0
+
+[node name="Buy_10" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer/BuyHBox" index="3"]
+margin_left = 69.0
+margin_right = 93.0
+margin_bottom = 23.0
+
+[node name="Buy_100" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer/BuyHBox" index="4"]
+margin_left = 96.0
+margin_right = 132.0
+margin_bottom = 23.0
+
+[node name="SellHBox" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer" index="2"]
+margin_top = 54.0
+margin_bottom = 77.0
+
+[node name="Sell_Button" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer/SellHBox" index="0"]
+margin_right = 48.0
+margin_bottom = 23.0
+
+[node name="Sell_2" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer/SellHBox" index="1"]
+margin_left = 51.0
+margin_right = 63.0
+margin_bottom = 23.0
+
+[node name="Sell_5" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer/SellHBox" index="2"]
+margin_left = 66.0
+margin_right = 78.0
+margin_bottom = 23.0
+
+[node name="Sell_10" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer/SellHBox" index="3"]
+margin_left = 81.0
+margin_right = 105.0
+margin_bottom = 23.0
+
+[node name="Sell_100" parent="Stock_Menu/Character_Container/VBoxContainer/ColorRect2/VBoxContainer/SellHBox" index="4"]
+margin_left = 108.0
+margin_right = 144.0
+margin_bottom = 23.0
+
+[connection signal="timeout" from="Player/HealTimer" to="Player" method="_on_HealTimer_timeout"]
+[connection signal="timeout" from="Player/Cancer_Timer" to="Player" method="_on_Cancer_Timer_timeout"]
+
+[editable path="Player"]
+[editable path="Player/Body_Mesh"]
+[editable path="Position3D/Rotation_Helper"]
+[editable path="Stock_Menu"]

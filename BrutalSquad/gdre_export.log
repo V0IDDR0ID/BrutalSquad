@@ -1,0 +1,1016 @@
+GDRE Tools v0.7.0
+Windows 10.0.22631, NVIDIA GeForce GTX 1650 Ti, opengl3
+Extracted 3228 files, no errors detected!
+WARNING: Converting lossy imports, you may lose fidelity for indicated assets when re-importing upon loading the project
+   at: ImportExporter::_export_imports (modules\gdsdecomp\utility\import_exporter.cpp:78)
+Script version 3.3.0 (rev 0x5565f55) detected
+Saved project config project.godot.
+Recreated plugin config for BitmapFontCutter
+Recreated plugin config for decals
+Recreated plugin config for qodot
+Did not rewrite import metadata for res://addons/decals/icon_decal.svg
+Did not rewrite import metadata for res://addons/qodot/icons/icon_qodot_node.svg
+Did not rewrite import metadata for res://addons/qodot/icons/icon_qodot_spatial.svg
+WARNING: Conversion for Resource of type Resource and format lmp not implemented
+   at: ImportExporter::report_unsupported_resource (modules\gdsdecomp\utility\import_exporter.cpp:1233)
+Did not convert Resource resource res://.import/palette.lmp-607fece05ca2e6d7092d2b1487763816.tres
+WARNING: Export of obj meshes currently unimplemented
+   at: ImportExporter::_export_imports (modules\gdsdecomp\utility\import_exporter.cpp:233)
+WARNING: Conversion for Resource of type Mesh and format obj not implemented
+   at: ImportExporter::report_unsupported_resource (modules\gdsdecomp\utility\import_exporter.cpp:1233)
+Did not convert Mesh resource res://.import/brain.obj-0968d65452300ec8b8c904532d40eb3d.mesh
+Did not convert Mesh resource res://.import/cranialbomb.obj-44a95b3c36484da28962613c7d090286.mesh
+Did not convert Mesh resource res://.import/cube.obj-ecd20c75680354919967c1f74dc43511.mesh
+Did not convert Mesh resource res://.import/monkey.obj-4497fd28cacdf5828d7618e33c59dea2.mesh
+Image %s (format: %s) is too small to decompress safely (%dx%d), not saving. Pixel.png-0a0ab4d02a16af300288c7c7eb4fa0cf.s3tc.stex DXT1 RGB8 1 1
+ERROR: Condition "err" is true. Returning: err
+   at: ImportExporter::export_texture (modules\gdsdecomp\utility\import_exporter.cpp:1048)
+Failed to convert StreamTexture resource res://.import/Pixel.png-0a0ab4d02a16af300288c7c7eb4fa0cf.s3tc.stex
+WARNING: Conversion for Resource of type Resource and format map not implemented
+   at: ImportExporter::report_unsupported_resource (modules\gdsdecomp\utility\import_exporter.cpp:1233)
+Did not convert Resource resource res://.import/Bonus3test.map-421d6c3c74cf6158b59362eee1094803.tres
+Did not convert Resource resource res://.import/Bonus4.map-744766335fd875d0ba304a57ca02eae2.tres
+Did not convert Resource resource res://.import/Bonus5.map-562d5f178562bc7d770b01572d103d53.tres
+Did not convert Resource resource res://.import/BonusEND-crash.map-d6ff0772e99c70f7f355c8ac71c0b53b.tres
+Did not convert Resource resource res://.import/BonusEND.map-5ee6b0f1814137f9c07124fdd1c81746.tres
+Did not convert Resource resource res://.import/Level1-crash.map-97010073549595eac2d502398df88229.tres
+Did not convert Resource resource res://.import/Level1.map-c727771eb3109c862a17b3047e84bba1.tres
+Did not convert Resource resource res://.import/Level10.map-c04471dc9fb9d7f30a4a8f23d65c12b6.tres
+Did not convert Resource resource res://.import/Level11.map-3560696545669d04385c8940274c642f.tres
+Did not convert Resource resource res://.import/Level12.map-d8f84cd4e4d2c8cd84ab76ac5cffd06d.tres
+Did not convert Resource resource res://.import/Level2-crash.map-8810aa53a39581b12cf50bcad64ff999.tres
+Did not convert Resource resource res://.import/Level2.map-f50e5274daeb9803b38a398cd8937c0b.tres
+Did not convert Resource resource res://.import/Level2backup.map-2d97bb9bc766c4a8ef2bc1737a443b7d.tres
+Did not convert Resource resource res://.import/Level3-crash.map-f63ce2cb96bf61ff62bb0a15b10e6365.tres
+Did not convert Resource resource res://.import/Level3.map-6079ffa1a29e79e91b80dba6b49e582f.tres
+Did not convert Resource resource res://.import/Level3backup.map-0c3e0e419db9ce799e02110b2d86bf86.tres
+Did not convert Resource resource res://.import/Level4.map-7e0aab0c33361545043474f8798adb15.tres
+Did not convert Resource resource res://.import/Level5.map-87ebf3590336c52c8b0c7a8ee53a4574.tres
+Did not convert Resource resource res://.import/Level6.map-f3079b96114c50601e58d92e1e75f417.tres
+Did not convert Resource resource res://.import/Level7-crash.map-6ef1541afbd7cd8517b7d6cac80b3c8a.tres
+Did not convert Resource resource res://.import/Level7.map-1f8b9bf4e4f42c2f661e95072e920c7e.tres
+Did not convert Resource resource res://.import/Level8-crash.map-2ee30ec59bd90554a337b2459b6cc4b5.tres
+Did not convert Resource resource res://.import/Level8.map-0c0040bf72049cf66de350722ce39dd6.tres
+Did not convert Resource resource res://.import/Level9.map-3911283cb0629d17e206875d52b846a4.tres
+Did not convert Resource resource res://.import/Training_Facility.map-74282517d0bffc9c06950cbfd4c9f730.tres
+Did not convert Resource resource res://.import/cutscene_ending1.map-70e5ec5a6487792c3c8dd3ffa26d248c.tres
+Did not convert Resource resource res://.import/cutscene_ending3.map-a949686121d70281e494e3a897c7dc58.tres
+Did not convert Resource resource res://.import/cutscene_intro.map-3fed1f2c9b87deab4137ad7dff6719f3.tres
+Did not convert Resource resource res://.import/test1.map-774436b5068a5dfaa546fae73e9a750a.tres
+Did not convert Resource resource res://.import/test2.map-1f4322fc4af599ac69aa63251a14532c.tres
+Did not convert Mesh resource res://.import/can.obj-f5f7001386e5f7967c011e63637e527b.mesh
+Did not convert Mesh resource res://.import/chipbag.obj-392cc0f76f223b0062d41dd0f991b184.mesh
+Did not convert Mesh resource res://.import/computer.obj-67e1cd05539f6d1eb08036f6f15e7cb4.mesh
+Did not convert Mesh resource res://.import/consumer.obj-47e9b24d457368232dd3da1b9d8e1e9d.mesh
+Did not convert Mesh resource res://.import/fatberg.obj-dcc83d62f6f465128da51836508f933d.mesh
+Did not convert Mesh resource res://.import/flechettegrenade.obj-585e06ce6c01fde4bb26b547d7e0008e.mesh
+Did not convert Mesh resource res://.import/grenade.obj-e6943dceeb5852ac77ef95ec2513f8ab.mesh
+Did not convert Mesh resource res://.import/key.obj-f4136fc346b1939526e308591ae6e455.mesh
+Did not convert Mesh resource res://.import/monitor.obj-7a3062a8b5ba319af55ab5fb05c8698b.mesh
+Did not convert Mesh resource res://.import/pizza.obj-e13d6e4fdf5e4a244b07e6118cc1c691.mesh
+Did not convert Mesh resource res://.import/plant1.obj-d448b0e9360396db39f5fc01832d54d2.mesh
+Did not convert Mesh resource res://.import/plant2.obj-84732986f90dd030352783f981b1ba09.mesh
+Did not convert Mesh resource res://.import/policecar.obj-9d2cc3dece28d9b7a5a4b55f569917dc.mesh
+Did not convert Mesh resource res://.import/radio.obj-27a96f1487f6111b6f7e63fcfa9700c8.mesh
+Did not convert Mesh resource res://.import/slotmachine.obj-6905ce7ef3287241aa723728f3c27d63.mesh
+Did not convert Mesh resource res://.import/softproducts.obj-daa1024d6354a42406b3ee8ac2109e18.mesh
+Did not convert Mesh resource res://.import/speaker.obj-b6bb72774ecd08e8aaab313308e28f2a.mesh
+Did not convert Mesh resource res://.import/statue.obj-282e6b323fb2a10cb022aeff15589363.mesh
+Did not convert Mesh resource res://.import/toilet.obj-e6b7eba18aa66f36826df655e1b882df.mesh
+Did not convert Mesh resource res://.import/trashcan.obj-65ccd2255a12ac299c6e30fc8b9ee75a.mesh
+Did not convert Mesh resource res://.import/tree.obj-350d22f45c70bea6c771de7dffa945de.mesh
+Did not convert Mesh resource res://.import/vending.obj-9d60eeb364f0f1773b1559aa3bec3c25.mesh
+Did not convert Mesh resource res://.import/UI_MESH.obj-ff3613c26915a8ae2685446de54dcba6.mesh
+Did not convert Mesh resource res://.import/AR.obj-1f7349b7d213674ac7b3d15aff8f4456.mesh
+Did not convert Mesh resource res://.import/Autoshotgn.mtl.obj-59c58be88bdbe127fc637c0f1faa3b7f.mesh
+Did not convert Mesh resource res://.import/Autoshotgn.obj-1a36520eaf656cba89c6ebd6cdfd50c7.mesh
+Did not convert Mesh resource res://.import/Autoshotgun.obj-80f1c90c09b9bcbc1d9fba09af610b22.mesh
+Did not convert Mesh resource res://.import/Bore.obj-cbe050e5d2ccfc69c56f88bb50dae870.mesh
+Did not convert Mesh resource res://.import/Gas_Grenade.obj-8dc1e5e69decfae6077064d077bf9f7c.mesh
+Did not convert Mesh resource res://.import/Gas_Grenade_Shell.obj-d69920ad3ef68917ca227d05f29be452.mesh
+Did not convert Mesh resource res://.import/20mmshell.obj-c710bff275f145b156b0ec794e43a8ba.mesh
+Did not convert Mesh resource res://.import/3dlogo.obj-120ad0e05f8dbc3d3a10a94f958e6a15.mesh
+Did not convert Mesh resource res://.import/protofish.obj-f7e660785ea24d94e94597ecacf937a7.mesh
+Did not convert Mesh resource res://.import/appendix.obj-00325db662264ad0b2f2f1af5991c0d7.mesh
+Did not convert Mesh resource res://.import/brain.obj-21091c4da4077b1497db36171141dcd6.mesh
+Did not convert Mesh resource res://.import/heart.obj-1edf3f351c30f147624524ffba9cef43.mesh
+Did not convert Mesh resource res://.import/intestine.obj-886b1da5f6eb707539e7812243430757.mesh
+Did not convert Mesh resource res://.import/kidney.obj-066a1f5f34dcae8fe5c3dd26440c98b6.mesh
+Did not convert Mesh resource res://.import/liver.obj-52ffac00d4ec104e38f6a280a87fedd5.mesh
+Did not convert Mesh resource res://.import/pancreas.obj-4088a2cf1791105fcb86be34e7c28254.mesh
+Did not convert Mesh resource res://.import/spine.obj-7e49dbe6024cac7e73174552e01a09d7.mesh
+Did not convert Mesh resource res://.import/stomach.obj-11afa9eb568766f48acd6a72ea223dd3.mesh
+Did not convert Mesh resource res://.import/curse.obj-53e70e8eda822e84ca2b55015027c8e1.mesh
+Did not convert Mesh resource res://.import/deathface.obj-9f647a5b1ebf4bc1dc57b7cda4114ec7.mesh
+Did not convert Mesh resource res://.import/flechette.obj-ef254d54a089765d23ae4bafa95e1591.mesh
+Did not convert Mesh resource res://.import/forklift.obj-ed80c63b0c64d7a722eb9cd45e244bec.mesh
+Did not convert Resource resource res://.import/Bonus1.map-b0e4d736855b0ce4d68aa7e0d0d906a8.tres
+Did not convert Resource resource res://.import/Bonus2.map-a1e8f45c6ff53d6141ca12c1e27c8367.tres
+Did not convert Resource resource res://.import/Bonus3-crash-1.map-875e2e6dba63016ee379d1334fbe6fb3.tres
+Did not convert Resource resource res://.import/Bonus3-crash.map-d4f6683187b35ad61c6d1ac8f24eebb5.tres
+Did not convert Resource resource res://.import/Bonus3.map-cc9968096e56e41a351afcd41c8e4532.tres
+Did not convert Mesh resource res://.import/Gas_Launcher.obj-7afc08b91da60d9a97b4de1b1ac6d6b8.mesh
+Did not convert Mesh resource res://.import/MG3.obj-c7f0ad2b70917c1ab2fa6e5aff889029.mesh
+Did not convert Mesh resource res://.import/Mauser.obj-1f0c92fb464e628a3d7d5ac5fe2f9c59.mesh
+Did not convert Mesh resource res://.import/Nambu.obj-c34056c7ccd9adf47a8b80cb9bfeae7c.mesh
+Did not convert Mesh resource res://.import/Pistol.obj-fca7ed782c91c36245e674e6c40ce6e4.mesh
+Did not convert Mesh resource res://.import/RL.obj-9f10e5b517eeabb28f48c1df73196e83.mesh
+Did not convert Mesh resource res://.import/Radgun_Body.obj-b5f1a2b89d56124ddeb3a01e5534dc80.mesh
+Did not convert Mesh resource res://.import/Radgun_Cylinder.obj-c013fba57066fe3efb127f215d92e4fd.mesh
+Did not convert Mesh resource res://.import/SKS.obj-c01c44982ef194188ed4cfa940c530cd.mesh
+Did not convert Mesh resource res://.import/SMG.obj-f17668a8f0023ce001e9a60159665738.mesh
+Did not convert Mesh resource res://.import/S_SMG.obj-b304c5a0188c54653c5d6d000a5f4f79.mesh
+Did not convert Mesh resource res://.import/Shotgun.obj-67b6325f8b6a8639f4d96a335cc352cc.mesh
+Did not convert Mesh resource res://.import/Sniper.obj-ad2e20df2cef5388f73444393eb381b2.mesh
+Did not convert Mesh resource res://.import/an94.obj-4ec0b52dfd10970d5187ff3616bbc253.mesh
+Did not convert Mesh resource res://.import/baton.obj-25166124b3025273f78a98bb36f87a26.mesh
+Did not convert Mesh resource res://.import/dartgun.obj-41e3a8437d4e7d5c51528f10c2ffba07.mesh
+Did not convert Mesh resource res://.import/dna.obj-cce49541fbcdf1180cf7f6dd8d09b260.mesh
+Did not convert Mesh resource res://.import/flamethrower.obj-6b3aff0d2133a695a72f0a02f7046492.mesh
+Did not convert Mesh resource res://.import/flashlight.obj-429c190a0ae47f131d6b0fe1eda71ecd.mesh
+Did not convert Mesh resource res://.import/light.obj-be56f173e4bd7c4b338122d62bb42b72.mesh
+Did not convert Mesh resource res://.import/mkr.obj-4d986cdd300410f3dfc6c49105ec2dbc.mesh
+Did not convert Mesh resource res://.import/nailer.obj-2016c90512a2362617392d795342cc5d.mesh
+Did not convert Mesh resource res://.import/radgun_solid.obj-f9ba1fbe110bcf9dfcacc7dd3138efc8.mesh
+Did not convert Mesh resource res://.import/rod.obj-e4903135e47ffa7f0000412e76ed60f3.mesh
+Did not convert Mesh resource res://.import/shockwave.obj-0188e99c1cafa835883c11e0f0221534.mesh
+Did not convert Mesh resource res://.import/steyr.obj-3e486ae8d2370ce96bfec893fd6d91fb.mesh
+Did not convert Mesh resource res://.import/vag72.obj-ae9a1ecd62eeab51065ed816a9a1a4b1.mesh
+Did not convert Mesh resource res://.import/zippy.obj-9393fb9217b663eb4865ca108453a6ec.mesh
+Did not convert Mesh resource res://.import/acidball.obj-3688857d90b9468decb0cc8952d2113e.mesh
+Did not convert Mesh resource res://.import/chief.obj-ef60524f82be376bd372fbfff168167c.mesh
+Did not convert Resource resource res://.import/MENUMAP.map-98d4a3e2f4364e63beb99b376692b2fa.tres
+WARNING: Export of Godot 2/3.x models/imported scenes currently unimplemented
+   at: ImportExporter::_export_imports (modules\gdsdecomp\utility\import_exporter.cpp:220)
+WARNING: Conversion for Resource of type 3.x PackedScene and format glb not implemented
+   at: ImportExporter::report_unsupported_resource (modules\gdsdecomp\utility\import_exporter.cpp:1233)
+Did not convert 3.x PackedScene resource res://.import/success.glb-aa1e41b3735edbbc0d53c415750efc69.scn
+Did not convert 3.x PackedScene resource res://.import/sunfish.glb-bcfc74d6698b68b71d3c99bf7285d59b.scn
+Did not convert 3.x PackedScene resource res://.import/superbogdo.glb-6c68ef73afb5b7bbf35914a596fc4817.scn
+Did not convert 3.x PackedScene resource res://.import/swampeel.glb-9413ed04f73e8f72a11649f65d19d514.scn
+Did not convert 3.x PackedScene resource res://.import/swampsucker.glb-6fc858906642a88e172ec107ca646bd4.scn
+Did not convert 3.x PackedScene resource res://.import/unidor.glb-560088ae2c7edca71c65979d6045e48d.scn
+Did not convert 3.x PackedScene resource res://.import/wealth.glb-70ba69c3541f117ef8e8cc1f6ebce3b0.scn
+Did not convert 3.x PackedScene resource res://.import/wheel.glb-7a5464c1ac2bfc5fbaa59e34d13ec937.scn
+Did not convert 3.x PackedScene resource res://.import/zooper.glb-70b4200fc259307938694313d464e978.scn
+Did not convert 3.x PackedScene resource res://.import/Generic_Shell.glb-0133314619e9391d6b67bdf4f2d902aa.scn
+Did not convert 3.x PackedScene resource res://.import/Head_Gib.glb-6f2a69f4f66879ff16d249f304e4b0ad.scn
+Did not convert 3.x PackedScene resource res://.import/Knife_Lord.glb-6291eddfc509ca241de9d17817411dbf.scn
+Did not convert 3.x PackedScene resource res://.import/Leg_Gib.glb-4fc4cdaf2a9bcd313bb1e5bbfac2d97d.scn
+Did not convert 3.x PackedScene resource res://.import/Medkit1.glb-5868358303321a5e19566e8d284ed4fd.scn
+Did not convert 3.x PackedScene resource res://.import/Medkit2.glb-816dfb6496bafd53c0a85f20d9d56e0a.scn
+Did not convert 3.x PackedScene resource res://.import/Obj_Nerd_1.glb-ccf39205863dc3bbe20549841f56517f.scn
+Did not convert 3.x PackedScene resource res://.import/spiker.glb-9900e446c8880c8f70e71edb7d6ad129.scn
+Did not convert 3.x PackedScene resource res://.import/soul.glb-0b9ddf9f65cefee7bf297e878c68abb1.scn
+Did not convert 3.x PackedScene resource res://.import/sophia.glb-f681d26786523263a7948d66bca739e6.scn
+Did not convert 3.x PackedScene resource res://.import/smallman.glb-c33bbfcce7ff5ae692717434aace3f2b.scn
+Did not convert 3.x PackedScene resource res://.import/slurper.glb-ee047fd8bb9ce4a3c339c9e1f490b37a.scn
+Did not convert 3.x PackedScene resource res://.import/skippy.glb-fb2f21e578e73438004481aba94962d4.scn
+Did not convert 3.x PackedScene resource res://.import/skeleton.glb-beb49ffaf1a7610daaf91464f8e7b444.scn
+Did not convert 3.x PackedScene resource res://.import/psychofish.glb-5ed9daeca2940545264c53f8ca746263.scn
+Did not convert 3.x PackedScene resource res://.import/protofish.glb-640cc87a17c73b5702203c95051c8aa6.scn
+Did not convert 3.x PackedScene resource res://.import/poolsucker.glb-65ef815460dff8f3353216c792cc722a.scn
+Did not convert 3.x PackedScene resource res://.import/pondman.glb-1ba969cac563b68d7170fcd4427476e8.scn
+Did not convert 3.x PackedScene resource res://.import/piper.glb-5be5b15131e8e988a4eac4c6a37a8b0a.scn
+Did not convert 3.x PackedScene resource res://.import/pain.glb-8c0ebce90198a6a04e63a17d9f0bdf7e.scn
+Did not convert 3.x PackedScene resource res://.import/octosaur.glb-db56d90b0c807388e764f173cf669860.scn
+Did not convert 3.x PackedScene resource res://.import/nocter.glb-64e7cddfc0a6f7037dbb7d58501f92bd.scn
+Did not convert 3.x PackedScene resource res://.import/night.glb-b76038d657644b38b289c8271cb17340.scn
+Did not convert 3.x PackedScene resource res://.import/fleshgun.glb-bcec7234280637592667c4532d0f8b5c.scn
+Did not convert 3.x PackedScene resource res://.import/snirby.glb-c4f6db33d2b7c63cd723398bd843272a.scn
+Did not convert 3.x PackedScene resource res://.import/snake.glb-1b765aad6638ad8692195a8c37f010a7.scn
+Did not convert 3.x PackedScene resource res://.import/orbot.glb-a21c94e30cb2b8b5f365ff83f740ad66.scn
+Did not convert 3.x PackedScene resource res://.import/orbarms.glb-6dddcaf8b3f4bc01331bd0c933b206f7.scn
+Did not convert 3.x PackedScene resource res://.import/intro_guy.glb-14eafe79f82198d9d85e54f5d848eac5.scn
+Did not convert 3.x PackedScene resource res://.import/flesh_civilian.glb-66a1b955d2685f0fed457885a9850492.scn
+Did not convert 3.x PackedScene resource res://.import/enemy_psycho.glb-a7e159d8e1c5ab364176bd584a36c450.scn
+Did not convert 3.x PackedScene resource res://.import/enemy_paratrooper.glb-8746250562cf1f6e7580a22b351ab2c0.scn
+Did not convert 3.x PackedScene resource res://.import/enemy_life_boss.glb-4232fc803c00fee3f53624efc6759f48.scn
+Did not convert 3.x PackedScene resource res://.import/enemy_fleshman.glb-a2708ebb26009c554e014a54cf66cb02.scn
+Did not convert 3.x PackedScene resource res://.import/deathorb.glb-00aabf51446ec607cd16c46b8b217e9c.scn
+Did not convert 3.x PackedScene resource res://.import/crab.glb-78927998338d04dbfb69c017ddf8e9b2.scn
+Did not convert 3.x PackedScene resource res://.import/civilian_nude.glb-48d91625b847d908852e5504d4bc4099.scn
+Did not convert 3.x PackedScene resource res://.import/civilian_female.glb-549b70fd763d13a2b9831027dd5d0dfb.scn
+Did not convert 3.x PackedScene resource res://.import/abraxas.glb-c91f3a9bcf7625b334ccc15b607614a0.scn
+Did not convert 3.x PackedScene resource res://.import/UICAR.glb-7efbd91f09d1deac6bf8526b4994ca58.scn
+Did not convert 3.x PackedScene resource res://.import/Smg_Ammo.glb-9103adf92881966354742332f3214dab.scn
+Did not convert 3.x PackedScene resource res://.import/Skeleton_Test2.glb-4bdae44d3d98a96a345dcf59db8dae10.scn
+Did not convert 3.x PackedScene resource res://.import/Skeleton_Test.glb-32feb27e16f0fdb06bec5cc5a8f56daa.scn
+Did not convert 3.x PackedScene resource res://.import/Shotgun_Shell.glb-6127b18ec71806f7ad916e746ad74ef9.scn
+Did not convert 3.x PackedScene resource res://.import/Shotgun_Ammo.glb-c7e02ec27d10b3f2c07364d07e51e313.scn
+Did not convert 3.x PackedScene resource res://.import/SHOTGUN.glb-bd119040a55b9e9775c7cc9464ae7c87.scn
+Did not convert 3.x PackedScene resource res://.import/Rocket.glb-3a41c29da0f3657d91ace5fd7a840230.scn
+Did not convert 3.x PackedScene resource res://.import/level_painting.glb-9b722cd2745060db7c13378f47165574.scn
+Did not convert 3.x PackedScene resource res://.import/implant_object.glb-2dacc8113513f61cccdee9595211714d.scn
+Did not convert 3.x PackedScene resource res://.import/Player_Weapon_New.glb-2ab54d26b11de43d8fec1567ca3122db.scn
+Did not convert 3.x PackedScene resource res://.import/Player_Weapon.glb-c3e0893816555883dba69bf2c96d4516.scn
+Did not convert 3.x PackedScene resource res://.import/Player_Leg.glb-ccdb605233fa74c875fcc05c95528e78.scn
+Did not convert 3.x PackedScene resource res://.import/Pistol_Ammo.glb-692742d97b71544a4ca5207681fd8fa4.scn
+Did not convert 3.x PackedScene resource res://.import/Objective_Pinky.glb-4c1a9e560a75fc574fb05b7aa22e0db0.scn
+Did not convert 3.x PackedScene resource res://.import/Objective_Chief.glb-5ecc83dec2f2ef67b83b459d64546615.scn
+Did not convert 3.x PackedScene resource res://.import/caverno.glb-1008640c976aaab19e6a0e05b55cb948.scn
+Did not convert 3.x PackedScene resource res://.import/carabino.glb-4dc84cb43215474382bf303debafdd2c.scn
+Did not convert 3.x PackedScene resource res://.import/bubblefish.glb-9b0ca3e38ad987c135e6c4470450ae00.scn
+Did not convert 3.x PackedScene resource res://.import/brimstone.glb-d43d46a5f40c580f927d1c60e9ab8c16.scn
+Did not convert 3.x PackedScene resource res://.import/brainy.glb-0e29921073aecfc79ae84aaeb7d476ec.scn
+Did not convert 3.x PackedScene resource res://.import/bouncy.glb-173dba50f4f1414d5c1ee2545d1e09b2.scn
+Did not convert 3.x PackedScene resource res://.import/bororion.glb-2da01a37fcab64059f8a7970a2e12c77.scn
+Did not convert 3.x PackedScene resource res://.import/bonbo.glb-1b24db2dc2b4ee27740ec9381b017fee.scn
+Did not convert 3.x PackedScene resource res://.import/bogdo.glb-9d3dfe27631f8408ef2cfd2df7ec3bfc.scn
+Did not convert 3.x PackedScene resource res://.import/blurpo.glb-95f0e2ed003613f0ea4c0de7fa5a03ac.scn
+Did not convert 3.x PackedScene resource res://.import/blossom.glb-8b7bb567dfbcebf0633285ad24c706fc.scn
+Did not convert 3.x PackedScene resource res://.import/bigman.glb-add3b3191edb84078ff6bb6aab983208.scn
+Did not convert 3.x PackedScene resource res://.import/agon.glb-04305a03dd8561a963321b6e6b66a6ed.scn
+Did not convert 3.x PackedScene resource res://.import/Fish.glb-c8c3345857b5dd95a7f3dc4049a5b90c.scn
+Did not convert 3.x PackedScene resource res://.import/First_Test.glb-1117042ee4bad6331c145195c605657f.scn
+Did not convert 3.x PackedScene resource res://.import/FLESHRAT.glb-920dc4605da83596f82d935e02d27cfd.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_pig.glb-141263704fe71b31ce2bc00c237df315.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_civilian_worker.glb-a1b245e2116b3c27e71a305e3b38b7e4.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Zombie.glb-6e574fd45a2d91aed82bc318819dd9b1.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Swamp.glb-50990bc3db79acc8645eca055315b05a.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Security.glb-ae8de1fa37234d070f3196f237011da4.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Killerbot.glb-2e32ddd448f781761f026e9b417db339.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Grunt.glb-410ed9617e2f1c8db2d70a88c69935f5.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Flower.glb-c36b7728c60f2bb479e49873bb64ff3b.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Fleshrat.glb-38515121230ddb1a836f9598bb5ddcaf.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Elite.glb-953627110e61383f6c58c937bb7351db.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Dog.glb-fa6bb6e2eefc8a2b66e12b7107bc89ac.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Cop_Shotgun.glb-e5b90a7984e15e8e50829db6a527070c.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Cop_Revolver.glb-90609b7da23a840558d1f03df152ffd3.scn
+Did not convert 3.x PackedScene resource res://.import/Enemy_Civilian.glb-c63b20edccf298d92a0bd15ee5e4d4bf.scn
+Did not convert 3.x PackedScene resource res://.import/Chest_Gib.glb-2048016e4454893d342f5a5da53d5b97.scn
+Did not convert 3.x PackedScene resource res://.import/Arm_Gib.glb-5bf14939517e4cd5479d29b1cd9508f3.scn
+Did not convert 3.x PackedScene resource res://.import/moonfish.glb-62a7531492fb649628a1d794df18fb88.scn
+Did not convert 3.x PackedScene resource res://.import/mistake.glb-0f0303a9061d909a442a153a926690e6.scn
+Did not convert 3.x PackedScene resource res://.import/lucksucker.glb-6e5c833a57da5892e65f67da7bfaf089.scn
+Did not convert 3.x PackedScene resource res://.import/icefish.glb-91371d4f9728020e16bfde8f7c2e2de2.scn
+Did not convert 3.x PackedScene resource res://.import/icecube.glb-0491272120050716ebe1d79d883f1094.scn
+Did not convert 3.x PackedScene resource res://.import/hydra.glb-75265ddcd92dcb8d23221e8afd138466.scn
+Did not convert 3.x PackedScene resource res://.import/human.glb-9bcde438e361cba38f154a0ccb83c33c.scn
+Did not convert 3.x PackedScene resource res://.import/hexasaur.glb-ec866ccfc83e1766dc7707dd3a2f801a.scn
+Did not convert 3.x PackedScene resource res://.import/heli.glb-e627deb788ea3e9732ef055759292b97.scn
+Did not convert 3.x PackedScene resource res://.import/head.glb-f7101bdd59c49ce878a46d5accc2a6c1.scn
+Did not convert 3.x PackedScene resource res://.import/gunkeel.glb-bcc16c16cf61650660b637bb409b5f9e.scn
+Did not convert 3.x PackedScene resource res://.import/grenade.glb-a60b1dcbd129a89b44c1ef74567239de.scn
+Did not convert 3.x PackedScene resource res://.import/grabshark.glb-ec6ba4aff44ef0734eabe6fa12519fbb.scn
+Did not convert 3.x PackedScene resource res://.import/glurm.glb-097132e59f1c4986106fc0b02963d915.scn
+Did not convert 3.x PackedScene resource res://.import/gloomoid.glb-7210e6086caedff45858bc29c3a81c93.scn
+Did not convert 3.x PackedScene resource res://.import/gigaflounder.glb-b041461689497236e9bb8002ec6de5c8.scn
+Did not convert 3.x PackedScene resource res://.import/fuzzer.glb-35ffbcc4407878ddd590bdcd32caf529.scn
+Did not convert 3.x PackedScene resource res://.import/flounder.glb-697a401b2723118739457947d1518ce3.scn
+Did not convert 3.x PackedScene resource res://.import/flippy.glb-40fe362c768877f5a11d1739942dda1a.scn
+Did not convert 3.x PackedScene resource res://.import/eternityslurper.glb-d574021ad87dcdcb15bfba4651730067.scn
+Did not convert 3.x PackedScene resource res://.import/engine.glb-7a70fab4e1c3a8b305ac584108f61ae6.scn
+Did not convert 3.x PackedScene resource res://.import/eel.glb-8891a8427c9adfce17586874448b4457.scn
+Did not convert 3.x PackedScene resource res://.import/drimp.glb-4cba0e0068cd8f01c1f0419a6e56fb3a.scn
+Did not convert 3.x PackedScene resource res://.import/dolphin.glb-eb40f15b6838f7f00459b6df597a22d9.scn
+Did not convert 3.x PackedScene resource res://.import/deltaforce.glb-38a5c56b2e5aa0a7a3e02b62451a19f9.scn
+Did not convert 3.x PackedScene resource res://.import/darksucker.glb-ec7a6a9dee51d8d9fb270cbdbe43f36f.scn
+Did not convert 3.x PackedScene resource res://.import/darkslurper.glb-5485483cc991446b8e739975b64ab317.scn
+Did not convert 3.x PackedScene resource res://.import/darkfish.glb-ca0215dc45aeebebad21f98a8b42d349.scn
+Did not convert 3.x PackedScene resource res://.import/cube.glb-1c57dd8bbc788e11c77379311b48b801.scn
+Did not convert 3.x PackedScene resource res://.import/creep.glb-1caed8c96c268bd2ceb4dc0e426fa672.scn
+Did not convert 3.x PackedScene resource res://.import/coiny.glb-f848beafa52afffe40a1644de6b943c6.scn
+Did not convert 3.x PackedScene resource res://.import/club.glb-c3312cb10db4f8f73eb86c65fdda476e.scn
+Saved project config project.godot.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     202
+Failed scripts:                         0
+Imported resources for export session:  3228
+Successfully converted:                 838
+Lossy:                                  437
+Rewrote metadata:                       0
+Non-importable conversions:             3
+Not converted:                          245
+Failed conversions:                     1
+-------------
+
+
+The following files were converted from an import that was stored lossy.
+You may lose fidelity when re-importing these files upon loading the project.
+res://.import/skullgun.png-fac888288c1e92fbf134fc68910dc0d4.s3tc.stex to res://Textures/Menu/Implants/skullgun.png
+res://.import/speed1.png-f092724029ee0c859b80a3b32139e9e7.s3tc.stex to res://Textures/Menu/Implants/speed1.png
+res://.import/verticalentry.png-17c6e207d735db0b27e9fc4ba54ff30c.s3tc.stex to res://Textures/Menu/Implants/verticalentry.png
+res://.import/zzz.png-80949e5d99d1ca71abadd99f0036c69c.s3tc.stex to res://Textures/Menu/Implants/zzz.png
+res://.import/Main_menu.png-c4d8b88f8bb16b7126d4b986ed9a0838.s3tc.stex to res://Textures/Menu/Main_menu.png
+res://.import/Next_Level.png-251559d90b979502f30ed16c6a96e374.s3tc.stex to res://Textures/Menu/Next_Level.png
+res://.import/OS_normal.png-6739da700ebdb4bb3e175fd6fd2af5d2.s3tc.stex to res://Textures/Menu/OS_normal.png
+res://.import/Autoshotgun.png-30820e9ff7c32f770456ac7f19e079a1.s3tc.stex to res://Textures/Menu/Weapon_Buttons/Autoshotgun.png
+res://.import/MG3.png-5eb46758ce3b3eb83980b083a61e1385.s3tc.stex to res://Textures/Menu/Weapon_Buttons/MG3.png
+res://.import/Mauser.png-145dfaab1b76242fce86c3a60a35ecbd.s3tc.stex to res://Textures/Menu/Weapon_Buttons/Mauser.png
+res://.import/ammogland.png-d1d1c20423126ea02c6d2303e6fe77b9.s3tc.stex to res://Textures/Menu/Implants/ammogland.png
+res://.import/cursed_torch.png-c605111b46ae00eb77b3713f2e92b08b.s3tc.stex to res://Textures/Menu/Implants/cursed_torch.png
+res://.import/light_armor.png-17eeab7df5e50c09129482d53229046d.s3tc.stex to res://Textures/Menu/Implants/light_armor.png
+res://.import/fish_found.png-cb1739b2fbe6ef9752580213ef70396c.s3tc.stex to res://Textures/Menu/fish_found.png
+res://.import/fish_not_found.png-7a755cd74df5023b51b2876ffe8ed639.s3tc.stex to res://Textures/Menu/fish_not_found.png
+res://.import/hover.png-c40e8f5205043617a72166afd73a82be.s3tc.stex to res://Textures/Menu/hover.png
+res://.import/implant_menu_button.png-17875f5ec52384aa807eb8871ef81505.s3tc.stex to res://Textures/Menu/implant_menu_button.png
+res://.import/logo.png-67000b940f3281f71480ea75acb8c548.s3tc.stex to res://Textures/Menu/logo.png
+res://.import/logo_3d_texture.png-7b13afbc3c2973e5648f186c00eef84f.s3tc.stex to res://Textures/Menu/logo_3d_texture.png
+res://.import/logo_3d_texture_emission.png-fb7707e1fd32b942f10eb92270d30f90.s3tc.stex to res://Textures/Menu/logo_3d_texture_emission.png
+res://.import/logo_uv.png-65892d8c09492f3930eb4c5c756b9b2e.s3tc.stex to res://Textures/Menu/logo_uv.png
+res://.import/mission_start.png-b05c7f9c91d73fad80775de89ba70f4a.s3tc.stex to res://Textures/Menu/mission_start.png
+res://.import/retry_normal.png-e64f3df9ada6a063edeadb0f27366adc.s3tc.stex to res://Textures/Menu/retry_normal.png
+res://.import/return_normal.png-a4a8737aba4ddd9723f0bb481bc2be52.s3tc.stex to res://Textures/Menu/return_normal.png
+res://.import/settings_normal.png-e6aa224708a0e2051e13078f7d46e57b.s3tc.stex to res://Textures/Menu/settings_normal.png
+res://.import/start_normal.png-26bd40e5fdbe11996b26db2765835057.s3tc.stex to res://Textures/Menu/start_normal.png
+res://.import/GRASS.PNG-a3523ced20563c01ceecc1aae1106dd3.s3tc.stex to res://Textures/Misc/GRASS.PNG
+res://.import/car.png-09c0bc3e92da0499e7318c69d91dfd0d.s3tc.stex to res://Textures/Misc/car.png
+res://.import/copcar.png-76cd280ae1c638b37c0646e644310e8a.s3tc.stex to res://Textures/Misc/copcar.png
+res://.import/corpse_texture.png-cc6f8e8b59dbafca0d489ce8c1f4191b.s3tc.stex to res://Textures/Misc/corpse_texture.png
+res://.import/fish.png-c0b4034192fedbe973a1a835e33c532f.s3tc.stex to res://Textures/Misc/fish.png
+res://.import/fishcatcher.png-e884de933f12d16a7d0f5a2bd02ce169.s3tc.stex to res://Textures/Misc/fishcatcher.png
+res://.import/forklift.png-fc18d56c45570455ac6d663fdb2a61b3.s3tc.stex to res://Textures/Misc/forklift.png
+res://.import/gib_1.png-82718d27af78d1ad0acfd4a70c3e35b9.s3tc.stex to res://Textures/Misc/gib_1.png
+res://.import/gib_grilled.png-99271c1817e60c70250c469c45bc0c94.s3tc.stex to res://Textures/Misc/gib_grilled.png
+res://.import/introguy.png-565efa1b95b67010ff468d371c85b394.s3tc.stex to res://Textures/Misc/introguy.png
+res://.import/tranq.png-d9d0d9bc833c4c3acb23bccaf361aaeb.s3tc.stex to res://Textures/Menu/Weapon_Buttons/tranq.png
+res://.import/background_1.png-6f5a1a0b9816299b7a0a3dffa67e9577.s3tc.stex to res://Textures/Menu/background_1.png
+res://.import/exit_level_normal.png-9b6ee73bdb72c39be2f869f836610f48.s3tc.stex to res://Textures/Menu/exit_level_normal.png
+res://.import/exit_menu_normal.png-3cbb04442ba2507ed9bea9c29bfcab17.s3tc.stex to res://Textures/Menu/exit_menu_normal.png
+res://.import/blood.png-1b4facebd2e3c0aa421d5416c76fd12f.s3tc.stex to res://Textures/Decals/blood.png
+res://.import/blood2.png-5b23cba6de19476a054fe0172f3beda8.s3tc.stex to res://Textures/Decals/blood2.png
+res://.import/blood3.png-fb090e2c2c941e38343a38a145195ee7.s3tc.stex to res://Textures/Decals/blood3.png
+res://.import/bullethole.png-960811aa243c6d7aea802359f8559213.s3tc.stex to res://Textures/Decals/bullethole.png
+res://.import/vomit.png-0bf1fa8419561895ab3462d2b6cf83d3.s3tc.stex to res://Textures/Decals/vomit.png
+res://.import/medkit1.png-d8b93d6a422970be5d15a05758692083.s3tc.stex to res://Textures/Items/medkit1.png
+res://.import/medkit2.png-4aeb8099e2357c8af01123ac7ba051ce.s3tc.stex to res://Textures/Items/medkit2.png
+res://.import/pistol_ammo.png-372dd69d97367368d23f48b07a51c1e0.s3tc.stex to res://Textures/Items/pistol_ammo.png
+res://.import/rocket.png-41588b4851db7d03fc75a64fc1f9133e.s3tc.stex to res://Textures/Items/rocket.png
+res://.import/shotgun_ammo.png-dd73af927cb5c2b1e100d32bffdab55c.s3tc.stex to res://Textures/Items/shotgun_ammo.png
+res://.import/smg_ammo.png-62473fa49591334bc057ecdacdc6885d.s3tc.stex to res://Textures/Items/smg_ammo.png
+res://.import/1.png-4a22ca3d928a54d8c14599fc8345420a.s3tc.stex to res://Textures/Menu/Civ_Mouth/1.png
+res://.import/2.png-6679cbb8ce9d68972fdeb796e3c44bc4.s3tc.stex to res://Textures/Menu/Civ_Mouth/2.png
+res://.import/3.png-75748faa51550591c9abca3bf26e0b11.s3tc.stex to res://Textures/Menu/Civ_Mouth/3.png
+res://.import/4.png-c6189655e7a732d073d0dc11458fb865.s3tc.stex to res://Textures/Menu/Civ_Mouth/4.png
+res://.import/1.png-679d57bce1f7d59bb92e0dae3ab232b3.s3tc.stex to res://Textures/Menu/Disabled_Button/1.png
+res://.import/2.png-fc38cdac09b49f132110ecebf517dfeb.s3tc.stex to res://Textures/Menu/Disabled_Button/2.png
+res://.import/3.png-229372c339e73b1ee6ec89f204f91981.s3tc.stex to res://Textures/Menu/Disabled_Button/3.png
+res://.import/4.png-955c09d35a11acd0b5d51ef425733213.s3tc.stex to res://Textures/Menu/Disabled_Button/4.png
+res://.import/1.png-a22ccd007b84049ffd60ba6c6ba87268.s3tc.stex to res://Textures/Menu/Handler/1.png
+res://.import/2.png-b1c20bc8a07de8e0adc324492aeedd1a.s3tc.stex to res://Textures/Menu/Handler/2.png
+res://.import/3.png-26a500dee3db2f531d3429c17bef328c.s3tc.stex to res://Textures/Menu/Handler/3.png
+res://.import/4.png-c04d84619a3396b49471eec5a76c576c.s3tc.stex to res://Textures/Menu/Handler/4.png
+res://.import/bighole.png-5d3ece78cf977d7811da283ace614387.s3tc.stex to res://Textures/Decals/bighole.png
+res://.import/blood-hole-png-2.png-dd1eac8e603c4dad7599238222dae719.s3tc.stex to res://Textures/Decals/blood-hole-png-2.png
+res://.import/MAG.png-68026aee8b7a52f9c6d68971c08a93ad.s3tc.stex to res://Textures/UI/MAG.png
+res://.import/target.png-893df42ffc30d8463a0eb4e46b62791b.s3tc.stex to res://Textures/UI/target.png
+res://.import/AR.png-6ab36f553848da634e3e71f3612a9fc7.s3tc.stex to res://Textures/Weapons/AR.png
+res://.import/Arms.png-e380285e7862e2f9c7354c006282eb7c.s3tc.stex to res://Textures/Weapons/Arms.png
+res://.import/Arms2.png-88dec12eed5ba2b682d4aca092e076c6.s3tc.stex to res://Textures/Weapons/Arms2.png
+res://.import/Arms3.png-85b4701bbc6d1d4e873d0c8b29a98cdc.s3tc.stex to res://Textures/Weapons/Arms3.png
+res://.import/Gas_Launcher.png-a71934f91dd44c353cb14a7058d84aa1.s3tc.stex to res://Textures/Weapons/Gas_Launcher.png
+res://.import/MG3.png-21f13a5c22e84558c45ae0c6d532b0f5.s3tc.stex to res://Textures/Weapons/MG3.png
+res://.import/Nambu.png-b3e87e7f25a04672070147eae63da59a.s3tc.stex to res://Textures/Weapons/Nambu.png
+res://.import/Pistol.png-51e5430153e9b7966cec103ff80d714f.s3tc.stex to res://Textures/Weapons/Pistol.png
+res://.import/Rocketlauncher.png-96fe1ac602ad3a60bb8fffd98563a9aa.s3tc.stex to res://Textures/Weapons/Rocketlauncher.png
+res://.import/SKS.png-0294f92e3c04e465651c964d07b9bf01.s3tc.stex to res://Textures/Weapons/SKS.png
+res://.import/SMG.png-a4a0a7970b040b566a003c6c748820f4.s3tc.stex to res://Textures/Weapons/SMG.png
+res://.import/Shotgun.png-608c120e1af531d4256598fcddee7907.s3tc.stex to res://Textures/Weapons/Shotgun.png
+res://.import/Sniper.png-f8bc89537003ea252b7212fe3a7ff39a.s3tc.stex to res://Textures/Weapons/Sniper.png
+res://.import/an94.png-b75b7fbc28ad009be01411baee24f7f2.s3tc.stex to res://Textures/Weapons/an94.png
+res://.import/autoshotgun.png-8d1b1a394df1739d3df7b5a07e862297.s3tc.stex to res://Textures/Weapons/autoshotgun.png
+res://.import/baton.png-575a5455cfb46b6a69503fec61413506.s3tc.stex to res://Textures/Weapons/baton.png
+res://.import/bore.png-10b87dcd6f2dd19c5b1b1275be29840f.s3tc.stex to res://Textures/Weapons/bore.png
+res://.import/sky1.png-c2130e69d15b7fdbd8714a6269046190.s3tc.stex to res://Textures/sky1.png
+res://.import/sky10.png-80d7f7bac29662d01c31fe2df44ff062.s3tc.stex to res://Textures/sky10.png
+res://.import/sky11.png-3acd73327d5ee4e8a5b6a37462e45432.s3tc.stex to res://Textures/sky11.png
+res://.import/sky5.png-ac43796767941b60f4d5ae1cde1d4eb4.s3tc.stex to res://Textures/sky5.png
+res://.import/sky9.png-f80a2181fe25b92a1cf7845d7176f912.s3tc.stex to res://Textures/sky9.png
+res://.import/skybox1.png-2ef4796c49f040e1ec39f0e44c4825be.s3tc.stex to res://Textures/skybox1.png
+res://.import/skybox2.png-2428e000fd92d37a2f5c1c461d796ebd.s3tc.stex to res://Textures/skybox2.png
+res://.import/skybox3.png-d6e06c27fcad5b9e7a583014da2c911e.s3tc.stex to res://Textures/skybox3.png
+res://.import/icon_decal.svg-6f00171dd2a72bb19e03ef9eedda30a9.s3tc.stex to res://.assets/addons/decals/icon_decal.png
+res://.import/icon_qodot_node.svg-f8e16c942b65e8e6f4c6a84d045cdcc4.stex to res://.assets/addons/qodot/icons/icon_qodot_node.png
+res://.import/icon_qodot_spatial.svg-91f1f2e27df14634856923a4b57ca0ff.stex to res://.assets/addons/qodot/icons/icon_qodot_spatial.png
+res://.import/crueltysquad.png-0bd481509515411c6d86428a9d389c66.s3tc.stex to res://crueltysquad.png
+res://.import/eRKhQy8F.png small.png-d5316d6d66c401093ed1cc428e287080.s3tc.stex to res://eRKhQy8F.png small.png
+res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.s3tc.stex to res://icon.png
+res://.import/dartgun.png-711322a3e737c27d3a5e7f097b113863.s3tc.stex to res://Textures/Weapons/dartgun.png
+res://.import/dna.png-7bbabfb9ecfed8ba36d7d7fb582de999.s3tc.stex to res://Textures/Weapons/dna.png
+res://.import/flamethrower.png-ab4726ceae8bdbac8a77e3b4bc2fbc28.s3tc.stex to res://Textures/Weapons/flamethrower.png
+res://.import/flashlight.png-2f32cdb961ded6ac4bb884cf7727173a.s3tc.stex to res://Textures/Weapons/flashlight.png
+res://.import/hegrenade.png-a26b7355ae57c9ac7774022f1c7ba728.s3tc.stex to res://Textures/Weapons/hegrenade.png
+res://.import/light.png-13d762675eff79b01f0d84ff043e0c2a.s3tc.stex to res://Textures/Weapons/light.png
+res://.import/mauser.png-78b88468fb4c11e71e1ffc994817e415.s3tc.stex to res://Textures/Weapons/mauser.png
+res://.import/mkr.png-9075a7b75ba8e5874c5e6a972ea42897.s3tc.stex to res://Textures/Weapons/mkr.png
+res://.import/nailgun.png-ebdeb30a8169822ab7c03e3c706be860.s3tc.stex to res://Textures/Weapons/nailgun.png
+res://.import/radgun.png-2d9962a4018301022df7eb62fccef0c8.s3tc.stex to res://Textures/Weapons/radgun.png
+res://.import/shockwave.png-080359e869d8076139d8ade2da1cfd5e.s3tc.stex to res://Textures/Weapons/shockwave.png
+res://.import/silenced_smg.png-f6daef65d95c839f1032a840e018d593.s3tc.stex to res://Textures/Weapons/silenced_smg.png
+res://.import/steyr.png-94812f8c22a24266024da4ecc55ef9a7.s3tc.stex to res://Textures/Weapons/steyr.png
+res://.import/vag72.png-b4ad07edf1109e3226f08b36e5ff34ee.s3tc.stex to res://Textures/Weapons/vag72.png
+res://.import/zippy.png-1c14f9a8359380a10f9b190476d60c27.s3tc.stex to res://Textures/Weapons/zippy.png
+res://.import/zzzgrenade.png-1551571b76aeb3df76c657b13453c2f8.s3tc.stex to res://Textures/Weapons/zzzgrenade.png
+res://.import/face1.png-563887c87bf1bf8245ba0980b4ece071.s3tc.stex to res://Textures/abraxas/face1.png
+res://.import/face2.png-063eb42cb3cd3535e4b8c8b91d850ce9.s3tc.stex to res://Textures/abraxas/face2.png
+res://.import/face3.png-ad8193bdf1aa3ef0e6d40ae657401100.s3tc.stex to res://Textures/abraxas/face3.png
+res://.import/face4.png-e4d8dbbfbe42d4179b70d89b69df8d9a.s3tc.stex to res://Textures/abraxas/face4.png
+res://.import/face5.png-9417e0be35176f9dd33ee45c1bce56ac.s3tc.stex to res://Textures/abraxas/face5.png
+res://.import/face6.png-d0dffc95613c7bd6c0c250eebe8c870a.s3tc.stex to res://Textures/abraxas/face6.png
+res://.import/building_2_night_emission.png-13509e5114dc4953ebea156c367aa0f3.s3tc.stex to res://Textures/building_2_night_emission.png
+res://.import/ending2face.png-0a76daf9337823202a1f7b99bfe2981e.s3tc.stex to res://Textures/ending2face.png
+res://.import/minecraft.png-7f36baf9f474135db961a08f3fd4ebdb.s3tc.stex to res://Textures/minecraft.png
+res://.import/mywork.png-2a722bb5c62d5d131b0e546f51e78bb3.s3tc.stex to res://Textures/mywork.png
+res://.import/Enemy_Night_Creep.png-eb669fcb3a0dc50be27ac932834941c9.s3tc.stex to res://Textures/NPC/Enemy_Night_Creep.png
+res://.import/Enemy_Nude.png-e6b3e37faa56be9010c26a10dad7a151.s3tc.stex to res://Textures/NPC/Enemy_Nude.png
+res://.import/Enemy_Security.png-5fefd6ae46ff8761607d5ce32f80ed11.s3tc.stex to res://Textures/NPC/Enemy_Security.png
+res://.import/Enemy_Ship_Security.png-e645e5339c6005728b0ca3a11605a6bf.s3tc.stex to res://Textures/NPC/Enemy_Ship_Security.png
+res://.import/Enemy_Swamp.png-b3c87f993cead54cc9bff56f3b7d2f15.s3tc.stex to res://Textures/NPC/Enemy_Swamp.png
+res://.import/Enemy_Worker.png-48262831940ef42263cb341738595899.s3tc.stex to res://Textures/NPC/Enemy_Worker.png
+res://.import/Enemy_Zombie.png-92a9281dd85b81078eb30a90b505c47c.s3tc.stex to res://Textures/NPC/Enemy_Zombie.png
+res://.import/Enemy_Zombie2.png-74169e71fd5b564a5fc896acd357dfcc.s3tc.stex to res://Textures/NPC/Enemy_Zombie2.png
+res://.import/Night_Civ.png-bbb247f3491899a10c92e8c83fa4572c.s3tc.stex to res://Textures/NPC/Night_Civ.png
+res://.import/Night_Civ2.png-b34081620ac73fb12c810f3a86f50df5.s3tc.stex to res://Textures/NPC/Night_Civ2.png
+res://.import/Objective_CEO.png-158f672c26e37d236ebf2d4bc4b52748.s3tc.stex to res://Textures/NPC/Objective_CEO.png
+res://.import/Objective_Chief.png-42295e03f06964cd533db67be333ccbe.s3tc.stex to res://Textures/NPC/Objective_Chief.png
+res://.import/Objective_Pinky.png-1c5ac0813cedadace7e1334a5123321e.s3tc.stex to res://Textures/NPC/Objective_Pinky.png
+res://.import/bosssguy_clothes.png-943681f3853070a3372a34c870045a61.s3tc.stex to res://Textures/NPC/bosssguy_clothes.png
+res://.import/cultist_civilian.png-dc558978fc792e6a33afbf49ba533925.s3tc.stex to res://Textures/NPC/cultist_civilian.png
+res://.import/enemy_cultist_enemy.png-a9f005794344e1afd0c64c7b047f0a09.s3tc.stex to res://Textures/NPC/enemy_cultist_enemy.png
+res://.import/enemy_cultist_leader.png-9e4ee924c8b8f7134f999fe7e6e1d013.s3tc.stex to res://Textures/NPC/enemy_cultist_leader.png
+res://.import/enemy_cultist_leader2.png-1ac133ce5ff8806b7339eb0b81585148.s3tc.stex to res://Textures/NPC/enemy_cultist_leader2.png
+res://.import/enemygun.png-a670df4a43ef51ea3d496a64f9707a74.s3tc.stex to res://Textures/NPC/enemygun.png
+res://.import/killerbot_alt.png-870c14602c8b849b7fef283d559777f6.s3tc.stex to res://Textures/NPC/killerbot_alt.png
+res://.import/lifebosshead.png-8654981457cc0aaf1c7a436b0ee85979.s3tc.stex to res://Textures/NPC/lifebosshead.png
+res://.import/melee.png-a1ca1bd890562cd8c05e177f2e71059a.s3tc.stex to res://Textures/NPC/melee.png
+res://.import/melee_dagger.png-1def877a0d7443b453ce00d0079e53e4.s3tc.stex to res://Textures/NPC/melee_dagger.png
+res://.import/pig.png-2ef7c1842605881eaf0392a2e2694603.s3tc.stex to res://Textures/NPC/pig.png
+res://.import/pig2.png-4a20f3fcd4c82a105b9af8dd2dbf2c31.s3tc.stex to res://Textures/NPC/pig2.png
+res://.import/1.png-d5781b50ad089e45e20c77157d5589c3.s3tc.stex to res://Textures/Noise/1.png
+res://.import/2.png-eecd8a9a607569f6f6926e38c80a0f00.s3tc.stex to res://Textures/Noise/2.png
+res://.import/3.png-dc72c915b4c926eb3fc67217d9797ccc.s3tc.stex to res://Textures/Noise/3.png
+res://.import/Explosion1.png-765b78061904cdc60b7ac2bb7bde30a8.s3tc.stex to res://Textures/Particles/Explosion1.png
+res://.import/Generic_Shell.png-f3d8526e6d169a3f1449cb5198be4991.s3tc.stex to res://Textures/Particles/Generic_Shell.png
+res://.import/mainguy_clothes.png-5cb4bae278eb1c9d381c14abdc4a6d73.s3tc.stex to res://Textures/Misc/mainguy_clothes.png
+res://.import/radio.png-8850ab6eeb509a05c53c45e231871473.s3tc.stex to res://Textures/Misc/radio.png
+res://.import/snirby.png-e9d2bf8b7a0e75c2f84493955b88eb42.s3tc.stex to res://Textures/Misc/snirby.png
+res://.import/speaker.png-c6e415e2dc764f4f72ff219655eef440.s3tc.stex to res://Textures/Misc/speaker.png
+res://.import/vendingmachine.png-d2fa3d579e6349f930125e1fc754dfa9.s3tc.stex to res://Textures/Misc/vendingmachine.png
+res://.import/Elsa.png-29b6adf9a54b5a219ea2be1f259b97a6.s3tc.stex to res://Textures/NPC/Elsa.png
+res://.import/Enemey_Skeleton.png-734e15918d0034d1b41a35af606c4497.s3tc.stex to res://Textures/NPC/Enemey_Skeleton.png
+res://.import/Enemy_Assassin.png-5804e293586b5f89cc17d9246e851742.s3tc.stex to res://Textures/NPC/Enemy_Assassin.png
+res://.import/Enemy_Assassin_Alt.png-2061d977f1d9bf5e907366c4d0e67743.s3tc.stex to res://Textures/NPC/Enemy_Assassin_Alt.png
+res://.import/Enemy_Civilian.png-441e9ca63ec5e408d4eedd8986827dfd.s3tc.stex to res://Textures/NPC/Enemy_Civilian.png
+res://.import/Enemy_Civilian2.png-0d45ea80ac9d74fad368f5ca1f659e52.s3tc.stex to res://Textures/NPC/Enemy_Civilian2.png
+res://.import/Enemy_Civilian3.png-316ecf09ae3e996f5fa8f37dfaca653e.s3tc.stex to res://Textures/NPC/Enemy_Civilian3.png
+res://.import/Enemy_Civilian4.png-92e4bcdb918187ddeb8e5bfcf4c9db56.s3tc.stex to res://Textures/NPC/Enemy_Civilian4.png
+res://.import/Enemy_CivilianDoc.png-626d0b7faf77f27a3f11401d1bd0313c.s3tc.stex to res://Textures/NPC/Enemy_CivilianDoc.png
+res://.import/Enemy_Civilian_T_Shirt_1.png-c5d627ef73142fa40c56016ec1dc5b4b.s3tc.stex to res://Textures/NPC/Enemy_Civilian_T_Shirt_1.png
+res://.import/Enemy_Civilian_T_Shirt_2.png-dcc3d75948e40e228f99ebfcb76dd218.s3tc.stex to res://Textures/NPC/Enemy_Civilian_T_Shirt_2.png
+res://.import/Enemy_Civilian_T_Shirt_3.png-ddf6956858566cd5fe7ef9a6bdee83f4.s3tc.stex to res://Textures/NPC/Enemy_Civilian_T_Shirt_3.png
+res://.import/Enemy_Cocky.png-4b0e1d297a7fe0adf2df85abab197dfd.s3tc.stex to res://Textures/NPC/Enemy_Cocky.png
+res://.import/Enemy_Cop1.png-e936e7761c38bf6c9b0a7aa4067b01f5.s3tc.stex to res://Textures/NPC/Enemy_Cop1.png
+res://.import/Enemy_Cop2.png-b80ba43326075cb9cb676301d5450bfa.s3tc.stex to res://Textures/NPC/Enemy_Cop2.png
+res://.import/Enemy_Cop_Narc.png-17ffaf963ec83e57e0ff47ea83937d36.s3tc.stex to res://Textures/NPC/Enemy_Cop_Narc.png
+res://.import/Enemy_Dog.png-4c0cdf29dcda26b405a28c003a9af7d9.s3tc.stex to res://Textures/NPC/Enemy_Dog.png
+res://.import/Enemy_Elite.png-940f62b0ac0a03c66bb6781aeae15803.s3tc.stex to res://Textures/NPC/Enemy_Elite.png
+res://.import/Enemy_Fleshrat.png-b2d9fe5d8930914dea2a9169760ef063.s3tc.stex to res://Textures/NPC/Enemy_Fleshrat.png
+res://.import/Enemy_Fleshrat2.png-bf1f4134df7766a8ef99e8f504653657.s3tc.stex to res://Textures/NPC/Enemy_Fleshrat2.png
+res://.import/Enemy_Flower.png-568e83bfd390ab36100847ca5d194ab2.s3tc.stex to res://Textures/NPC/Enemy_Flower.png
+res://.import/Enemy_Grunt.png-9664b49785997c711f4bd3ee8038255a.s3tc.stex to res://Textures/NPC/Enemy_Grunt.png
+res://.import/Enemy_Kevin.png-3b8d68e70663cd48682cceaafe68604f.s3tc.stex to res://Textures/NPC/Enemy_Kevin.png
+res://.import/Enemy_Killerbot.png-b85ed216110c10cfb97fcf820507aa95.s3tc.stex to res://Textures/NPC/Enemy_Killerbot.png
+res://.import/Enemy_Knifer.png-2dd89c05d97a109bc5f50f18016110dd.s3tc.stex to res://Textures/NPC/Enemy_Knifer.png
+res://.import/Shotgun_Shell.png-d23d2778dd18e6a7d4f46ec6f2964bce.s3tc.stex to res://Textures/Particles/Shotgun_Shell.png
+res://.import/acidball.png-6f5fa1dcc9350cf4bd88b27862091aa2.s3tc.stex to res://Textures/Particles/acidball.png
+res://.import/muzzleflashfront.png-96d9e2b1045bb49c413f62dead5f6188.s3tc.stex to res://Textures/Particles/muzzleflashfront.png
+res://.import/muzzleflashfront2.png-5ca9e89151cbabc14361dc08f27c34a7.s3tc.stex to res://Textures/Particles/muzzleflashfront2.png
+res://.import/muzzleflashside1.png-865eeedd47b2866791edd1b3675dfb3a.s3tc.stex to res://Textures/Particles/muzzleflashside1.png
+res://.import/shine.png-ede2d94bcbd215240782f2bbfe85607c.s3tc.stex to res://Textures/Particles/shine.png
+res://.import/can1.png-d56a91ce8cd00f7f29961e350fbf4862.s3tc.stex to res://Textures/Props/can1.png
+res://.import/computer.png-bb49849ca3f34948bae3066d9e1aba94.s3tc.stex to res://Textures/Props/computer.png
+res://.import/leaves.png-89055ad041fbcfed69f98997abc11b49.s3tc.stex to res://Textures/Props/leaves.png
+res://.import/monitor.png-f0256b8a6e3b7da640881b45555d2d72.s3tc.stex to res://Textures/Props/monitor.png
+res://.import/pizza.png-f17ede564451bbaf4c739933623ffb93.s3tc.stex to res://Textures/Props/pizza.png
+res://.import/pot_plant.png-4e7c0b9ba0d84a10cceb7203a26b97dd.s3tc.stex to res://Textures/Props/pot_plant.png
+res://.import/slotmachine1.png-8b5a5dd999896e264fdd932e818da204.s3tc.stex to res://Textures/Props/slotmachine1.png
+res://.import/slotmachine2.png-56ca6c5e0f05c77c0fb0ad207abcf802.s3tc.stex to res://Textures/Props/slotmachine2.png
+res://.import/slots_cylinder.png-ca8d83584727b10e936fa6eba97e923b.s3tc.stex to res://Textures/Props/slots_cylinder.png
+res://.import/super_cruncher.png-c535f34540a8f28f1c795cbec554f185.s3tc.stex to res://Textures/Props/super_cruncher.png
+res://.import/swampbush.png-0edcbc20648493c6a60e3f5d977428ff.s3tc.stex to res://Textures/Props/swampbush.png
+res://.import/toilet.png-78001c0b51842452d61ae5c7f7fd896f.s3tc.stex to res://Textures/Props/toilet.png
+res://.import/toiletUV.png-1649e0ccbd44ad8ac2157055c5bbf7bf.s3tc.stex to res://Textures/Props/toiletUV.png
+res://.import/AMMO.png-f08f9375068a9b595aaa8bc0f08292aa.s3tc.stex to res://Textures/UI/AMMO.png
+res://.import/locker.png-08a9f5e8e6aee4b51847e01c0f532fd7.s3tc.stex to res://Maps/textures/PD/locker.png
+res://.import/manhole.png-136a8cd21bfa61abc73ff4bd4b537ef3.s3tc.stex to res://Maps/textures/PD/manhole.png
+res://.import/oldbooks.png-72645b0e51224cbb88dbf6f3986a21cb.s3tc.stex to res://Maps/textures/PD/oldbooks.png
+res://.import/target.png-bd7e7a4f9feb0bd9410a0996bd290e51.s3tc.stex to res://Maps/textures/PD/target.png
+res://.import/bluetilekitchen.png-5b2b7a035a62e7b2c7170e8f3f93c390.s3tc.stex to res://Maps/textures/apartment/bluetilekitchen.png
+res://.import/ceiling.png-5a89879925c19423ae5af76e1f81b817.s3tc.stex to res://Maps/textures/apartment/ceiling.png
+res://.import/crungewallpaper.png-23bc926daf04c837d164bc858f051ed6.s3tc.stex to res://Maps/textures/apartment/crungewallpaper.png
+res://.import/cupboard.png-665843339a6dd73f332bc5da33922799.s3tc.stex to res://Maps/textures/apartment/cupboard.png
+res://.import/grandma.png-092a303222f5202bcfa74a8c2b1688df.s3tc.stex to res://Maps/textures/apartment/grandma.png
+res://.import/grandma2.png-6969088b2d164f95709562fbc061a118.s3tc.stex to res://Maps/textures/apartment/grandma2.png
+res://.import/grandma3.png-e03e226cc8a61eee44c22ea3d5ff611b.s3tc.stex to res://Maps/textures/apartment/grandma3.png
+res://.import/oven.png-89fe1affc8bb872f914557c7ede11830.s3tc.stex to res://Maps/textures/apartment/oven.png
+res://.import/whitedoor.png-d08419440cd1c5245da8422e7ce05c7d.s3tc.stex to res://Maps/textures/apartment/whitedoor.png
+res://.import/1.png-7d1508f5ac5e748e7b57b3b656144de0.s3tc.stex to res://Maps/textures/base/1.png
+res://.import/BlackWall.png-48cf15b334abfd205164d3be65143d82.s3tc.stex to res://Maps/textures/base/BlackWall.png
+res://.import/Diamond_Tile.png-6d74b3cb44ae4298778f8964eb7830e6.s3tc.stex to res://Maps/textures/base/Diamond_Tile.png
+res://.import/Diamond_Tile_blue.png-e383eedd13d723f15c5563a1a97cd4af.s3tc.stex to res://Maps/textures/base/Diamond_Tile_blue.png
+res://.import/Diamond_Tile_green.png-0a97f43aef4f08a2fceea33aa4860af2.s3tc.stex to res://Maps/textures/base/Diamond_Tile_green.png
+res://.import/Elevator1.png-5fb52d9f2f5859a5e830c3100c77f392.s3tc.stex to res://Maps/textures/base/Elevator1.png
+res://.import/Granite1.png-aac7d56f5c483d09320594bcd37249ce.s3tc.stex to res://Maps/textures/base/Granite1.png
+res://.import/Granite2.png-b057a651687e86fd155ad397f79c4e29.s3tc.stex to res://Maps/textures/base/Granite2.png
+res://.import/GreyWall.png-71b07924276fc12e41bec6550b43de85.s3tc.stex to res://Maps/textures/base/GreyWall.png
+res://.import/Marble1green.png-8493dea4759d04be343db0110c16cae0.s3tc.stex to res://Maps/textures/base/Marble1green.png
+res://.import/Marble1tan.png-a5d896300c6ddaf1698438109864ad43.s3tc.stex to res://Maps/textures/base/Marble1tan.png
+res://.import/MarbleFace1.png-b08eb3c4f014ef43cb9d1a9696b3c2a8.s3tc.stex to res://Maps/textures/base/MarbleFace1.png
+res://.import/Marble_Light.png-d08d64b22f157fbdd27f0fc0d97fe442.s3tc.stex to res://Maps/textures/base/Marble_Light.png
+res://.import/OliveWall.png-ad979dbd454eecc3659a53c7283b29df.s3tc.stex to res://Maps/textures/base/OliveWall.png
+res://.import/arches.png-d93a6c6ed87b9245fc411e20abc79e25.s3tc.stex to res://Maps/textures/base/arches.png
+res://.import/bathroom.png-19c3f38ac454501a7911e5c60176c159.s3tc.stex to res://Maps/textures/base/bathroom.png
+res://.import/bl_red_cyan.png-a153576b16a3b3c5d899651e73d0bed2.s3tc.stex to res://Maps/textures/base/bl_red_cyan.png
+res://.import/blackmarble.png-48deafb7d42a88a037857467ab5a2a80.s3tc.stex to res://Maps/textures/base/blackmarble.png
+res://.import/blue_granite.png-02cc1db1c3c47d19fe58636835accc72.s3tc.stex to res://Maps/textures/base/blue_granite.png
+res://.import/blue_yellow.png-65c7b30d665b9b5d08dc70a4a6fb9f31.s3tc.stex to res://Maps/textures/base/blue_yellow.png
+res://.import/bluewall.png-f002fad0401bf31211eecfce4fe89a38.s3tc.stex to res://Maps/textures/base/bluewall.png
+res://.import/building_1.png-4729cd31c8a6fbd047080b52fc7f60dc.s3tc.stex to res://Maps/textures/base/building_1.png
+res://.import/building_2.png-ad72f806ce7b62d1e6c5095f1351d367.s3tc.stex to res://Maps/textures/base/building_2.png
+res://.import/building_2_night.png-3c4aa681f5f97ff4a85668acecb15e8f.s3tc.stex to res://Maps/textures/base/building_2_night.png
+res://.import/building_3.png-d851ea08107d72ae4ef6255131fb2d06.s3tc.stex to res://Maps/textures/base/building_3.png
+res://.import/building_3_no_logo.png-c0066c5efcd7df7047425baf057b4983.s3tc.stex to res://Maps/textures/base/building_3_no_logo.png
+res://.import/catacomb.png-eb4b7189e40337a7806bc6caf7dd4e70.s3tc.stex to res://Maps/textures/base/catacomb.png
+res://.import/chainlink.png-99bb6c61a20c5ef580b71a90edd72587.s3tc.stex to res://Maps/textures/base/chainlink.png
+res://.import/chessboard.png-f263fdb91e4345fe5a26a2c6453c855a.s3tc.stex to res://Maps/textures/base/chessboard.png
+res://.import/cobble1.png-dbc9f902574841e04df4611a992c0eb2.s3tc.stex to res://Maps/textures/base/cobble1.png
+res://.import/cobble2.png-ee247c4fd4177faa38e53d0bab8ea6cf.s3tc.stex to res://Maps/textures/base/cobble2.png
+res://.import/cyber_1-export.png-137ac3caad1777d08b3b013f7d569537.s3tc.stex to res://Maps/textures/base/cyber_1-export.png
+res://.import/cyber_1.png-8914996a5ee8c7357071372ce22c44cc.s3tc.stex to res://Maps/textures/base/cyber_1.png
+res://.import/cyber_2.png-70f62af5f8ba7913827f00f4f3e479b1.s3tc.stex to res://Maps/textures/base/cyber_2.png
+res://.import/divinedoor.png-91fad0f33243cfc38331b36b1ab0cb29.s3tc.stex to res://Maps/textures/base/divinedoor.png
+res://.import/flesh.png-59422bdf383cac1aad7090b03a37c146.s3tc.stex to res://Maps/textures/base/flesh.png
+res://.import/flesh2.png-6a5d2f80343dff8044bd6bed4a013111.s3tc.stex to res://Maps/textures/base/flesh2.png
+res://.import/flesh_tile.png-e6e9f2a64883b1a18dda5c654dc9cc2a.s3tc.stex to res://Maps/textures/base/flesh_tile.png
+res://.import/flower.png-14cea630a37083b69f6b4452262322fe.s3tc.stex to res://Maps/textures/base/flower.png
+res://.import/freak_tile.png-598e999f6dcf67985eeb01284a38816c.s3tc.stex to res://Maps/textures/base/freak_tile.png
+res://.import/frog1.png-91d35a566ba57d92fcc610bc96e4ae4f.s3tc.stex to res://Maps/textures/base/frog1.png
+res://.import/glass1.png-25e545cbdac21b8758c19ba5a2658b6e.s3tc.stex to res://Maps/textures/base/glass1.png
+res://.import/glass_green.png-cd9f268508523193f58143326718d57d.s3tc.stex to res://Maps/textures/base/glass_green.png
+res://.import/grass.png-ad0e76ad36c069d44a672c0257d8724a.s3tc.stex to res://Maps/textures/base/grass.png
+res://.import/RedWall.png-f7b9cc464d5b2b649e289b039e28b7e5.s3tc.stex to res://Maps/textures/base/RedWall.png
+res://.import/Red_Tile.png-5b5dc8201e5d38267cc649bf8ec570e0.s3tc.stex to res://Maps/textures/base/Red_Tile.png
+res://.import/Steel1.png-e8568ffea45dd07de29a9cbad832728a.s3tc.stex to res://Maps/textures/base/Steel1.png
+res://.import/Stone1.png-5dc06aa42995c2fed605739de9754bce.s3tc.stex to res://Maps/textures/base/Stone1.png
+res://.import/Stone2.png-4d4ecfbd19c36d5cef3413890d69ef6b.s3tc.stex to res://Maps/textures/base/Stone2.png
+res://.import/Stone2face.png-0e303c0d0cfd5759889a55c7a1c62970.s3tc.stex to res://Maps/textures/base/Stone2face.png
+res://.import/Stone2green.png-e6ebc2d21a9242e274b67e8088d4fb37.s3tc.stex to res://Maps/textures/base/Stone2green.png
+res://.import/Stone2seamless.png-1ad1574233fce6085f3673ccdc1d393d.s3tc.stex to res://Maps/textures/base/Stone2seamless.png
+res://.import/Stone3.png-823aedcba92406db858f0004dc78fc5e.s3tc.stex to res://Maps/textures/base/Stone3.png
+res://.import/Stone4.png-463bc83357b19ff00385cc8dbdd7e577.s3tc.stex to res://Maps/textures/base/Stone4.png
+res://.import/Stone5.png-761e3e42aedaec5a46f048ed37a555ec.s3tc.stex to res://Maps/textures/base/Stone5.png
+res://.import/Stone6.png-3380a717dd7724d56793fadc465d6212.s3tc.stex to res://Maps/textures/base/Stone6.png
+res://.import/Stone_Tile.png-67e33b69431b928268b1f09366f324fa.s3tc.stex to res://Maps/textures/base/Stone_Tile.png
+res://.import/Stone_Tile_dark.png-fa32478e5b9f45006e6e695b76fd78ae.s3tc.stex to res://Maps/textures/base/Stone_Tile_dark.png
+res://.import/Stone_Wall_1.png-e3b10a049a2d10662996d455de16dcf6.s3tc.stex to res://Maps/textures/base/Stone_Wall_1.png
+res://.import/Stone_wall_2.png-1f7dba53c5219d74a2a39b57a2cde048.s3tc.stex to res://Maps/textures/base/Stone_wall_2.png
+res://.import/TealWall.png-340080e6bdac2486d4612864dc61891b.s3tc.stex to res://Maps/textures/base/TealWall.png
+res://.import/Teal_Tile.png-bf7494b586976815d043a6c89f725d7e.s3tc.stex to res://Maps/textures/base/Teal_Tile.png
+res://.import/Teal_Tile2.png-6c06c34dca2556873df353aa3d775273.s3tc.stex to res://Maps/textures/base/Teal_Tile2.png
+res://.import/Tile_Wall.png-6c1a6bc9438429eec64caabac95bd90c.s3tc.stex to res://Maps/textures/base/Tile_Wall.png
+res://.import/Wall_Crusty.png-787576c263d156d8a19d78cf149c9475.s3tc.stex to res://Maps/textures/base/Wall_Crusty.png
+res://.import/Wall_Crusty_face.png-d2e6eeff2f73b2ad3aeccfc9dc45b160.s3tc.stex to res://Maps/textures/base/Wall_Crusty_face.png
+res://.import/WhiteWall.png-cd02db29d9c67692ad20df134cf7d2f9.s3tc.stex to res://Maps/textures/base/WhiteWall.png
+res://.import/Wood1.png-67428e1018b0f7583f9f4ef7d97e3c90.s3tc.stex to res://Maps/textures/base/Wood1.png
+res://.import/Wood2.png-b17746cd892093efb11898aabfa88e83.s3tc.stex to res://Maps/textures/base/Wood2.png
+res://.import/Wood3.png-46eb3df252c21fcfbeafc71a86ff54a5.s3tc.stex to res://Maps/textures/base/Wood3.png
+res://.import/Wood_Door2.png-7cce5d7451d10de0456fbedea9883f96.s3tc.stex to res://Maps/textures/base/Wood_Door2.png
+res://.import/airduct.png-14646ae28772f10f8dfabb4f0180efb7.s3tc.stex to res://Maps/textures/base/airduct.png
+res://.import/alien_1.png-876b068cc6ed884291f992607460e49a.s3tc.stex to res://Maps/textures/base/alien_1.png
+res://.import/alien_2.png-0d454da3ae579d99ecc19a800212da95.s3tc.stex to res://Maps/textures/base/alien_2.png
+res://.import/empty.png-411ec5062d8bae458a92092b88c06b50.s3tc.stex to res://Cutscenes/empty.png
+res://.import/text1.png-70e4341f88100039c83c5cfa94418c1e.s3tc.stex to res://Cutscenes/text1.png
+res://.import/text2.png-201ddf86ec59362626157e0f3f40b95f.s3tc.stex to res://Cutscenes/text2.png
+res://.import/text3.png-06d42a4641e96ef358e0552d3034e335.s3tc.stex to res://Cutscenes/text3.png
+res://.import/title10.png-f8c2376bd61a4d1afdb47ccfbada3745.s3tc.stex to res://Cutscenes/title10.png
+res://.import/title2.png-836a533fde343ec13c5abc10882105a9.s3tc.stex to res://Cutscenes/title2.png
+res://.import/title3.png-2834273338488629874a414b41773c13.s3tc.stex to res://Cutscenes/title3.png
+res://.import/title4.png-590b8ad92b8f40fd51f24fbf3d5dbf10.s3tc.stex to res://Cutscenes/title4.png
+res://.import/title5.png-b66cf2f901c7ad7b31dd4cc04010323c.s3tc.stex to res://Cutscenes/title5.png
+res://.import/title6.png-de3fbc563968e92f0fcb0dc97645427c.s3tc.stex to res://Cutscenes/title6.png
+res://.import/title7.png-f4954008cabb48e412f766e8cb5bb4b7.s3tc.stex to res://Cutscenes/title7.png
+res://.import/title8.png-320fd08dc327aed603fc2628bada14b7.s3tc.stex to res://Cutscenes/title8.png
+res://.import/bitmap64.png-999fb2e06114c5ee1ddd5d5f0c91af10.s3tc.stex to res://Fonts/bitmap64.png
+res://.import/tall64.png-b00cb0ffbc07c9728c5b817c612b5ef4.s3tc.stex to res://Fonts/tall64.png
+res://.import/Level1.png-a34e261adbdd34154cb08f44fb56cd86.s3tc.stex to res://Levels/Level1.png
+res://.import/LightMap.png-381b4fd4fcc8a3dac0665fdf8380d965.s3tc.stex to res://Levels/Level1LightMap/LightMap.png
+res://.import/Level6.png-b23899625cdefbf8b244041c5a04a09b.s3tc.stex to res://Levels/Level6.png
+res://.import/Level8.png-f41294513f5dd35a8dc37d872ee24181.s3tc.stex to res://Levels/Level8.png
+res://.import/Real_Test_Level.png-53655a104ef4f4a1580b19e5adb1add4.s3tc.stex to res://Levels/Real_Test_Level.png
+res://.import/swamptree.png-d07e6f9aaff4d65009b1bfae019c8b77.s3tc.stex to res://Maps/textures/swamp/swamptree.png
+res://.import/swampwater1.png-2917566a91fcc5ce87f3b5be9669698a.s3tc.stex to res://Maps/textures/swamp/swampwater1.png
+res://.import/bugs.png-7bdf0dfd6986f26879ed2f90ae1f85c9.s3tc.stex to res://Maps/textures/trauma/bugs.png
+res://.import/ladder1.png-08322487e2be90c78ee43317e42a49bd.s3tc.stex to res://Maps/textures/trauma/ladder1.png
+res://.import/pillar.png-3865a60f47256939f13dbfca08327ffc.s3tc.stex to res://Maps/textures/trauma/pillar.png
+res://.import/pureblack.png-66a9c9b43979b07481e660b8c971dde5.s3tc.stex to res://Maps/textures/trauma/pureblack.png
+res://.import/tface1.png-fad946aa7e58aeb0482a16d9c67f6a2b.s3tc.stex to res://Maps/textures/trauma/tface1.png
+res://.import/tstone.png-8f621385cc017b69ae78122add050f43.s3tc.stex to res://Maps/textures/trauma/tstone.png
+res://.import/tstone2.png-178db27b552fb228d96d902d72619d43.s3tc.stex to res://Maps/textures/trauma/tstone2.png
+res://.import/twood.png-33966318a2bf30dd97afae6971475eb8.s3tc.stex to res://Maps/textures/trauma/twood.png
+res://.import/switch.png-1164183c832d57219332e2471b498a7a.s3tc.stex to res://Maps/textures/base/switch.png
+res://.import/wall_window.png-82d44c0692f6280a399163df2a9443d5.s3tc.stex to res://Maps/textures/base/wall_window.png
+res://.import/water.png-f2544cb6af4b5c4661f9d952a8ea3170.s3tc.stex to res://Maps/textures/base/water.png
+res://.import/wood_door.png-7469ea830fe38152c2811bfcb7b000b7.s3tc.stex to res://Maps/textures/base/wood_door.png
+res://.import/woodbottomwall.png-61e2390fbff4541c44cbbbf295148537.s3tc.stex to res://Maps/textures/base/woodbottomwall.png
+res://.import/painting1.png-49b77b391a44dc398123bc84320b7935.s3tc.stex to res://Maps/textures/castle/painting1.png
+res://.import/darkred_wall.png-5af0af5b3bfa8370c9bcb8258d8400d3.s3tc.stex to res://Maps/textures/house/darkred_wall.png
+res://.import/darkwood.png-d4fe60304fb6e1b3e4970e64989a09be.s3tc.stex to res://Maps/textures/house/darkwood.png
+res://.import/light_wall.png-81adfed4714900c57de8ad372fc217dd.s3tc.stex to res://Maps/textures/house/light_wall.png
+res://.import/orange_wall.png-90c3b0f0c2be6c037115d4701daba308.s3tc.stex to res://Maps/textures/house/orange_wall.png
+res://.import/town_building1.png-bf10a67e48f2afb014d86cab77c13f0d.s3tc.stex to res://Maps/textures/house/town_building1.png
+res://.import/town_building2.png-e54b9be023af4de0bacd4aee63dee5ec.s3tc.stex to res://Maps/textures/house/town_building2.png
+res://.import/books.png-570c47724be61f2d0a43a12a2003496e.s3tc.stex to res://Maps/textures/mall/books.png
+res://.import/clothes.png-ec4f5a3271fd86f7ad1c01dea2ef73c5.s3tc.stex to res://Maps/textures/mall/clothes.png
+res://.import/donutworld.png-4f66886fa8dbe5bec0c0723f13f68b8d.s3tc.stex to res://Maps/textures/mall/donutworld.png
+res://.import/gorbino.png-2a2ee8205345cb3889d9ae67826ce45a.s3tc.stex to res://Maps/textures/mall/gorbino.png
+res://.import/hatch.png-a71a9cd354652dc069e999cc65e95639.s3tc.stex to res://Maps/textures/mall/hatch.png
+res://.import/pale_blue_tile.png-c5d660bdee7092316baf8e8f62344538.s3tc.stex to res://Maps/textures/mall/pale_blue_tile.png
+res://.import/pale_green_tile.png-ac228a4dd8e4863a5f3cb4bf7a95f7a1.s3tc.stex to res://Maps/textures/mall/pale_green_tile.png
+res://.import/reddish_tile.png-068b376657f2fdb11bc0ff54646f7ca2.s3tc.stex to res://Maps/textures/mall/reddish_tile.png
+res://.import/store_game.png-39e80dede19c2ef2b1e41fbf0612d223.s3tc.stex to res://Maps/textures/mall/store_game.png
+res://.import/store_gun.png-f570db77a4064a4d74386ee490af3cd0.s3tc.stex to res://Maps/textures/mall/store_gun.png
+res://.import/store_happiness.png-0015422ed89cc052316054c27d8c080d.s3tc.stex to res://Maps/textures/mall/store_happiness.png
+res://.import/store_plant_heaven.png-eee7eaab8ff7e9912da21db335450a8d.s3tc.stex to res://Maps/textures/mall/store_plant_heaven.png
+res://.import/store_power.png-755c6cad071306b3dfcdc000774a344b.s3tc.stex to res://Maps/textures/mall/store_power.png
+res://.import/store_punishment.png-3c139239c2f9b91de9121602fb5d6bb3.s3tc.stex to res://Maps/textures/mall/store_punishment.png
+res://.import/store_purity.png-362e9df50b54613e94c11eb1aa2b0f3f.s3tc.stex to res://Maps/textures/mall/store_purity.png
+res://.import/grate.png-7044d1e1084ee276284019ad4fe71d7c.s3tc.stex to res://Maps/textures/base/grate.png
+res://.import/greenplank.png-179e024875067d00b71ade15a2dcb8dd.s3tc.stex to res://Maps/textures/base/greenplank.png
+res://.import/greenwall.png-218e6eb8f39c4d087bd7fe04c108849e.s3tc.stex to res://Maps/textures/base/greenwall.png
+res://.import/greyface.png-677f2bd7a003472e380d8f29ca3a60a9.s3tc.stex to res://Maps/textures/base/greyface.png
+res://.import/greyfacedstrct.png-5c5de693da334eb73925491db8a396d0.s3tc.stex to res://Maps/textures/base/greyfacedstrct.png
+res://.import/helldoor.png-557330a73ead088369d94058485a1e32.s3tc.stex to res://Maps/textures/base/helldoor.png
+res://.import/joe2.png-a28a44330d87d70dc7cde9d11a33c9c9.s3tc.stex to res://Maps/textures/base/joe2.png
+res://.import/light1.png-aba9b7f9060dc3a5c3cc77c48d25094c.s3tc.stex to res://Maps/textures/base/light1.png
+res://.import/light_effect.png-450574390ee90b49ac79b44660ff1c01.s3tc.stex to res://Maps/textures/base/light_effect.png
+res://.import/maario.png-84e9a59125bfa8bca80972469baa2ef1.s3tc.stex to res://Maps/textures/base/maario.png
+res://.import/metal_door.png-b327fb80ce8dbf0dfc46caa5025ab1d5.s3tc.stex to res://Maps/textures/base/metal_door.png
+res://.import/mosaic_1.png-ca8640eed4193617273401bddf5ea68c.s3tc.stex to res://Maps/textures/base/mosaic_1.png
+res://.import/moss.png-2250ef0a21efc7a4919248644bedfe85.s3tc.stex to res://Maps/textures/base/moss.png
+res://.import/moss2.png-859856a7ad493621092ade46106e25d9.s3tc.stex to res://Maps/textures/base/moss2.png
+res://.import/moss2dstrct.png-610eade6c7ec0ebe7254a5cc7ca7580a.s3tc.stex to res://Maps/textures/base/moss2dstrct.png
+res://.import/muscle.png-82de25e91307e651d39cbdfb92a0665e.s3tc.stex to res://Maps/textures/base/muscle.png
+res://.import/muskface.png-11f8bf722f8d272697c370a4ca53430e.s3tc.stex to res://Maps/textures/base/muskface.png
+res://.import/noise.png-79738fe168dc4bfe40087dfae9546fa4.s3tc.stex to res://Maps/textures/base/noise.png
+res://.import/non_slip_tile.png-58156f0b57c367628a3c93547cd233e9.s3tc.stex to res://Maps/textures/base/non_slip_tile.png
+res://.import/pizzahouse.png-50be0a150a5370087cb853e062e3ec16.s3tc.stex to res://Maps/textures/base/pizzahouse.png
+res://.import/plain_wall.png-633201d6ac5043c3512a97d242d361e2.s3tc.stex to res://Maps/textures/base/plain_wall.png
+res://.import/plain_wall2.png-a915234b89775e08b16d8fc6069a82e7.s3tc.stex to res://Maps/textures/base/plain_wall2.png
+res://.import/plain_wall_dark.png-40860730ce8599858eeb8b13d8ba077c.s3tc.stex to res://Maps/textures/base/plain_wall_dark.png
+res://.import/plain_wall_dark_cracked.png-f2a457df3b60e69710c5053c974e70c1.s3tc.stex to res://Maps/textures/base/plain_wall_dark_cracked.png
+res://.import/plain_wall_greenred.png-d04c8cbd0b9a8c21acc69901aba97432.s3tc.stex to res://Maps/textures/base/plain_wall_greenred.png
+res://.import/profanedoor.png-7ef7058dd1e99250b89a9cf65e091c90.s3tc.stex to res://Maps/textures/base/profanedoor.png
+res://.import/psycho_tile.png-32b945312616eb62bc0b6014bfcc9536.s3tc.stex to res://Maps/textures/base/psycho_tile.png
+res://.import/red_water.png-3090a8e509bd1c2cc877b46e37af78c0.s3tc.stex to res://Maps/textures/base/red_water.png
+res://.import/rug1.png-ea18676072d77e763607f15d96e226a1.s3tc.stex to res://Maps/textures/base/rug1.png
+res://.import/star_tile.png-bbb938b7fcb9fda31696235540f8a91a.s3tc.stex to res://Maps/textures/base/star_tile.png
+res://.import/sewerwalldark.png-7d08a18358de637f9ec1a23ee38d859e.s3tc.stex to res://Maps/textures/sewer/sewerwalldark.png
+res://.import/sewerwallneon.png-54df1f33f390ad8a5ed826dd0763842c.s3tc.stex to res://Maps/textures/sewer/sewerwallneon.png
+res://.import/slimecarpet.png-59a756aaa82ff483d102e7a485df3c7d.s3tc.stex to res://Maps/textures/sewer/slimecarpet.png
+res://.import/bubble.png-eee23a2c25240eedbef97257f9d68b5e.s3tc.stex to res://Maps/textures/ship/bubble.png
+res://.import/cabindoor.png-a279f6a28a54e148f02e37984d1138b2.s3tc.stex to res://Maps/textures/ship/cabindoor.png
+res://.import/cabinwindow.png-cb4d2a766100a7e3624334a7220c9395.s3tc.stex to res://Maps/textures/ship/cabinwindow.png
+res://.import/carpet.png-b050bf47cc051467ef537ff78d63fad0.s3tc.stex to res://Maps/textures/ship/carpet.png
+res://.import/carpet2.png-15d441b2be5d1ac3de4bfc548bdc2115.s3tc.stex to res://Maps/textures/ship/carpet2.png
+res://.import/carpet3.png-5bc57dc4eb6572588b9dda6256c478ed.s3tc.stex to res://Maps/textures/ship/carpet3.png
+res://.import/corridor.png-1ae049cbd9752ae6fc84148e280fb2f1.s3tc.stex to res://Maps/textures/ship/corridor.png
+res://.import/dazzle.png-85ee22e495e4de9fd118c07f240d74c0.s3tc.stex to res://Maps/textures/ship/dazzle.png
+res://.import/fence.png-583296e28ef4675167d58574cf55aaae.s3tc.stex to res://Maps/textures/ship/fence.png
+res://.import/shipwindows.png-d0132e2f8ce9ffc0d2f323af993e73ca.s3tc.stex to res://Maps/textures/ship/shipwindows.png
+res://.import/sun.png-3066b2993984e260a3b76ffe7ffa6da7.s3tc.stex to res://Maps/textures/ship/sun.png
+res://.import/ending2face.png-0cba63e81c5b558cca967bb717ba984e.s3tc.stex to res://Maps/textures/special/ending2face.png
+res://.import/exit.png-7ca6e9ff7374e31e6bc55b2147f7f10b.s3tc.stex to res://Maps/textures/special/exit.png
+res://.import/skip.png-85b75355bf147a6690fc337889c255fa.s3tc.stex to res://Maps/textures/special/skip.png
+res://.import/funko.png-9beee12cae367ac4319d0e2c50301555.s3tc.stex to res://Maps/textures/suburb/funko.png
+res://.import/suburb_brick_1.png-399bdf261f98ace733f1c251b6f3fd86.s3tc.stex to res://Maps/textures/suburb/suburb_brick_1.png
+res://.import/suburb_brick_2.png-2a4c92178ddc919c4d8979d74051ccc0.s3tc.stex to res://Maps/textures/suburb/suburb_brick_2.png
+res://.import/suburb_grass.png-be42997d8f25ef343a9efc65b70f4d85.s3tc.stex to res://Maps/textures/suburb/suburb_grass.png
+res://.import/suburb_grass_red.png-bc3e86cf74eb6a25a2b4624a57310316.s3tc.stex to res://Maps/textures/suburb/suburb_grass_red.png
+res://.import/suburb_roof_1.png-430e0b9bb6f16740c2ce16aef7f505a5.s3tc.stex to res://Maps/textures/suburb/suburb_roof_1.png
+res://.import/suburb_roof_2.png-bcead28b3864ef99c4c8c52a8c90140b.s3tc.stex to res://Maps/textures/suburb/suburb_roof_2.png
+res://.import/suburb_wall_1.png-cd988853b5328f45a8b39118d5e5b46e.s3tc.stex to res://Maps/textures/suburb/suburb_wall_1.png
+res://.import/suburb_wall_2.png-a5caae9f5c7cf75379708e85eafd6e9b.s3tc.stex to res://Maps/textures/suburb/suburb_wall_2.png
+res://.import/suburb_wall_3.png-72c153b99d7f34fa449af0219e752e52.s3tc.stex to res://Maps/textures/suburb/suburb_wall_3.png
+res://.import/swampground1.png-1f79101d0adf1a06d7592fd7afc06a90.s3tc.stex to res://Maps/textures/swamp/swampground1.png
+res://.import/swampground2.png-e769a1aebfa33c7dd5c5c43f917bbccb.s3tc.stex to res://Maps/textures/swamp/swampground2.png
+res://.import/swampground3.png-ca5f9529711ff00db6e678b732021688.s3tc.stex to res://Maps/textures/swamp/swampground3.png
+res://.import/store_strength.png-fa7fbf9ef5d5a5093064cdfbc0b65a99.s3tc.stex to res://Maps/textures/mall/store_strength.png
+res://.import/store_virtue.png-2d61a44270733dd348495575343070bb.s3tc.stex to res://Maps/textures/mall/store_virtue.png
+res://.import/tigerstripe.png-c702478b8a3d957ff6b13b253a612393.s3tc.stex to res://Maps/textures/mall/tigerstripe.png
+res://.import/1.png-99dc3b18a3866de52e774d97c0cc0012.s3tc.stex to res://Maps/textures/office/1.png
+res://.import/2.png-edf9d7afc6bf1a4f0b73fe14eede0c0e.s3tc.stex to res://Maps/textures/office/2.png
+res://.import/3-export.png-788dad894c998a937957321198913282.s3tc.stex to res://Maps/textures/office/3-export.png
+res://.import/3.png-3bcca6cdc1e85b515016cae517bd04d0.s3tc.stex to res://Maps/textures/office/3.png
+res://.import/4.png-03b07742e18c5fa64c011237909c737b.s3tc.stex to res://Maps/textures/office/4.png
+res://.import/skyscraperwindow.png-c1a3f89eb3aadc753b1f8f5d61418476.s3tc.stex to res://Maps/textures/office/skyscraperwindow.png
+res://.import/Bluered.png-7a7623551d1d8a067542c99900405062.s3tc.stex to res://Maps/textures/pyramid/Bluered.png
+res://.import/bluered2.png-5f80eba76b3a9db3654d1d64464e69b7.s3tc.stex to res://Maps/textures/pyramid/bluered2.png
+res://.import/container_end.png-ffe96b74b53071a000efac80b41df9dc.s3tc.stex to res://Maps/textures/pyramid/container_end.png
+res://.import/container_side.png-32be5a836d819a13f632207e8866cb87.s3tc.stex to res://Maps/textures/pyramid/container_side.png
+res://.import/dirt1.png-5e50f21039fa4527100b9cd017b02108.s3tc.stex to res://Maps/textures/pyramid/dirt1.png
+res://.import/heliport.png-d63a173065cfc60a58398a122905b3fa.s3tc.stex to res://Maps/textures/pyramid/heliport.png
+res://.import/sewerwall.png-8370f6483de288d9a7123d2ac64714c2.s3tc.stex to res://Maps/textures/sewer/sewerwall.png
+res://.import/sewerpipe.png-3410913b9624baa889a716fc3e4a6247.s3tc.stex to res://Maps/textures/sewer/sewerpipe.png
+res://.import/orb.png-f5a2bc5961a479727ef00dadbcfffa9c.s3tc.stex to res://Maps/textures/sewer/orb.png
+res://.import/test2.png-685702df082c543ad57b55de692980ab.s3tc.stex to res://Maps/textures/schizo/test2.png
+res://.import/test.png-d6e1a97acaacdbee966f5442a4fccca4.s3tc.stex to res://Maps/textures/schizo/test.png
+res://.import/schizodiamond.png-0337e6187f991348be0e57010044ed08.s3tc.stex to res://Maps/textures/schizo/schizodiamond.png
+res://.import/blue_granite_psx.png-0c6610745dbb1b7ae91fbd37bfc58075.s3tc.stex to res://Maps/textures/schizo/blue_granite_psx.png
+res://.import/Schizo_Blue_Yellow.png-094d42981a0f79a73dc7fcd6d8730180.s3tc.stex to res://Maps/textures/schizo/Schizo_Blue_Yellow.png
+res://.import/Meat.png-c23d9208e47fbd66937ce25de3b55b7c.s3tc.stex to res://Maps/textures/schizo/Meat.png
+res://.import/Marble1red_psx.png-c0227ec1fe81369be50a6723a69359f7.s3tc.stex to res://Maps/textures/schizo/Marble1red_psx.png
+res://.import/skull2.png-6c76512f24313ffce8f33c2375a7ce7a.s3tc.stex to res://Maps/textures/pyramid/skull2.png
+res://.import/skull1.png-2e549687a8837506691986162aa97e04.s3tc.stex to res://Maps/textures/pyramid/skull1.png
+res://.import/screen2.png-8d3bc61f9da911d94801904d6810b2e5.s3tc.stex to res://Maps/textures/pyramid/screen2.png
+res://.import/screen.png-99fd6d578d73dc936d63ccee77b94c61.s3tc.stex to res://Maps/textures/pyramid/screen.png
+res://.import/pipes.png-3c7bdebd0e705360ab3a1c8342a3655f.s3tc.stex to res://Maps/textures/pyramid/pipes.png
+------
+
+The following files were converted and saved to a non-original path, but did not have their import data rewritten.
+These files will not be re-imported when loading the project.
+res://.import/icon_decal.svg-6f00171dd2a72bb19e03ef9eedda30a9.s3tc.stex to res://.assets/addons/decals/icon_decal.png
+res://.import/icon_qodot_node.svg-f8e16c942b65e8e6f4c6a84d045cdcc4.stex to res://.assets/addons/qodot/icons/icon_qodot_node.png
+res://.import/icon_qodot_spatial.svg-91f1f2e27df14634856923a4b57ca0ff.stex to res://.assets/addons/qodot/icons/icon_qodot_spatial.png
+------
+
+The following files were not converted because support has not been implemented yet:
+res://.import/palette.lmp-607fece05ca2e6d7092d2b1487763816.tres
+res://.import/brain.obj-0968d65452300ec8b8c904532d40eb3d.mesh
+res://.import/cranialbomb.obj-44a95b3c36484da28962613c7d090286.mesh
+res://.import/cube.obj-ecd20c75680354919967c1f74dc43511.mesh
+res://.import/monkey.obj-4497fd28cacdf5828d7618e33c59dea2.mesh
+res://.import/Bonus3test.map-421d6c3c74cf6158b59362eee1094803.tres
+res://.import/Bonus4.map-744766335fd875d0ba304a57ca02eae2.tres
+res://.import/Bonus5.map-562d5f178562bc7d770b01572d103d53.tres
+res://.import/BonusEND-crash.map-d6ff0772e99c70f7f355c8ac71c0b53b.tres
+res://.import/BonusEND.map-5ee6b0f1814137f9c07124fdd1c81746.tres
+res://.import/Level1-crash.map-97010073549595eac2d502398df88229.tres
+res://.import/Level1.map-c727771eb3109c862a17b3047e84bba1.tres
+res://.import/Level10.map-c04471dc9fb9d7f30a4a8f23d65c12b6.tres
+res://.import/Level11.map-3560696545669d04385c8940274c642f.tres
+res://.import/Level12.map-d8f84cd4e4d2c8cd84ab76ac5cffd06d.tres
+res://.import/Level2-crash.map-8810aa53a39581b12cf50bcad64ff999.tres
+res://.import/Level2.map-f50e5274daeb9803b38a398cd8937c0b.tres
+res://.import/Level2backup.map-2d97bb9bc766c4a8ef2bc1737a443b7d.tres
+res://.import/Level3-crash.map-f63ce2cb96bf61ff62bb0a15b10e6365.tres
+res://.import/Level3.map-6079ffa1a29e79e91b80dba6b49e582f.tres
+res://.import/Level3backup.map-0c3e0e419db9ce799e02110b2d86bf86.tres
+res://.import/Level4.map-7e0aab0c33361545043474f8798adb15.tres
+res://.import/Level5.map-87ebf3590336c52c8b0c7a8ee53a4574.tres
+res://.import/Level6.map-f3079b96114c50601e58d92e1e75f417.tres
+res://.import/Level7-crash.map-6ef1541afbd7cd8517b7d6cac80b3c8a.tres
+res://.import/Level7.map-1f8b9bf4e4f42c2f661e95072e920c7e.tres
+res://.import/Level8-crash.map-2ee30ec59bd90554a337b2459b6cc4b5.tres
+res://.import/Level8.map-0c0040bf72049cf66de350722ce39dd6.tres
+res://.import/Level9.map-3911283cb0629d17e206875d52b846a4.tres
+res://.import/Training_Facility.map-74282517d0bffc9c06950cbfd4c9f730.tres
+res://.import/cutscene_ending1.map-70e5ec5a6487792c3c8dd3ffa26d248c.tres
+res://.import/cutscene_ending3.map-a949686121d70281e494e3a897c7dc58.tres
+res://.import/cutscene_intro.map-3fed1f2c9b87deab4137ad7dff6719f3.tres
+res://.import/test1.map-774436b5068a5dfaa546fae73e9a750a.tres
+res://.import/test2.map-1f4322fc4af599ac69aa63251a14532c.tres
+res://.import/can.obj-f5f7001386e5f7967c011e63637e527b.mesh
+res://.import/chipbag.obj-392cc0f76f223b0062d41dd0f991b184.mesh
+res://.import/computer.obj-67e1cd05539f6d1eb08036f6f15e7cb4.mesh
+res://.import/consumer.obj-47e9b24d457368232dd3da1b9d8e1e9d.mesh
+res://.import/fatberg.obj-dcc83d62f6f465128da51836508f933d.mesh
+res://.import/flechettegrenade.obj-585e06ce6c01fde4bb26b547d7e0008e.mesh
+res://.import/grenade.obj-e6943dceeb5852ac77ef95ec2513f8ab.mesh
+res://.import/key.obj-f4136fc346b1939526e308591ae6e455.mesh
+res://.import/monitor.obj-7a3062a8b5ba319af55ab5fb05c8698b.mesh
+res://.import/pizza.obj-e13d6e4fdf5e4a244b07e6118cc1c691.mesh
+res://.import/plant1.obj-d448b0e9360396db39f5fc01832d54d2.mesh
+res://.import/plant2.obj-84732986f90dd030352783f981b1ba09.mesh
+res://.import/policecar.obj-9d2cc3dece28d9b7a5a4b55f569917dc.mesh
+res://.import/radio.obj-27a96f1487f6111b6f7e63fcfa9700c8.mesh
+res://.import/slotmachine.obj-6905ce7ef3287241aa723728f3c27d63.mesh
+res://.import/softproducts.obj-daa1024d6354a42406b3ee8ac2109e18.mesh
+res://.import/speaker.obj-b6bb72774ecd08e8aaab313308e28f2a.mesh
+res://.import/statue.obj-282e6b323fb2a10cb022aeff15589363.mesh
+res://.import/toilet.obj-e6b7eba18aa66f36826df655e1b882df.mesh
+res://.import/trashcan.obj-65ccd2255a12ac299c6e30fc8b9ee75a.mesh
+res://.import/tree.obj-350d22f45c70bea6c771de7dffa945de.mesh
+res://.import/vending.obj-9d60eeb364f0f1773b1559aa3bec3c25.mesh
+res://.import/UI_MESH.obj-ff3613c26915a8ae2685446de54dcba6.mesh
+res://.import/AR.obj-1f7349b7d213674ac7b3d15aff8f4456.mesh
+res://.import/Autoshotgn.mtl.obj-59c58be88bdbe127fc637c0f1faa3b7f.mesh
+res://.import/Autoshotgn.obj-1a36520eaf656cba89c6ebd6cdfd50c7.mesh
+res://.import/Autoshotgun.obj-80f1c90c09b9bcbc1d9fba09af610b22.mesh
+res://.import/Bore.obj-cbe050e5d2ccfc69c56f88bb50dae870.mesh
+res://.import/Gas_Grenade.obj-8dc1e5e69decfae6077064d077bf9f7c.mesh
+res://.import/Gas_Grenade_Shell.obj-d69920ad3ef68917ca227d05f29be452.mesh
+res://.import/20mmshell.obj-c710bff275f145b156b0ec794e43a8ba.mesh
+res://.import/3dlogo.obj-120ad0e05f8dbc3d3a10a94f958e6a15.mesh
+res://.import/protofish.obj-f7e660785ea24d94e94597ecacf937a7.mesh
+res://.import/appendix.obj-00325db662264ad0b2f2f1af5991c0d7.mesh
+res://.import/brain.obj-21091c4da4077b1497db36171141dcd6.mesh
+res://.import/heart.obj-1edf3f351c30f147624524ffba9cef43.mesh
+res://.import/intestine.obj-886b1da5f6eb707539e7812243430757.mesh
+res://.import/kidney.obj-066a1f5f34dcae8fe5c3dd26440c98b6.mesh
+res://.import/liver.obj-52ffac00d4ec104e38f6a280a87fedd5.mesh
+res://.import/pancreas.obj-4088a2cf1791105fcb86be34e7c28254.mesh
+res://.import/spine.obj-7e49dbe6024cac7e73174552e01a09d7.mesh
+res://.import/stomach.obj-11afa9eb568766f48acd6a72ea223dd3.mesh
+res://.import/curse.obj-53e70e8eda822e84ca2b55015027c8e1.mesh
+res://.import/deathface.obj-9f647a5b1ebf4bc1dc57b7cda4114ec7.mesh
+res://.import/flechette.obj-ef254d54a089765d23ae4bafa95e1591.mesh
+res://.import/forklift.obj-ed80c63b0c64d7a722eb9cd45e244bec.mesh
+res://.import/Bonus1.map-b0e4d736855b0ce4d68aa7e0d0d906a8.tres
+res://.import/Bonus2.map-a1e8f45c6ff53d6141ca12c1e27c8367.tres
+res://.import/Bonus3-crash-1.map-875e2e6dba63016ee379d1334fbe6fb3.tres
+res://.import/Bonus3-crash.map-d4f6683187b35ad61c6d1ac8f24eebb5.tres
+res://.import/Bonus3.map-cc9968096e56e41a351afcd41c8e4532.tres
+res://.import/Gas_Launcher.obj-7afc08b91da60d9a97b4de1b1ac6d6b8.mesh
+res://.import/MG3.obj-c7f0ad2b70917c1ab2fa6e5aff889029.mesh
+res://.import/Mauser.obj-1f0c92fb464e628a3d7d5ac5fe2f9c59.mesh
+res://.import/Nambu.obj-c34056c7ccd9adf47a8b80cb9bfeae7c.mesh
+res://.import/Pistol.obj-fca7ed782c91c36245e674e6c40ce6e4.mesh
+res://.import/RL.obj-9f10e5b517eeabb28f48c1df73196e83.mesh
+res://.import/Radgun_Body.obj-b5f1a2b89d56124ddeb3a01e5534dc80.mesh
+res://.import/Radgun_Cylinder.obj-c013fba57066fe3efb127f215d92e4fd.mesh
+res://.import/SKS.obj-c01c44982ef194188ed4cfa940c530cd.mesh
+res://.import/SMG.obj-f17668a8f0023ce001e9a60159665738.mesh
+res://.import/S_SMG.obj-b304c5a0188c54653c5d6d000a5f4f79.mesh
+res://.import/Shotgun.obj-67b6325f8b6a8639f4d96a335cc352cc.mesh
+res://.import/Sniper.obj-ad2e20df2cef5388f73444393eb381b2.mesh
+res://.import/an94.obj-4ec0b52dfd10970d5187ff3616bbc253.mesh
+res://.import/baton.obj-25166124b3025273f78a98bb36f87a26.mesh
+res://.import/dartgun.obj-41e3a8437d4e7d5c51528f10c2ffba07.mesh
+res://.import/dna.obj-cce49541fbcdf1180cf7f6dd8d09b260.mesh
+res://.import/flamethrower.obj-6b3aff0d2133a695a72f0a02f7046492.mesh
+res://.import/flashlight.obj-429c190a0ae47f131d6b0fe1eda71ecd.mesh
+res://.import/light.obj-be56f173e4bd7c4b338122d62bb42b72.mesh
+res://.import/mkr.obj-4d986cdd300410f3dfc6c49105ec2dbc.mesh
+res://.import/nailer.obj-2016c90512a2362617392d795342cc5d.mesh
+res://.import/radgun_solid.obj-f9ba1fbe110bcf9dfcacc7dd3138efc8.mesh
+res://.import/rod.obj-e4903135e47ffa7f0000412e76ed60f3.mesh
+res://.import/shockwave.obj-0188e99c1cafa835883c11e0f0221534.mesh
+res://.import/steyr.obj-3e486ae8d2370ce96bfec893fd6d91fb.mesh
+res://.import/vag72.obj-ae9a1ecd62eeab51065ed816a9a1a4b1.mesh
+res://.import/zippy.obj-9393fb9217b663eb4865ca108453a6ec.mesh
+res://.import/acidball.obj-3688857d90b9468decb0cc8952d2113e.mesh
+res://.import/chief.obj-ef60524f82be376bd372fbfff168167c.mesh
+res://.import/MENUMAP.map-98d4a3e2f4364e63beb99b376692b2fa.tres
+res://.import/success.glb-aa1e41b3735edbbc0d53c415750efc69.scn
+res://.import/sunfish.glb-bcfc74d6698b68b71d3c99bf7285d59b.scn
+res://.import/superbogdo.glb-6c68ef73afb5b7bbf35914a596fc4817.scn
+res://.import/swampeel.glb-9413ed04f73e8f72a11649f65d19d514.scn
+res://.import/swampsucker.glb-6fc858906642a88e172ec107ca646bd4.scn
+res://.import/unidor.glb-560088ae2c7edca71c65979d6045e48d.scn
+res://.import/wealth.glb-70ba69c3541f117ef8e8cc1f6ebce3b0.scn
+res://.import/wheel.glb-7a5464c1ac2bfc5fbaa59e34d13ec937.scn
+res://.import/zooper.glb-70b4200fc259307938694313d464e978.scn
+res://.import/Generic_Shell.glb-0133314619e9391d6b67bdf4f2d902aa.scn
+res://.import/Head_Gib.glb-6f2a69f4f66879ff16d249f304e4b0ad.scn
+res://.import/Knife_Lord.glb-6291eddfc509ca241de9d17817411dbf.scn
+res://.import/Leg_Gib.glb-4fc4cdaf2a9bcd313bb1e5bbfac2d97d.scn
+res://.import/Medkit1.glb-5868358303321a5e19566e8d284ed4fd.scn
+res://.import/Medkit2.glb-816dfb6496bafd53c0a85f20d9d56e0a.scn
+res://.import/Obj_Nerd_1.glb-ccf39205863dc3bbe20549841f56517f.scn
+res://.import/spiker.glb-9900e446c8880c8f70e71edb7d6ad129.scn
+res://.import/soul.glb-0b9ddf9f65cefee7bf297e878c68abb1.scn
+res://.import/sophia.glb-f681d26786523263a7948d66bca739e6.scn
+res://.import/smallman.glb-c33bbfcce7ff5ae692717434aace3f2b.scn
+res://.import/slurper.glb-ee047fd8bb9ce4a3c339c9e1f490b37a.scn
+res://.import/skippy.glb-fb2f21e578e73438004481aba94962d4.scn
+res://.import/skeleton.glb-beb49ffaf1a7610daaf91464f8e7b444.scn
+res://.import/psychofish.glb-5ed9daeca2940545264c53f8ca746263.scn
+res://.import/protofish.glb-640cc87a17c73b5702203c95051c8aa6.scn
+res://.import/poolsucker.glb-65ef815460dff8f3353216c792cc722a.scn
+res://.import/pondman.glb-1ba969cac563b68d7170fcd4427476e8.scn
+res://.import/piper.glb-5be5b15131e8e988a4eac4c6a37a8b0a.scn
+res://.import/pain.glb-8c0ebce90198a6a04e63a17d9f0bdf7e.scn
+res://.import/octosaur.glb-db56d90b0c807388e764f173cf669860.scn
+res://.import/nocter.glb-64e7cddfc0a6f7037dbb7d58501f92bd.scn
+res://.import/night.glb-b76038d657644b38b289c8271cb17340.scn
+res://.import/fleshgun.glb-bcec7234280637592667c4532d0f8b5c.scn
+res://.import/snirby.glb-c4f6db33d2b7c63cd723398bd843272a.scn
+res://.import/snake.glb-1b765aad6638ad8692195a8c37f010a7.scn
+res://.import/orbot.glb-a21c94e30cb2b8b5f365ff83f740ad66.scn
+res://.import/orbarms.glb-6dddcaf8b3f4bc01331bd0c933b206f7.scn
+res://.import/intro_guy.glb-14eafe79f82198d9d85e54f5d848eac5.scn
+res://.import/flesh_civilian.glb-66a1b955d2685f0fed457885a9850492.scn
+res://.import/enemy_psycho.glb-a7e159d8e1c5ab364176bd584a36c450.scn
+res://.import/enemy_paratrooper.glb-8746250562cf1f6e7580a22b351ab2c0.scn
+res://.import/enemy_life_boss.glb-4232fc803c00fee3f53624efc6759f48.scn
+res://.import/enemy_fleshman.glb-a2708ebb26009c554e014a54cf66cb02.scn
+res://.import/deathorb.glb-00aabf51446ec607cd16c46b8b217e9c.scn
+res://.import/crab.glb-78927998338d04dbfb69c017ddf8e9b2.scn
+res://.import/civilian_nude.glb-48d91625b847d908852e5504d4bc4099.scn
+res://.import/civilian_female.glb-549b70fd763d13a2b9831027dd5d0dfb.scn
+res://.import/abraxas.glb-c91f3a9bcf7625b334ccc15b607614a0.scn
+res://.import/UICAR.glb-7efbd91f09d1deac6bf8526b4994ca58.scn
+res://.import/Smg_Ammo.glb-9103adf92881966354742332f3214dab.scn
+res://.import/Skeleton_Test2.glb-4bdae44d3d98a96a345dcf59db8dae10.scn
+res://.import/Skeleton_Test.glb-32feb27e16f0fdb06bec5cc5a8f56daa.scn
+res://.import/Shotgun_Shell.glb-6127b18ec71806f7ad916e746ad74ef9.scn
+res://.import/Shotgun_Ammo.glb-c7e02ec27d10b3f2c07364d07e51e313.scn
+res://.import/SHOTGUN.glb-bd119040a55b9e9775c7cc9464ae7c87.scn
+res://.import/Rocket.glb-3a41c29da0f3657d91ace5fd7a840230.scn
+res://.import/level_painting.glb-9b722cd2745060db7c13378f47165574.scn
+res://.import/implant_object.glb-2dacc8113513f61cccdee9595211714d.scn
+res://.import/Player_Weapon_New.glb-2ab54d26b11de43d8fec1567ca3122db.scn
+res://.import/Player_Weapon.glb-c3e0893816555883dba69bf2c96d4516.scn
+res://.import/Player_Leg.glb-ccdb605233fa74c875fcc05c95528e78.scn
+res://.import/Pistol_Ammo.glb-692742d97b71544a4ca5207681fd8fa4.scn
+res://.import/Objective_Pinky.glb-4c1a9e560a75fc574fb05b7aa22e0db0.scn
+res://.import/Objective_Chief.glb-5ecc83dec2f2ef67b83b459d64546615.scn
+res://.import/caverno.glb-1008640c976aaab19e6a0e05b55cb948.scn
+res://.import/carabino.glb-4dc84cb43215474382bf303debafdd2c.scn
+res://.import/bubblefish.glb-9b0ca3e38ad987c135e6c4470450ae00.scn
+res://.import/brimstone.glb-d43d46a5f40c580f927d1c60e9ab8c16.scn
+res://.import/brainy.glb-0e29921073aecfc79ae84aaeb7d476ec.scn
+res://.import/bouncy.glb-173dba50f4f1414d5c1ee2545d1e09b2.scn
+res://.import/bororion.glb-2da01a37fcab64059f8a7970a2e12c77.scn
+res://.import/bonbo.glb-1b24db2dc2b4ee27740ec9381b017fee.scn
+res://.import/bogdo.glb-9d3dfe27631f8408ef2cfd2df7ec3bfc.scn
+res://.import/blurpo.glb-95f0e2ed003613f0ea4c0de7fa5a03ac.scn
+res://.import/blossom.glb-8b7bb567dfbcebf0633285ad24c706fc.scn
+res://.import/bigman.glb-add3b3191edb84078ff6bb6aab983208.scn
+res://.import/agon.glb-04305a03dd8561a963321b6e6b66a6ed.scn
+res://.import/Fish.glb-c8c3345857b5dd95a7f3dc4049a5b90c.scn
+res://.import/First_Test.glb-1117042ee4bad6331c145195c605657f.scn
+res://.import/FLESHRAT.glb-920dc4605da83596f82d935e02d27cfd.scn
+res://.import/Enemy_pig.glb-141263704fe71b31ce2bc00c237df315.scn
+res://.import/Enemy_civilian_worker.glb-a1b245e2116b3c27e71a305e3b38b7e4.scn
+res://.import/Enemy_Zombie.glb-6e574fd45a2d91aed82bc318819dd9b1.scn
+res://.import/Enemy_Swamp.glb-50990bc3db79acc8645eca055315b05a.scn
+res://.import/Enemy_Security.glb-ae8de1fa37234d070f3196f237011da4.scn
+res://.import/Enemy_Killerbot.glb-2e32ddd448f781761f026e9b417db339.scn
+res://.import/Enemy_Grunt.glb-410ed9617e2f1c8db2d70a88c69935f5.scn
+res://.import/Enemy_Flower.glb-c36b7728c60f2bb479e49873bb64ff3b.scn
+res://.import/Enemy_Fleshrat.glb-38515121230ddb1a836f9598bb5ddcaf.scn
+res://.import/Enemy_Elite.glb-953627110e61383f6c58c937bb7351db.scn
+res://.import/Enemy_Dog.glb-fa6bb6e2eefc8a2b66e12b7107bc89ac.scn
+res://.import/Enemy_Cop_Shotgun.glb-e5b90a7984e15e8e50829db6a527070c.scn
+res://.import/Enemy_Cop_Revolver.glb-90609b7da23a840558d1f03df152ffd3.scn
+res://.import/Enemy_Civilian.glb-c63b20edccf298d92a0bd15ee5e4d4bf.scn
+res://.import/Chest_Gib.glb-2048016e4454893d342f5a5da53d5b97.scn
+res://.import/Arm_Gib.glb-5bf14939517e4cd5479d29b1cd9508f3.scn
+res://.import/moonfish.glb-62a7531492fb649628a1d794df18fb88.scn
+res://.import/mistake.glb-0f0303a9061d909a442a153a926690e6.scn
+res://.import/lucksucker.glb-6e5c833a57da5892e65f67da7bfaf089.scn
+res://.import/icefish.glb-91371d4f9728020e16bfde8f7c2e2de2.scn
+res://.import/icecube.glb-0491272120050716ebe1d79d883f1094.scn
+res://.import/hydra.glb-75265ddcd92dcb8d23221e8afd138466.scn
+res://.import/human.glb-9bcde438e361cba38f154a0ccb83c33c.scn
+res://.import/hexasaur.glb-ec866ccfc83e1766dc7707dd3a2f801a.scn
+res://.import/heli.glb-e627deb788ea3e9732ef055759292b97.scn
+res://.import/head.glb-f7101bdd59c49ce878a46d5accc2a6c1.scn
+res://.import/gunkeel.glb-bcc16c16cf61650660b637bb409b5f9e.scn
+res://.import/grenade.glb-a60b1dcbd129a89b44c1ef74567239de.scn
+res://.import/grabshark.glb-ec6ba4aff44ef0734eabe6fa12519fbb.scn
+res://.import/glurm.glb-097132e59f1c4986106fc0b02963d915.scn
+res://.import/gloomoid.glb-7210e6086caedff45858bc29c3a81c93.scn
+res://.import/gigaflounder.glb-b041461689497236e9bb8002ec6de5c8.scn
+res://.import/fuzzer.glb-35ffbcc4407878ddd590bdcd32caf529.scn
+res://.import/flounder.glb-697a401b2723118739457947d1518ce3.scn
+res://.import/flippy.glb-40fe362c768877f5a11d1739942dda1a.scn
+res://.import/eternityslurper.glb-d574021ad87dcdcb15bfba4651730067.scn
+res://.import/engine.glb-7a70fab4e1c3a8b305ac584108f61ae6.scn
+res://.import/eel.glb-8891a8427c9adfce17586874448b4457.scn
+res://.import/drimp.glb-4cba0e0068cd8f01c1f0419a6e56fb3a.scn
+res://.import/dolphin.glb-eb40f15b6838f7f00459b6df597a22d9.scn
+res://.import/deltaforce.glb-38a5c56b2e5aa0a7a3e02b62451a19f9.scn
+res://.import/darksucker.glb-ec7a6a9dee51d8d9fb270cbdbe43f36f.scn
+res://.import/darkslurper.glb-5485483cc991446b8e739975b64ab317.scn
+res://.import/darkfish.glb-ca0215dc45aeebebad21f98a8b42d349.scn
+res://.import/cube.glb-1c57dd8bbc788e11c77379311b48b801.scn
+res://.import/creep.glb-1caed8c96c268bd2ceb4dc0e426fa672.scn
+res://.import/coiny.glb-f848beafa52afffe40a1644de6b943c6.scn
+res://.import/club.glb-c3312cb10db4f8f73eb86c65fdda476e.scn
+------
+
+Failed conversions:
+res://.import/Pixel.png-0a0ab4d02a16af300288c7c7eb4fa0cf.s3tc.stex
+
+
+
+---------------------------------IMPORTANT NOTES----------------------------------
+
+
+Unsupported Resources Detected:
+The following resource types were detected in the project that conversion is not implemented for yet.
+See Export Report to see which resources were not exported.
+You will still be able to edit the project in the editor regardless.
+ - Resource Type: Resource, Format: lmp
+ - Resource Type: Mesh, Format: obj
+ - Resource Type: Resource, Format: map
+ - Resource Type: 3.x PackedScene, Format: glb
+
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 3.3.0 to edit the project.
+Note: the project may be using a custom version of Godot. Detection for this has not been implemented yet.
+If you find that you have many non-import errors upon opening the project 
+(i.e. scripts or shaders have many errors), use the original game's binary as the export template.
+
+*******************************************************************************
+

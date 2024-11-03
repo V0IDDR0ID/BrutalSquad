@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/swamptune.ogg-8a2763d87fdcc6bf50ce182616b3c366.oggstr"
+
+[deps]
+
+source_file="res://Sfx/Music/swamptune.ogg"
+dest_files=[ "res://.import/swamptune.ogg-8a2763d87fdcc6bf50ce182616b3c366.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

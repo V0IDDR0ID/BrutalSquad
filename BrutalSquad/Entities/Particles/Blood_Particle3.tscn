@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Entities/Particles/Blood_Particle2.tres" type="Material" id=1]
+[ext_resource path="res://Textures/Particles/Pixel.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+params_billboard_mode = 1
+params_billboard_keep_scale = true
+albedo_color = Color( 1, 0, 0, 1 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 0.077, 0.077 )
+
+[node name="Blood_Particle3" type="Particles"]
+transform = Transform( 0.123153, 0, 0, 0, 0.123153, 0, 0, 0, 0.123153, 0, 0, 0 )
+cast_shadow = 0
+emitting = false
+amount = 1105
+lifetime = 0.6
+one_shot = true
+speed_scale = 2.05
+visibility_aabb = AABB( -105.864, -82.8631, -88.9918, 211.727, 165.726, 177.984 )
+local_coords = false
+process_material = ExtResource( 1 )
+draw_pass_1 = SubResource( 2 )

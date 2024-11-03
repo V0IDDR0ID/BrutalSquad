@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Entities/curseface.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/UI/UI_Quad.gd" type="Script" id=4]
+[ext_resource path="res://Entities/FOV_Setter.gd" type="Script" id=5]
+[ext_resource path="res://Imported_Mesh/UI_MESH.obj" type="ArrayMesh" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+flags_no_depth_test = true
+
+[node name="Camera" type="Camera"]
+pause_mode = 2
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0.0248652, 0 )
+current = true
+near = 0.01
+far = 1034.2
+script = ExtResource( 5 )
+
+[node name="UI_Quad" type="MeshInstance" parent="."]
+pause_mode = 2
+transform = Transform( 2.053, 0, 9.44166e-08, 0, -1.125, 0, -1.79479e-07, 0, 1.08, -5.35031e-07, 0.014742, -1.642 )
+visible = false
+layers = 4
+material_override = SubResource( 1 )
+cast_shadow = 0
+mesh = ExtResource( 6 )
+script = ExtResource( 4 )
+
+[node name="Curseface" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.227 )
+visible = false

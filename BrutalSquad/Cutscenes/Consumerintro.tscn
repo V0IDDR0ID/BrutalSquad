@@ -1,0 +1,141 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/MingLiU-ExtB-01.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/speech_label.gd" type="Script" id=3]
+[ext_resource path="res://Imported_Mesh/Props/consumer.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Textures/sky6.png" type="Texture" id=5]
+[ext_resource path="res://Imported_Mesh/Props/softproducts.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Cutscenes/Consumer_Logo.gd" type="Script" id=7]
+[ext_resource path="res://Textures/Decals/blood3.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="PanoramaSky" id=3]
+panorama = ExtResource( 5 )
+
+[sub_resource type="Environment" id=4]
+background_mode = 2
+background_sky = SubResource( 3 )
+background_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+ambient_light_color = Color( 0.996078, 0.631373, 0.631373, 1 )
+ambient_light_energy = 0.0
+ambient_light_sky_contribution = 0.0
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.266667, 1, 0, 1 )
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 1, 0, 0, 1 )
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+flags_unshaded = true
+albedo_texture = ExtResource( 8 )
+
+[sub_resource type="QuadMesh" id=8]
+size = Vector2( 6.832, 0.518 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+next_scene = "res://Cutscenes/Cutscene1.tscn"
+DURATION = [ 7 ]
+introskip = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -192.0
+margin_top = -147.0
+margin_right = 192.0
+margin_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+margin_right = 504.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subtitle" type="Label" parent="MarginContainer/CenterContainer"]
+margin_left = 252.0
+margin_right = 252.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_colors/font_color = Color( 0.14902, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/CenterContainer/Subtitle"]
+volume_db = 3.774
+pitch_scale = 1.21
+
+[node name="Authority" type="Label" parent="MarginContainer/CenterContainer"]
+modulate = Color( 0.0313726, 1, 0, 0 )
+margin_top = 19.0
+margin_right = 504.0
+margin_bottom = 58.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+text = "The Authority on Life..."
+align = 1
+
+[node name="Cameras" type="Node" parent="."]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Camera" type="Camera" parent="Cameras"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.41781 )
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )
+
+[node name="Consumer_Logo" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="Consumer" type="MeshInstance" parent="Consumer_Logo"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="Softproducts" type="MeshInstance" parent="Consumer_Logo"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+material_override = SubResource( 6 )
+mesh = ExtResource( 6 )
+
+[node name="OmniLight" type="OmniLight" parent="Consumer_Logo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38645, 0.0707597, 1.39349 )
+light_energy = 16.0
+
+[node name="MeshInstance" type="MeshInstance" parent="Consumer_Logo/OmniLight"]
+material_override = SubResource( 7 )
+mesh = SubResource( 8 )

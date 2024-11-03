@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Kinematic_Physics_Object.gd" type="Script" id=1]
+[ext_resource path="res://snakesphere.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Physics_Objects/flesh_sound.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SphereShape" id=1]
+radius = 11.5314
+
+[node name="Head_Gib" type="KinematicBody"]
+script = ExtResource( 1 )
+usable = false
+particle = false
+collidable = true
+stay_active = true
+sounds = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sound1" parent="." instance=ExtResource( 4 )]
+
+[node name="Sound2" parent="." instance=ExtResource( 4 )]
+
+[node name="Sound3" parent="." instance=ExtResource( 4 )]
+
+[node name="Sphere005" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.876046, 0.482228, -3.96716e-08, -0.482228, 0.876046, 1.83296e-09, 3.5638e-08, 1.7525e-08, 1, 0, 0, 0 )

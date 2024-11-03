@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Maps/textures/base/maario.png" type="Texture" id=1]
+[ext_resource path="res://Imported_Mesh/Props/trashcan.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Scripts/Kinematic_Physics_Object_Environment.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/garbage_destroyer.gd" type="Script" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape" id=2]
+radius = 0.371063
+height = 1.0224
+
+[sub_resource type="CylinderShape" id=3]
+radius = 0.298505
+height = 0.0693291
+
+[node name="Trashcan" type="KinematicBody"]
+collision_layer = 65
+script = ExtResource( 3 )
+particle = false
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+material_override = SubResource( 1 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0233213, 0 )
+shape = SubResource( 2 )
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553563, 0 )
+shape = SubResource( 3 )

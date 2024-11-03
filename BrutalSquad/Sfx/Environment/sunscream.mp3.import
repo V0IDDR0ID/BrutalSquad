@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sunscream.mp3-7b70f5f1943145fa414d4a8b89e9be74.mp3str"
+
+[deps]
+
+source_file="res://Sfx/Environment/sunscream.mp3"
+dest_files=[ "res://.import/sunscream.mp3-7b70f5f1943145fa414d4a8b89e9be74.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+render_mode unshaded;
+varying float energy;
+
+void fragment(){
+	ALBEDO.r = (sin(TIME*1.0)+1.0)*0.5;
+	ALBEDO.g = (sin(TIME*1.0)+1.0)*0.5;
+	ALBEDO.b = (sin(TIME*1.0)+1.0)*0.5;
+}"
+
+[resource]
+shader = SubResource( 1 )

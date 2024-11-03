@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Imported_Mesh/curse.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Entities/curseface.gd" type="Script" id=2]
+[ext_resource path="res://Materials/seethrough.tres" type="Material" id=3]
+
+[node name="MeshInstance" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0132227, 3.31373, 3.00426 )
+material_override = ExtResource( 3 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+script = ExtResource( 2 )

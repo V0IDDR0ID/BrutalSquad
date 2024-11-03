@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/can.obj-f5f7001386e5f7967c011e63637e527b.mesh"
+
+[deps]
+
+files=[ "res://.import/can.obj-f5f7001386e5f7967c011e63637e527b.mesh" ]
+
+source_file="res://Imported_Mesh/Props/can.obj"
+dest_files=[ "res://.import/can.obj-f5f7001386e5f7967c011e63637e527b.mesh", "res://.import/can.obj-f5f7001386e5f7967c011e63637e527b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

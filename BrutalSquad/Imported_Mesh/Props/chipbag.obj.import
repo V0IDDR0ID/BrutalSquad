@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/chipbag.obj-392cc0f76f223b0062d41dd0f991b184.mesh"
+
+[deps]
+
+files=[ "res://.import/chipbag.obj-392cc0f76f223b0062d41dd0f991b184.mesh" ]
+
+source_file="res://Imported_Mesh/Props/chipbag.obj"
+dest_files=[ "res://.import/chipbag.obj-392cc0f76f223b0062d41dd0f991b184.mesh", "res://.import/chipbag.obj-392cc0f76f223b0062d41dd0f991b184.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

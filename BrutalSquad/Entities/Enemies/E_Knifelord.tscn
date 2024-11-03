@@ -1,0 +1,185 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scripts/E_Grunt_Movement_New.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/EnemyHandler.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Enemies/Enemy_Melee_Weapon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sfx/QuakeJump.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scripts/Enemy_Torso.gd" type="Script" id=5]
+[ext_resource path="res://Entities/Enemies/Objective_Indicator.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Imported_Mesh/Knife_Lord.glb" type="PackedScene" id=9]
+[ext_resource path="res://Sfx/NPCs/Melee mutant/mutant_pain_1.wav" type="AudioStream" id=11]
+[ext_resource path="res://Entities/Enemies/Gib_Sound.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Sfx/UI/IED_hollow_laughter.wav" type="AudioStream" id=13]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.105882, 0.388235, 0.27451, 1 )
+metallic_specular = 0.0
+
+[sub_resource type="SphereMesh" id=2]
+material = SubResource( 1 )
+radius = 0.314
+height = 0.606
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.23
+height = 1.39
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.341, 0.032, 0.341 )
+
+[sub_resource type="CubeMesh" id=5]
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.084, 0.162928, 0.144975 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.140623, 0.496696, 0.308467 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.217686, 0.265592, 0.161787 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 0.547506, 0.120744, 0.803563 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 0.108482, 0.0996669, 0.133016 )
+
+[node name="Knifeguy" type="Spatial"]
+script = ExtResource( 2 )
+health = 150
+flee_health = 3
+poison_death = true
+
+[node name="Body" type="KinematicBody" parent="."]
+collision_layer = 16
+collision/safe_margin = 0.005
+script = ExtResource( 1 )
+melee = true
+engage_distance = 2.0
+pathing_frequency = 10.0
+move_speed = 8.0
+
+[node name="Temporary_Mesh" type="MeshInstance" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.737681, -0.11581 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Objective_Indicator" parent="Body" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Body_CollisionShape" type="CollisionShape" parent="Body"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0298252, 0 )
+shape = SubResource( 3 )
+
+[node name="Feet_CollisionShape" type="CollisionShape" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.800427, 0 )
+shape = SubResource( 4 )
+
+[node name="Rotation_Helper" type="Spatial" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.638255, -0.601123 )
+
+[node name="Weapon" parent="Body/Rotation_Helper" instance=ExtResource( 3 )]
+
+[node name="MeshInstance" type="MeshInstance" parent="Body/Rotation_Helper"]
+transform = Transform( 0.109, 0, 0, 0, 0.243, 0, 0, 0, 38.557, 0, 0, -19.142 )
+visible = false
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.292436, 0 )
+stream = ExtResource( 4 )
+
+[node name="Player_Ray" type="RayCast" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712365, -0.346726 )
+visible = false
+enabled = true
+cast_to = Vector3( 0, 0, -100 )
+collision_mask = 3
+
+[node name="Velocity_Ray" type="RayCast" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.691128, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1.446 )
+collision_mask = 17
+
+[node name="Reaction_Timer" type="Timer" parent="Body"]
+one_shot = true
+
+[node name="Shoot_Timer" type="Timer" parent="Body"]
+one_shot = true
+
+[node name="Chase_Timer" type="Timer" parent="Body"]
+one_shot = true
+
+[node name="SFX" type="Spatial" parent="Body"]
+
+[node name="Pain1" type="AudioStreamPlayer3D" parent="Body/SFX"]
+stream = ExtResource( 11 )
+unit_db = 1.0
+unit_size = 10.0
+bus = "SFX"
+
+[node name="Gib" parent="Body/SFX" instance=ExtResource( 12 )]
+
+[node name="Death" type="AudioStreamPlayer3D" parent="Body/SFX"]
+stream = ExtResource( 13 )
+unit_size = 11.5
+pitch_scale = 1.16
+bus = "SFX"
+
+[node name="Collisions" type="Spatial" parent="."]
+
+[node name="Head" type="KinematicBody" parent="Collisions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.008 )
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 5 )
+alive_head = true
+head = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.752, -0.096 )
+shape = SubResource( 6 )
+
+[node name="Legs" type="KinematicBody" parent="Collisions"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Legs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.381509, -0.0564629 )
+shape = SubResource( 7 )
+
+[node name="Torso" type="KinematicBody" parent="Collisions"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Torso"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352987, 0 )
+shape = SubResource( 8 )
+
+[node name="Dead_Body" type="KinematicBody" parent="Collisions"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Dead_Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.780023, 0 )
+shape = SubResource( 9 )
+disabled = true
+
+[node name="Dead_Head" type="KinematicBody" parent="Collisions"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Dead_Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0991363, -0.764959, -0.897008 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="Nemesis" parent="." instance=ExtResource( 9 )]

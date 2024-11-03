@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/steyr.obj-3e486ae8d2370ce96bfec893fd6d91fb.mesh"
+
+[deps]
+
+files=["res://.import/steyr.obj-3e486ae8d2370ce96bfec893fd6d91fb.mesh"]
+source_file="res://Imported_Mesh/Weapon_Mesh_Only/steyr.obj"
+dest_files=["res://.import/steyr.obj-3e486ae8d2370ce96bfec893fd6d91fb.mesh", "res://.import/steyr.obj-3e486ae8d2370ce96bfec893fd6d91fb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

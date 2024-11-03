@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Explosion.gd" type="Script" id=1]
+[ext_resource path="res://Textures/Particles/Explosion1.png" type="Texture" id=2]
+[ext_resource path="res://Sfx/WeaponsPickups/Rocket launcher/missile_explosion.wav" type="AudioStream" id=3]
+[ext_resource path="res://Entities/Particles/Spark_1.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.776006
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0.352941, 0, 1 )
+
+[sub_resource type="SphereMesh" id=3]
+material = SubResource( 2 )
+radius = 1.967
+height = 4.081
+
+[sub_resource type="ParticlesMaterial" id=4]
+lifetime_randomness = 0.09
+emission_shape = 1
+emission_sphere_radius = 0.08
+flag_rotate_y = true
+direction = Vector3( 0, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.21
+initial_velocity_random = 0.93
+scale = 0.3
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_unshaded = true
+params_blend_mode = 1
+params_billboard_mode = 1
+params_billboard_keep_scale = true
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_color = Color( 0.054902, 1, 0, 1 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=6]
+material = SubResource( 5 )
+
+[node name="Small_Explosion" type="Area"]
+collision_layer = 0
+collision_mask = 15
+script = ExtResource( 1 )
+damage = 20
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Particle" type="Particles" parent="."]
+emitting = false
+amount = 58
+lifetime = 0.08
+one_shot = true
+randomness = 1.0
+fract_delta = false
+local_coords = false
+process_material = SubResource( 4 )
+draw_pass_1 = SubResource( 6 )
+
+[node name="Particles" parent="Particle" instance=ExtResource( 4 )]
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_size = 20.0
+max_db = 2.0
+pitch_scale = 4.0
+autoplay = true
+bus = "SFX"
+[connection signal="area_entered" from="." to="." method="_on_Explosion_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Explosion_body_entered"]

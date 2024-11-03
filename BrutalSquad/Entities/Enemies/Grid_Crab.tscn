@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://grid_enemy.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/crab_anim.gd" type="Script" id=2]
+[ext_resource path="res://Imported_Mesh/crab.glb" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 1, 0.470588, 0, 1 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=4]
+params_specular_mode = 4
+metallic = 1.0
+metallic_specular = 0.0
+roughness = 0.16
+
+[sub_resource type="SphereMesh" id=5]
+radius = 0.392
+height = 1.021
+radial_segments = 32
+rings = 16
+
+[sub_resource type="SpatialMaterial" id=6]
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_color = Color( 1, 0, 0, 1 )
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.866158, 0.944749, 1 )
+
+[node name="Crab" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1 )
+collision_layer = 16
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="crab" parent="." instance=ExtResource( 3 )]
+script = ExtResource( 2 )
+
+[node name="Body" parent="crab" index="0"]
+material_override = SubResource( 3 )
+
+[node name="Eye_Right" parent="crab" index="1"]
+material_override = SubResource( 4 )
+
+[node name="Eye_Left" parent="crab" index="2"]
+material_override = SubResource( 4 )
+
+[node name="Arm_L_1" parent="crab" index="3"]
+material_override = SubResource( 3 )
+
+[node name="Arm_L_2" parent="crab" index="4"]
+material_override = SubResource( 3 )
+
+[node name="Arm_L_3" parent="crab" index="5"]
+material_override = SubResource( 3 )
+
+[node name="Arm_L_4" parent="crab" index="6"]
+material_override = SubResource( 3 )
+
+[node name="Arm_L_5" parent="crab" index="7"]
+material_override = SubResource( 3 )
+
+[node name="Claw_Left_R" parent="crab" index="8"]
+material_override = SubResource( 3 )
+
+[node name="Claw_Left_L" parent="crab" index="9"]
+material_override = SubResource( 3 )
+
+[node name="Arm_R_1" parent="crab" index="10"]
+material_override = SubResource( 3 )
+
+[node name="Arm_R_2" parent="crab" index="11"]
+material_override = SubResource( 3 )
+
+[node name="Arm_R_3" parent="crab" index="12"]
+material_override = SubResource( 3 )
+
+[node name="Arm_R_4" parent="crab" index="13"]
+material_override = SubResource( 3 )
+
+[node name="Arm_R_5" parent="crab" index="14"]
+material_override = SubResource( 3 )
+
+[node name="Claw_Right_R" parent="crab" index="15"]
+material_override = SubResource( 3 )
+
+[node name="Claw_Right_L" parent="crab" index="16"]
+material_override = SubResource( 3 )
+
+[node name="Leg_L_F" type="MeshInstance" parent="crab"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.456795, -0.685056, 0.569947 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Leg_L_B" type="MeshInstance" parent="crab"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.456795, -0.685056, -0.658873 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Leg_R_F" type="MeshInstance" parent="crab"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.554352, -0.685056, 0.569947 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Leg_R_B" type="MeshInstance" parent="crab"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.554352, -0.685056, -0.658873 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Area" type="Area" parent="crab"]
+collision_layer = 0
+collision_mask = 14
+
+[node name="CollisionShape" type="CollisionShape" parent="crab/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.03398 )
+shape = SubResource( 7 )
+[connection signal="body_entered" from="crab/Area" to="." method="_on_Area_body_entered"]
+
+[editable path="crab"]

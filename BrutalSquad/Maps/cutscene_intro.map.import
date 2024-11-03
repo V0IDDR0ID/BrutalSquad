@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/cutscene_intro.map-3fed1f2c9b87deab4137ad7dff6719f3.tres"
+
+[deps]
+
+source_file="res://Maps/cutscene_intro.map"
+dest_files=["res://.import/cutscene_intro.map-3fed1f2c9b87deab4137ad7dff6719f3.tres"]
+
+[params]
+
+dummy_value_ignore_me=0

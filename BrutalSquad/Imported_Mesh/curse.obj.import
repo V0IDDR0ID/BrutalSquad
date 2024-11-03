@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/curse.obj-53e70e8eda822e84ca2b55015027c8e1.mesh"
+
+[deps]
+
+files=[ "res://.import/curse.obj-53e70e8eda822e84ca2b55015027c8e1.mesh" ]
+
+source_file="res://Imported_Mesh/curse.obj"
+dest_files=[ "res://.import/curse.obj-53e70e8eda822e84ca2b55015027c8e1.mesh", "res://.import/curse.obj-53e70e8eda822e84ca2b55015027c8e1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

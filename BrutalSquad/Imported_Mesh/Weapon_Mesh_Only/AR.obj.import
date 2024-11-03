@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/AR.obj-1f7349b7d213674ac7b3d15aff8f4456.mesh"
+
+[deps]
+
+files=[ "res://.import/AR.obj-1f7349b7d213674ac7b3d15aff8f4456.mesh" ]
+
+source_file="res://Imported_Mesh/Weapon_Mesh_Only/AR.obj"
+dest_files=[ "res://.import/AR.obj-1f7349b7d213674ac7b3d15aff8f4456.mesh", "res://.import/AR.obj-1f7349b7d213674ac7b3d15aff8f4456.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/punishment.ogg-63168ab43739986587687b6043a367ff.oggstr"
+
+[deps]
+
+source_file="res://Sfx/Music/punishment.ogg"
+dest_files=[ "res://.import/punishment.ogg-63168ab43739986587687b6043a367ff.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/gamblingaddiction.mp3-dbb2bd91e09eea149c9ad557077f132a.mp3str"
+
+[deps]
+
+source_file="res://Sfx/Music/gamblingaddiction.mp3"
+dest_files=[ "res://.import/gamblingaddiction.mp3-dbb2bd91e09eea149c9ad557077f132a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

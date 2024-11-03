@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Kinematic_Physics_Object.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Physics_Objects/coin.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Physics_Objects/flesh_sound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sfx/WeaponsPickups/ammo_shell_2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sfx/WeaponsPickups/ammo_shell_3.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sfx/bullet_impact_metal.wav" type="AudioStream" id=6]
+[ext_resource path="res://Maps/textures/base/red_water.png" type="Texture" id=7]
+[ext_resource path="res://Shaders/realpsx.shader" type="Shader" id=8]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 8 )
+shader_param/paletteswap = false
+shader_param/snapRes = 50.0
+shader_param/albedoTex = ExtResource( 7 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 0.416, 0.043, 0.274 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 0, 0.003, 0.029, 0.0205061, 0.003, 0.0205061, 0.029, 0.003, 1.77574e-18, 0.0205061, 0.003, -0.0205061, 3.55148e-18, 0.003, -0.029, -0.0205061, 0.003, -0.0205061, -0.029, 0.003, -5.32721e-18, -0.0205061, 0.003, 0.0205061, -7.10295e-18, 0.003, 0.029, 0, 0, 0.029, 0.0205061, 0, 0.0205061, 0.029, 0, 1.77574e-18, 0.0205061, 0, -0.0205061, 3.55148e-18, 0, -0.029, -0.0205061, 0, -0.0205061, -0.029, 0, -5.32721e-18, -0.0205061, 0, 0.0205061, -7.10295e-18, 0, 0.029, 0, -0.003, 0.029, 0.0205061, -0.003, 0.0205061, 0.029, -0.003, 1.77574e-18, 0.0205061, -0.003, -0.0205061, 3.55148e-18, -0.003, -0.029, -0.0205061, -0.003, -0.0205061, -0.029, -0.003, -5.32721e-18, -0.0205061, -0.003, 0.0205061, -7.10295e-18, -0.003, 0.029, 0, 0.003, 0, 0, 0.003, 0.029, 0.0205061, 0.003, 0.0205061, 0.029, 0.003, 1.77574e-18, 0.0205061, 0.003, -0.0205061, 3.55148e-18, 0.003, -0.029, -0.0205061, 0.003, -0.0205061, -0.029, 0.003, -5.32721e-18, -0.0205061, 0.003, 0.0205061, -7.10295e-18, 0.003, 0.029, 0, -0.003, 0, 0, -0.003, 0.029, 0.0205061, -0.003, 0.0205061, 0.029, -0.003, 1.77574e-18, 0.0205061, -0.003, -0.0205061, 3.55148e-18, -0.003, -0.029, -0.0205061, -0.003, -0.0205061, -0.029, -0.003, -5.32721e-18, -0.0205061, -0.003, 0.0205061, -7.10295e-18, -0.003, 0.029 )
+
+[sub_resource type="SphereShape" id=4]
+radius = 0.300669
+
+[node name="Money" type="KinematicBody"]
+collision_layer = 0
+script = ExtResource( 1 )
+particle = false
+mass = 3
+rotate_b = false
+shell = true
+sounds = true
+
+[node name="Sound1" parent="." instance=ExtResource( 3 )]
+stream = ExtResource( 6 )
+
+[node name="Sound2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Sound3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+material_override = SubResource( 1 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 3 )
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource( 2 )
+value = 2000
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 4 )

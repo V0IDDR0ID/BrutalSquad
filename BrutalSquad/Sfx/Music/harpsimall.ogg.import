@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/harpsimall.ogg-f900d6eb8224e7fa2ce7eeb4cc801cea.oggstr"
+
+[deps]
+
+source_file="res://Sfx/Music/harpsimall.ogg"
+dest_files=[ "res://.import/harpsimall.ogg-f900d6eb8224e7fa2ce7eeb4cc801cea.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

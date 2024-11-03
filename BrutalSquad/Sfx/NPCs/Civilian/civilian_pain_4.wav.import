@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/civilian_pain_4.wav-88191f6ca83e70337aa455c73152fafc.sample"
+
+[deps]
+
+source_file="res://Sfx/NPCs/Civilian/civilian_pain_4.wav"
+dest_files=[ "res://.import/civilian_pain_4.wav-88191f6ca83e70337aa455c73152fafc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

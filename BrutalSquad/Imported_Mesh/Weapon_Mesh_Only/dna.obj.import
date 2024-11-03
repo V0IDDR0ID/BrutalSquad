@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/dna.obj-cce49541fbcdf1180cf7f6dd8d09b260.mesh"
+
+[deps]
+
+files=["res://.import/dna.obj-cce49541fbcdf1180cf7f6dd8d09b260.mesh"]
+source_file="res://Imported_Mesh/Weapon_Mesh_Only/dna.obj"
+dest_files=["res://.import/dna.obj-cce49541fbcdf1180cf7f6dd8d09b260.mesh", "res://.import/dna.obj-cce49541fbcdf1180cf7f6dd8d09b260.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

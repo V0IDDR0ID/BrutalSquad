@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Objects/real_weapon_pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Kinematic_Physics_Object.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.0708074, 0.0483806, 0.31501 )
+
+[node name="Spatial" type="KinematicBody"]
+collision_layer = 256
+collision_mask = 13
+script = ExtResource( 2 )
+particle = false
+gun_rotation = true
+rotate_b = false
+
+[node name="Area" parent="." instance=ExtResource( 1 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0348488, -0.0932201 )
+shape = SubResource( 1 )

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/poison_mist.wav-6e5cae32f261e845c55949803e1447eb.sample"
+
+[deps]
+
+source_file="res://Sfx/NPCs/Melee mutant/poison_mist.wav"
+dest_files=[ "res://.import/poison_mist.wav-6e5cae32f261e845c55949803e1447eb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

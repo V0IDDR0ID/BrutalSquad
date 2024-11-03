@@ -1,0 +1,27 @@
+[gd_resource type="ParticlesMaterial" load_steps=3 format=2]
+
+[sub_resource type="Curve" id=1]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, -360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+width = 256
+curve = SubResource( 1 )
+
+[resource]
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 1.37
+flag_rotate_y = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, -10, 0 )
+initial_velocity = 49.68
+angular_velocity = 0.47
+angular_velocity_random = 0.9
+angle = 33.1
+angle_random = 0.67
+angle_curve = SubResource( 2 )
+scale = 0.21
+scale_random = 0.32

@@ -1,0 +1,11 @@
+[gd_resource type="ParticlesMaterial" format=2]
+
+[resource]
+emission_shape = 2
+emission_box_extents = Vector3( 0.153, 0.248, 0.129 )
+direction = Vector3( 0, -0.045, 0 )
+spread = 0.0
+gravity = Vector3( 0, -8.784, 0 )
+angle = 1.0
+scale = 0.0
+scale_random = 1.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/QuakeJump.ogg-a18ecf028685c49976885b64374c258b.oggstr"
+
+[deps]
+
+source_file="res://Sfx/QuakeJump.ogg"
+dest_files=[ "res://.import/QuakeJump.ogg-a18ecf028685c49976885b64374c258b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://MissileKinematic.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Particles/Smoke_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sfx/NPCs/Acid vomiter/acid_vomit_1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Textures/Particles/Pixel.png" type="Texture" id=4]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial; 
+render_mode skip_vertex_transform, cull_disabled, unshaded;
+
+//Albedo texture 
+uniform sampler2D albedoTex : hint_albedo;
+uniform bool paletteswap = false;
+//Geometric resolution for vert snap
+uniform float snapRes = 50.0; 
+
+//vec4 for UV recalculation 
+varying vec4 vertCoord;
+
+
+
+void vertex() {
+	VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	VERTEX.xyz = floor(VERTEX.xyz * snapRes) / snapRes;
+	vertCoord = vec4(UV * VERTEX.z, VERTEX.z, 0); 
+} 
+ 
+void fragment() {
+	
+	ALBEDO = texture(albedoTex, vertCoord.xy / vertCoord.z).rgb;
+}
+
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/paletteswap = false
+shader_param/snapRes = 50.0
+shader_param/albedoTex = ExtResource( 4 )
+
+[sub_resource type="SphereMesh" id=3]
+radius = 0.401
+height = 0.803
+
+[sub_resource type="SphereShape" id=4]
+radius = 0.112412
+
+[node name="Spatial" type="KinematicBody"]
+collision_layer = 0
+collision_mask = 13
+collision/safe_margin = 0.002
+script = ExtResource( 1 )
+speed = 4
+piercing = true
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.004, 0, 0, 0, 0.012, 0, 0, 0, 0.008, 0, 0, 0 )
+material_override = SubResource( 2 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0175732, 0 )
+shape = SubResource( 4 )
+
+[node name="Smoke_Particle" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.123153, 0, 0, 0, 0.123153, 0, 0, 0, 0.123153, 0.00448698, 0, 0 )
+visible = false
+lifetime = 7.54
+speed_scale = 8.53
+fixed_fps = 30
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_size = 5.4
+max_db = 0.0
+pitch_scale = 4.0
+bus = "SFX"

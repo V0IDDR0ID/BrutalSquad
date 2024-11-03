@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/vending.obj-9d60eeb364f0f1773b1559aa3bec3c25.mesh"
+
+[deps]
+
+files=[ "res://.import/vending.obj-9d60eeb364f0f1773b1559aa3bec3c25.mesh" ]
+
+source_file="res://Imported_Mesh/Props/vending.obj"
+dest_files=[ "res://.import/vending.obj-9d60eeb364f0f1773b1559aa3bec3c25.mesh", "res://.import/vending.obj-9d60eeb364f0f1773b1559aa3bec3c25.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

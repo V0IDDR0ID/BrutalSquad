@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Weapon_Pickup.gd" type="Script" id=1]
+[ext_resource path="res://Textures/Weapons/silenced_smg.png" type="Texture" id=2]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/S_SMG.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+resource_name = "SMG_Material"
+flags_unshaded = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.131535, 0.148896, 0.168345 )
+
+[node name="P_S_SMG" type="Area"]
+collision_layer = 256
+collision_mask = 2
+script = ExtResource( 1 )
+weapon_index = 6
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.763855, 0 )
+material_override = SubResource( 1 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.763855, 0 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_P_SMG_body_entered"]

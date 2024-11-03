@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=2]
+resource_name = "meat_sound"
+script/source = "extends AudioStreamPlayer3D
+
+var meatsounds_array : Array = [
+	preload(\"res://Sfx/NPCs/meatsound_1.wav\"),
+	preload(\"res://Sfx/NPCs/meatsound_2.wav\"),
+	preload(\"res://Sfx/NPCs/meatsound_3.wav\"),
+	preload(\"res://Sfx/NPCs/meatsound_4.wav\"),
+	preload(\"res://Sfx/NPCs/meatsound_5.wav\"),
+	preload(\"res://Sfx/NPCs/meatsound_6.wav\"),
+]
+
+func _ready():
+	stream = meatsounds_array.pick_random()
+	play()
+
+func _on_Meat_Sound_finished():
+	queue_free()
+"
+
+[node name="Meat_Sound" type="AudioStreamPlayer3D"]
+unit_db = 20.0
+script = SubResource( 2 )
+
+[connection signal="finished" from="." to="." method="_on_Meat_Sound_finished"]

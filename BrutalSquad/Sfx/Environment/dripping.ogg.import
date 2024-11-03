@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dripping.ogg-bb389a771333b69380922dd771dafe5c.oggstr"
+
+[deps]
+
+source_file="res://Sfx/Environment/dripping.ogg"
+dest_files=[ "res://.import/dripping.ogg-bb389a771333b69380922dd771dafe5c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,949 @@
+[gd_scene load_steps=106 format=2]
+
+[ext_resource path="res://Sfx/mg42.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/weapon.gd" type="Script" id=2]
+[ext_resource path="res://Sfx/WeaponsPickups/SMG/SMG_fire_1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sfx/mg42_3.wav" type="AudioStream" id=4]
+[ext_resource path="res://Imported_Mesh/Player_Weapon_New.glb" type="PackedScene" id=5]
+[ext_resource path="res://Sfx/WeaponsPickups/Rocket launcher/rocketlauncher_fire.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sfx/WeaponsPickups/Shotgun/shotgun_fire.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sfx/WeaponsPickups/Pistol/pistol_silenced_fire_1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Imported_Mesh/Player_Leg.glb" type="PackedScene" id=9]
+[ext_resource path="res://Sfx/WeaponsPickups/Shotgun/shotgun_pump.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sfx/UI/UI_selection.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sfx/WeaponsPickups/generic_reload.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sfx/427598__michorvath__ar15-pistol-shot.wav" type="AudioStream" id=13]
+[ext_resource path="res://Entities/Laser_Dot.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Sfx/WeaponsPickups/AR/AR_fire.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sfx/WeaponsPickups/S_SMG/fire.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sfx/WeaponsPickups/revolver_fire.wav" type="AudioStream" id=17]
+[ext_resource path="res://Entities/Particles/muzzleflash.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/mkr.obj" type="ArrayMesh" id=19]
+[ext_resource path="res://Textures/Weapons/mkr.png" type="Texture" id=20]
+[ext_resource path="res://Materials/Radiation2.tres" type="Material" id=21]
+[ext_resource path="res://Materials/Player_Arm.tres" type="Material" id=22]
+[ext_resource path="res://Textures/Weapons/radgun.png" type="Texture" id=23]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/Radgun_Body.obj" type="ArrayMesh" id=24]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/Radgun_Cylinder.obj" type="ArrayMesh" id=25]
+[ext_resource path="res://Sfx/mechsound.wav" type="AudioStream" id=26]
+[ext_resource path="res://Sfx/UI/Implant_Equip.wav" type="AudioStream" id=27]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/dartgun.obj" type="ArrayMesh" id=28]
+[ext_resource path="res://Textures/Weapons/dartgun.png" type="Texture" id=29]
+[ext_resource path="res://Textures/Particles/shine.png" type="Texture" id=30]
+[ext_resource path="res://Sfx/WeaponsPickups/dartgun.wav" type="AudioStream" id=31]
+[ext_resource path="res://Kicksound.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Sfx/Player/kick.wav" type="AudioStream" id=33]
+[ext_resource path="res://Sfx/Player/kickgrunt.wav" type="AudioStream" id=34]
+[ext_resource path="res://flashlight.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/zippy.obj" type="ArrayMesh" id=36]
+[ext_resource path="res://Textures/Weapons/zippy.png" type="Texture" id=37]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/an94.obj" type="ArrayMesh" id=38]
+[ext_resource path="res://Textures/Weapons/an94.png" type="Texture" id=39]
+[ext_resource path="res://Sfx/vag.wav" type="AudioStream" id=40]
+[ext_resource path="res://Textures/Weapons/vag72.png" type="Texture" id=41]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/vag72.obj" type="ArrayMesh" id=42]
+[ext_resource path="res://Textures/Weapons/steyr.png" type="Texture" id=43]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/steyr.obj" type="ArrayMesh" id=44]
+[ext_resource path="res://Sfx/WeaponsPickups/steyr.wav" type="AudioStream" id=45]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/dna.obj" type="ArrayMesh" id=46]
+[ext_resource path="res://Textures/Weapons/dna.png" type="Texture" id=47]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/rod.obj" type="ArrayMesh" id=48]
+[ext_resource path="res://Sfx/WeaponsPickups/flamethrower.wav" type="AudioStream" id=49]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/flamethrower.obj" type="ArrayMesh" id=50]
+[ext_resource path="res://Textures/Weapons/flamethrower.png" type="Texture" id=51]
+[ext_resource path="res://Textures/Weapons/SKS.png" type="Texture" id=52]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/SKS.obj" type="ArrayMesh" id=53]
+[ext_resource path="res://Sfx/WeaponsPickups/Sniper/screamsplosion.wav" type="AudioStream" id=54]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/nailer.obj" type="ArrayMesh" id=55]
+[ext_resource path="res://Textures/Weapons/nailgun.png" type="Texture" id=56]
+[ext_resource path="res://Imported_Mesh/orbarms.glb" type="PackedScene" id=57]
+[ext_resource path="res://Materials/rod.tres" type="Material" id=58]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/shockwave.obj" type="ArrayMesh" id=59]
+[ext_resource path="res://Entities/AnimationPlayer.tscn" type="PackedScene" id=60]
+[ext_resource path="res://Textures/Weapons/shockwave.png" type="Texture" id=61]
+[ext_resource path="res://Textures/Weapons/light.png" type="Texture" id=62]
+[ext_resource path="res://Imported_Mesh/Weapon_Mesh_Only/light.obj" type="ArrayMesh" id=63]
+[ext_resource path="res://Sfx/lightgun.wav" type="AudioStream" id=64]
+[ext_resource path="res://Sfx/Flesh/gibbing_3.wav" type="AudioStream" id=65]
+[ext_resource path="res://Sfx/WeaponsPickups/switch_sound.wav" type="AudioStream" id=66]
+[ext_resource path="res://Fonts/Bowler.ttf" type="DynamicFontData" id=67]
+[ext_resource path="res://Sfx/ricochet.wav" type="AudioStream" id=68]
+[ext_resource path="res://Sfx/WeaponsPickups/Rocket launcher/missile_explosion-old1.wav" type="AudioStream" id=69]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+audio_stream = ExtResource( 34 )
+
+[sub_resource type="AudioStreamRandomPitch" id=2]
+audio_stream = ExtResource( 31 )
+
+[sub_resource type="AudioStreamRandomPitch" id=3]
+audio_stream = ExtResource( 40 )
+
+[sub_resource type="AudioStreamRandomPitch" id=36]
+audio_stream = ExtResource( 68 )
+random_pitch = 1.5
+
+[sub_resource type="DynamicFont" id=35]
+font_data = ExtResource( 67 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_disable_ambient_light = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 52 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 29 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+params_billboard_mode = 1
+params_billboard_keep_scale = true
+albedo_texture = ExtResource( 30 )
+metallic_specular = 0.0
+
+[sub_resource type="ParticlesMaterial" id=7]
+direction = Vector3( 0, 10.705, 0 )
+spread = 1.73
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 4.72
+initial_velocity_random = 1.0
+damping = 0.93
+scale = 0.0
+scale_random = 1.0
+
+[sub_resource type="QuadMesh" id=8]
+size = Vector2( 0.171, 0.167 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 37 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 41 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_texture = ExtResource( 47 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_texture = ExtResource( 56 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_texture = ExtResource( 61 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_texture = ExtResource( 20 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_texture = ExtResource( 39 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_texture = ExtResource( 43 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_texture = ExtResource( 51 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_texture = ExtResource( 23 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_color = Color( 0.2, 0.164706, 0.470588, 1 )
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.1
+
+[sub_resource type="SphereMesh" id=20]
+radius = 0.001
+height = 0.002
+radial_segments = 10
+rings = 10
+
+[sub_resource type="SpatialMaterial" id=21]
+flags_unshaded = true
+albedo_color = Color( 0.0313726, 1, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=22]
+flags_disable_ambient_light = true
+albedo_texture = ExtResource( 62 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=23]
+flags_unshaded = true
+albedo_color = Color( 0.172549, 1, 0, 1 )
+
+[sub_resource type="SphereMesh" id=24]
+radius = 0.004
+height = 0.008
+
+[sub_resource type="CylinderShape" id=25]
+height = 2.74
+radius = 20.6796
+
+[sub_resource type="CylinderShape" id=26]
+height = 7.0
+radius = 0.53
+
+[sub_resource type="CylinderMesh" id=27]
+bottom_radius = 1.811
+height = 7.0
+radial_segments = 12
+
+[sub_resource type="SpatialMaterial" id=28]
+albedo_color = Color( 0.960784, 0.960784, 0.960784, 1 )
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=29]
+flags_unshaded = true
+params_grow = true
+params_grow_amount = 0.251
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SphereShape" id=30]
+radius = 0.464623
+
+[sub_resource type="Animation" id=31]
+length = 0.666667
+tracks/0/type = "transform"
+tracks/0/path = NodePath("L_Arm/Bone 2/Bone001 2/Bone002 2/Bone003 2/Bone004 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 1.47247e-08, 0.308279, -5.82077e-10, -0.000544003, 5.73227e-08, -0.219636, 0.975582, 1, 1, 1, 0.0666667, 1, 4.42922e-08, 0.308279, -6.55312e-10, -0.000618628, 5.69765e-08, -0.249765, 0.968306, 1, 1, 1, 0.2, 1, 4.82877e-08, 0.308279, -5.47107e-10, -0.00100786, 5.4605e-08, -0.406912, 0.913467, 1, 1, 1, 0.266667, 1, -3.45544e-08, 0.308279, -2.73754e-10, -0.000936085, 5.51387e-08, -0.377936, 0.925831, 1.06024, 1.06024, 1.06024, 0.333333, 1, 2.1509e-08, 0.308279, -1.14766e-10, -3.27852e-05, 5.79363e-08, -0.0132369, 0.999912, 1.30118, 1.30118, 1.30118, 0.6, 1, 1.52839e-07, 0.308279, -7.01234e-11, -0.000443269, 5.76189e-08, -0.178966, 0.983855, 1.06024, 1.06024, 1.06024, 0.666667, 1, 1.47247e-08, 0.308279, -5.82077e-10, -0.000544003, 5.73227e-08, -0.219636, 0.975582, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("L_Arm/Bone 2/Bone001 2/Bone002 2/Bone003 2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, -6.04683e-08, 0.298927, 5.12358e-10, -0.000542817, -1.4397e-07, -0.219165, 0.975688, 1, 1, 1, 0.0666667, 1, 8.85773e-09, 0.298927, 4.29246e-10, -0.000616735, -1.42773e-07, -0.249009, 0.968501, 1, 1, 1, 0.2, 1, -5.24927e-08, 0.298927, -1.27938e-11, -0.00100238, -1.34251e-07, -0.404717, 0.914441, 1, 1, 1, 0.266667, 1, -2.34355e-08, 0.298927, 4.13261e-10, -0.000907459, -1.36868e-07, -0.366391, 0.930461, 1, 1, 1, 0.333333, 1, -6.66783e-08, 0.298927, 9.74945e-10, 9.15242e-05, -1.48706e-07, 0.0369535, 0.999317, 1, 1, 1, 0.533333, 1, -1.27473e-08, 0.298927, 6.88033e-12, -0.000291395, -1.46941e-07, -0.117652, 0.993055, 1, 1, 1, 0.666667, 1, -6.04683e-08, 0.298927, 5.12358e-10, -0.000542817, -1.4397e-07, -0.219165, 0.975688, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("L_Arm/Bone 2/Bone001 2/Bone002 2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, -1.16955e-07, 0.3548, -1.4964e-10, -0.000581164, 4.76492e-08, -0.234658, 0.972078, 1, 1, 1, 0.0666667, 1, -4.82708e-08, 0.3548, -4.77362e-10, -0.000620538, 4.75374e-08, -0.250556, 0.968102, 1, 1, 1, 0.2, 1, 4.35021e-08, 0.3548, 1.84328e-10, -0.000827912, 4.65324e-08, -0.334288, 0.942471, 1, 1, 1, 0.266667, 1, -6.73774e-09, 0.3548, 4.86839e-11, -0.000744742, 4.69216e-08, -0.300706, 0.953717, 1, 1, 1, 0.333333, 1, -2.37633e-08, 0.3548, -2.32831e-10, -8.07635e-05, 4.74226e-08, -0.0326104, 0.999468, 1, 1, 1, 0.6, 1, -3.26642e-08, 0.3548, -6.61685e-10, -0.000482668, 4.78932e-08, -0.194888, 0.980825, 1, 1, 1, 0.666667, 1, -1.16955e-07, 0.3548, -1.4964e-10, -0.000581164, 4.76492e-08, -0.234658, 0.972078, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("L_Arm/Bone 2/Bone001 2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, -5.73108e-08, 0.367911, 1.03381e-09, -0.00880618, -0.00259483, -0.157318, 0.987505, 1, 1, 1, 0.2, 1, -7.15668e-09, 0.367911, 2.85919e-10, -0.00880618, -0.00259483, -0.157318, 0.987505, 1, 1, 1, 0.266667, 1, -4.73964e-08, 0.367911, -3.42045e-10, -0.00880674, -0.0023446, -0.128024, 0.991729, 1, 1, 1, 0.333333, 1, -1.25138e-07, 0.367911, -3.57399e-10, -0.0087319, -0.00132536, -0.00998007, 0.999911, 1, 1, 1, 0.666667, 1, -5.73108e-08, 0.367911, 1.03381e-09, -0.00880618, -0.00259483, -0.157318, 0.987505, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("L_Arm/Bone 2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, -0.528533, -8.01537e-10, 0.0353908, -0.650855, 0.264707, 0.26013, 0.662307, 1, 1, 1, 0.0666667, 1, -0.528533, -8.01537e-10, 0.0353908, -0.611813, 0.348019, 0.342002, 0.622577, 1, 1, 1, 0.133333, 1, -0.528533, -8.01537e-10, 0.0353908, -0.426296, 0.566163, 0.556374, 0.433797, 1, 1, 1, 0.2, 1, -0.528533, -8.01537e-10, 0.0353908, -0.149289, 0.69688, 0.684831, 0.151916, 1, 1, 1, 0.266667, 1, -0.528533, -8.01537e-10, 0.0353908, 0.273645, -0.656643, -0.64529, -0.278459, 1, 1, 1, 0.333333, 1, -0.528533, -8.01537e-10, 0.0353908, -0.700865, -0.00839708, -0.00825187, 0.713196, 1, 1, 1, 0.4, 1, -0.528533, -8.01537e-10, 0.0353908, -0.68704, 0.141208, 0.138767, 0.699128, 1, 1, 1, 0.533333, 1, -0.528533, -8.01537e-10, 0.0353908, -0.660724, 0.238047, 0.233931, 0.672349, 1, 1, 1, 0.6, 1, -0.528533, -8.01537e-10, 0.0353908, -0.653387, 0.258168, 0.253704, 0.664883, 1, 1, 1, 0.666667, 1, -0.528533, -8.01537e-10, 0.0353908, -0.650855, 0.264707, 0.26013, 0.662307, 1, 1, 1 )
+
+[sub_resource type="Animation" id=32]
+length = 0.583333
+tracks/0/type = "transform"
+tracks/0/path = NodePath("R_Arm/Bone/Bone001/Bone002/Bone003/Bone004")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 1.74428e-07, 0.308279, -3.62979e-10, 0.000523786, 5.65657e-08, 0.211475, 0.977383, 1, 1, 1, 0.2, 1, 6.14762e-09, 0.308279, -5.2419e-10, 0.000523786, 5.65843e-08, 0.211475, 0.977383, 1, 1, 1, 0.266667, 1, 1.63041e-07, 0.308279, -4.06309e-10, 0.000476266, 5.67855e-08, 0.192289, 0.981338, 1.03189, 1.03189, 1.03189, 0.333333, 1, 1.55949e-07, 0.308279, 1.48454e-10, 0.000180045, 5.73954e-08, 0.0726926, 0.997354, 1.22778, 1.22778, 1.22778, 0.4, 1, 5.32624e-08, 0.308279, -3.36521e-10, 8.80208e-05, 5.85819e-08, 0.0355386, 0.999368, 1.28831, 1.28831, 1.28831, 0.466667, 1, 6.91113e-08, 0.308279, -3.38323e-10, 0.000251157, 5.85166e-08, 0.101403, 0.994845, 1.18106, 1.18106, 1.18106, 0.533333, 1, 8.14311e-08, 0.308279, -3.68838e-10, 0.000453385, 5.80825e-08, 0.183051, 0.983103, 1.04723, 1.04723, 1.04723, 0.583333, 1, 1.74428e-07, 0.308279, -3.62979e-10, 0.000523786, 5.65657e-08, 0.211475, 0.977383, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("R_Arm/Bone/Bone001/Bone002/Bone003")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, 9.14182e-08, 0.298927, 5.32276e-10, 0.000714568, -1.40257e-07, 0.288512, 0.957476, 1, 1, 1, 0.0666667, 1, -8.06217e-08, 0.298927, 3.27459e-11, 0.000850466, -1.37413e-07, 0.343381, 0.939196, 1, 1, 1, 0.133333, 1, 2.39088e-09, 0.298927, 8.7997e-10, 0.00111107, -1.30611e-07, 0.4486, 0.893732, 1, 1, 1, 0.2, 1, -1.03902e-07, 0.298927, 2.98256e-10, 0.001342, -1.22615e-07, 0.541842, 0.840479, 1, 1, 1, 0.266667, 1, -3.75831e-08, 0.298927, 2.30528e-10, 0.00129112, -1.25263e-07, 0.521299, 0.853373, 1, 1, 1, 0.333333, 1, -2.44107e-08, 0.298927, 5.23869e-10, 0.00042755, -1.45591e-07, 0.172627, 0.984987, 1, 1, 1, 0.4, 1, -1.33654e-07, 0.298927, 2.19754e-10, 0.000108164, -1.4809e-07, 0.0436729, 0.999046, 1, 1, 1, 0.466667, 1, -3.42901e-08, 0.298927, 1.29241e-10, 0.000337508, -1.46476e-07, 0.136272, 0.990671, 1, 1, 1, 0.533333, 1, -8.74362e-08, 0.298927, 2.10912e-10, 0.000617828, -1.42893e-07, 0.249453, 0.968387, 1, 1, 1, 0.583333, 1, 9.14182e-08, 0.298927, 5.32276e-10, 0.000714568, -1.40257e-07, 0.288512, 0.957476, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("R_Arm/Bone/Bone001/Bone002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, 7.43694e-08, 0.3548, -4.71683e-10, 0.000383145, 4.9899e-08, 0.154703, 0.987961, 1, 1, 1, 0.0666667, 1, 7.3951e-08, 0.3548, -5.00171e-10, 0.000501361, 4.93795e-08, 0.202435, 0.979296, 1, 1, 1, 0.2, 1, 5.93145e-08, 0.3548, -5.96776e-10, 0.000940594, 4.64543e-08, 0.379785, 0.925075, 1, 1, 1, 0.266667, 1, 1.59747e-08, 0.3548, -5.2634e-10, 0.000913088, 4.77499e-08, 0.368679, 0.929556, 1, 1, 1, 0.333333, 1, 9.25894e-08, 0.3548, -5.16809e-10, 0.000298971, 5.11035e-08, 0.120715, 0.992687, 1, 1, 1, 0.4, 1, 1.13886e-07, 0.3548, -4.80985e-10, 6.713e-05, 4.92396e-08, 0.0271046, 0.999633, 1, 1, 1, 0.466667, 1, 2.44875e-08, 0.3548, -1.52752e-10, 0.000185449, 4.90069e-08, 0.0748784, 0.997193, 1, 1, 1, 0.533333, 1, 2.44875e-08, 0.3548, -1.52752e-10, 0.000331735, 4.86307e-08, 0.133945, 0.990989, 1, 1, 1, 0.583333, 1, 7.43694e-08, 0.3548, -4.71683e-10, 0.000383145, 4.9899e-08, 0.154703, 0.987961, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("R_Arm/Bone/Bone001")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, -5.95938e-08, 0.367911, 9.31256e-10, -0.00845925, -4.82109e-09, 0.140601, 0.99003, 1, 1, 1, 0.2, 1, -1.05391e-07, 0.367911, 5.79089e-10, -0.00845925, -4.77406e-09, 0.140601, 0.99003, 1, 1, 1, 0.266667, 1, -5.86799e-08, 0.367911, 8.79187e-10, -0.00849201, -0.000120544, 0.127039, 0.991861, 1, 1, 1, 0.333333, 1, 3.83084e-08, 0.367911, -3.5068e-10, -0.0086584, -0.000860855, 0.0431616, 0.99903, 1, 1, 1, 0.4, 1, -8.15251e-09, 0.367911, -2.55518e-11, -0.00869741, -0.00108834, 0.017186, 0.999814, 1, 1, 1, 0.466667, 1, -6.12523e-08, 0.367911, 4.58944e-10, -0.00862424, -0.000684569, 0.0632254, 0.997962, 1, 1, 1, 0.533333, 1, 1.70686e-08, 0.367911, -1.9413e-10, -0.00850719, -0.000178474, 0.120511, 0.992676, 1, 1, 1, 0.583333, 1, -5.95938e-08, 0.367911, 9.31256e-10, -0.00845925, -4.82109e-09, 0.140601, 0.99003, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("R_Arm/Bone")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, 0.647335, -5.19731e-10, 0.0353908, -0.64769, -0.272628, -0.267914, 0.659085, 1, 1, 1, 0.0666667, 1, 0.647335, -5.19731e-10, 0.0353908, -0.584727, -0.39329, -0.38649, 0.595015, 1, 1, 1, 0.133333, 1, 0.647335, -5.19731e-10, 0.0353908, -0.362037, -0.610734, -0.600175, 0.368407, 1, 1, 1, 0.2, 1, 0.647335, -5.19731e-10, 0.0353908, -0.0971516, -0.706361, -0.694148, 0.0988609, 1, 1, 1, 0.266667, 1, 0.647335, -5.19731e-10, 0.0353908, -0.109964, -0.704414, -0.692234, 0.111898, 1, 1, 1, 0.333333, 1, 0.647335, -5.19731e-10, 0.0353908, -0.661526, -0.23573, -0.231654, 0.673165, 1, 1, 1, 0.4, 1, 0.647335, -5.19731e-10, 0.0353908, -0.700492, -0.0247525, -0.0243246, 0.712816, 1, 1, 1, 0.466667, 1, 0.647335, -5.19731e-10, 0.0353908, -0.690709, -0.121266, -0.119169, 0.702862, 1, 1, 1, 0.533333, 1, 0.647335, -5.19731e-10, 0.0353908, -0.662115, -0.234012, -0.229966, 0.673764, 1, 1, 1, 0.583333, 1, 0.647335, -5.19731e-10, 0.0353908, -0.64769, -0.272628, -0.267914, 0.659085, 1, 1, 1 )
+
+[sub_resource type="Animation" id=33]
+length = 0.0416667
+tracks/0/type = "transform"
+tracks/0/path = NodePath("L_Arm/Bone 2/Bone001 2/Bone002 2/Bone003 2/Bone004 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 1.47247e-08, 0.308279, -5.82077e-10, -0.000544003, 5.73227e-08, -0.219636, 0.975582, 1, 1, 1, 0.0416667, 1, 1.47247e-08, 0.308279, -5.82077e-10, -0.000544003, 5.73227e-08, -0.219636, 0.975582, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("L_Arm/Bone 2/Bone001 2/Bone002 2/Bone003 2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, -6.04683e-08, 0.298927, 5.12358e-10, -0.000542817, -1.4397e-07, -0.219165, 0.975688, 1, 1, 1, 0.0416667, 1, -6.04683e-08, 0.298927, 5.12358e-10, -0.000542817, -1.4397e-07, -0.219165, 0.975688, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("L_Arm/Bone 2/Bone001 2/Bone002 2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, -1.16955e-07, 0.3548, -1.4964e-10, -0.000581164, 4.76492e-08, -0.234658, 0.972078, 1, 1, 1, 0.0416667, 1, -1.16955e-07, 0.3548, -1.4964e-10, -0.000581164, 4.76492e-08, -0.234658, 0.972078, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("L_Arm/Bone 2/Bone001 2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, -5.73108e-08, 0.367911, 1.03381e-09, -0.00880618, -0.00259483, -0.157318, 0.987505, 1, 1, 1, 0.0416667, 1, -5.73108e-08, 0.367911, 1.03381e-09, -0.00880618, -0.00259483, -0.157318, 0.987505, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("L_Arm/Bone 2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, -0.528533, -8.01537e-10, 0.0353908, -0.650855, 0.264707, 0.26013, 0.662307, 1, 1, 1, 0.0416667, 1, -0.528533, -8.01537e-10, 0.0353908, -0.650855, 0.264707, 0.26013, 0.662307, 1, 1, 1 )
+
+[sub_resource type="Animation" id=34]
+length = 0.001
+tracks/0/type = "transform"
+tracks/0/path = NodePath("R_Arm/Bone/Bone001/Bone002/Bone003/Bone004")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 1.74428e-07, 0.308279, -3.62979e-10, 0.000523786, 5.65657e-08, 0.211475, 0.977383, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("R_Arm/Bone/Bone001/Bone002/Bone003")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, 9.14182e-08, 0.298927, 5.32276e-10, 0.000714568, -1.40257e-07, 0.288512, 0.957476, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("R_Arm/Bone/Bone001/Bone002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, 7.43694e-08, 0.3548, -4.71683e-10, 0.000383145, 4.9899e-08, 0.154703, 0.987961, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("R_Arm/Bone/Bone001")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, -5.95938e-08, 0.367911, 9.31256e-10, -0.00845925, -4.82109e-09, 0.140601, 0.99003, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("R_Arm/Bone")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, 0.647335, -5.19731e-10, 0.0353908, -0.64769, -0.272628, -0.267914, 0.659085, 1, 1, 1 )
+
+[node name="Weapon" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="SMG_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+pitch_scale = 0.84
+bus = "SFX"
+
+[node name="Kicksound" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.455319, 1.30754 )
+stream = ExtResource( 33 )
+unit_db = 6.169
+pitch_scale = 1.0
+bus = "SFX"
+
+[node name="Batonsound" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.455319, 1.30754 )
+stream = ExtResource( 33 )
+unit_db = 6.169
+pitch_scale = 2.43
+bus = "SFX"
+
+[node name="Kicksound2" parent="." instance=ExtResource( 32 )]
+stream = SubResource( 1 )
+pitch_scale = 0.91
+bus = "SFX"
+
+[node name="Rad_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+volume_db = -10.322
+pitch_scale = 2.03
+bus = "SFX"
+
+[node name="Rad_Sound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
+volume_db = 1.588
+pitch_scale = 0.84
+bus = "SFX"
+
+[node name="S_SMG_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = 3.529
+pitch_scale = 0.95
+bus = "SFX"
+
+[node name="Pistol_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+bus = "SFX"
+
+[node name="Dart_Sound" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 2 )
+volume_db = -1.725
+pitch_scale = 1.32
+bus = "SFX"
+
+[node name="Nambu_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+bus = "SFX"
+
+[node name="AN94_Sound" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 3 )
+bus = "SFX"
+
+[node name="Light_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 64 )
+bus = "SFX"
+
+[node name="SKS_Sound" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 3 )
+pitch_scale = 0.85
+bus = "SFX"
+
+[node name="Nailer_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+pitch_scale = 3.59
+bus = "SFX"
+
+[node name="SKS_Sound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 54 )
+pitch_scale = 3.17
+bus = "SFX"
+
+[node name="FT_Sound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163491, 0, 0.603554 )
+stream = ExtResource( 49 )
+unit_size = 0.6
+max_db = 0.0
+bus = "SFX"
+
+[node name="VAG72_Sound" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 3 )
+bus = "SFX"
+
+[node name="AR_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = 5.117
+pitch_scale = 1.45
+bus = "SFX"
+
+[node name="Shotgun_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -6.192
+bus = "SFX"
+
+[node name="Steyr_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 45 )
+bus = "SFX"
+
+[node name="Sniper_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+pitch_scale = 0.3
+bus = "SFX"
+
+[node name="RL_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "SFX"
+
+[node name="MG3_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 0.791
+bus = "SFX"
+
+[node name="MG3_Sound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 0.791
+bus = "SFX"
+
+[node name="Ricochet_Sound" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 36 )
+volume_db = -5.0
+
+[node name="Exploison" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 69 )
+pitch_scale = 1.5
+
+[node name="RayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, 2000 )
+collision_mask = 79
+collide_with_areas = true
+
+[node name="Collision_Ray" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, 1 )
+collision_mask = 15
+collide_with_areas = true
+
+[node name="Sniper_Barrel_End" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130842, -0.0200683, 1.48969 )
+
+[node name="Sniper_Tracer_Ray" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, 2000 )
+collide_with_areas = true
+
+[node name="Use_Raycast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, 5 )
+collision_mask = 449
+collide_with_areas = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Reload_Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Richochet_Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.131576, -0.0672236, 0.790137 )
+visible = false
+light_color = Color( 0.4, 1, 0.407843, 1 )
+light_energy = 0.0
+light_specular = 0.0
+light_bake_mode = 0
+omni_range = 9.9
+
+[node name="Player_Weapon" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.135, -0.078, 0.312 )
+
+[node name="AmmoTimer" type="Timer" parent="Player_Weapon/Player_Weapon" index="0"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Skeleton" parent="Player_Weapon/Player_Weapon" index="1"]
+bones/0/bound_children = [ NodePath("BoneAttachment") ]
+bones/1/bound_children = [ NodePath("BoneAttachment 2") ]
+bones/50/bound_children = [ NodePath("BoneAttachment 3") ]
+bones/51/bound_children = [ NodePath("BoneAttachment 4") ]
+bones/52/bound_children = [ NodePath("BoneAttachment 5") ]
+bones/53/bound_children = [ NodePath("BoneAttachment 8") ]
+bones/54/bound_children = [ NodePath("BoneAttachment 6") ]
+bones/55/bound_children = [ NodePath("BoneAttachment 7") ]
+bones/56/bound_children = [ NodePath("BoneAttachment 9") ]
+bones/57/bound_children = [ NodePath("BoneAttachment 10") ]
+bones/58/bound_children = [ NodePath("BoneAttachment 13"), NodePath("BoneAttachment 14") ]
+bones/59/bound_children = [ NodePath("BoneAttachment 11") ]
+bones/60/bound_children = [ NodePath("BoneAttachment 12") ]
+bones/61/bound_children = [ NodePath("BoneAttachment 18") ]
+bones/62/bound_children = [ NodePath("BoneAttachment 17") ]
+bones/63/bound_children = [ NodePath("BoneAttachment 15") ]
+bones/64/bound_children = [ NodePath("BoneAttachment 16") ]
+bones/65/bound_children = [ NodePath("BoneAttachment 19") ]
+bones/66/bound_children = [ NodePath("BoneAttachment 20") ]
+bones/67/bound_children = [ NodePath("BoneAttachment 22") ]
+bones/68/bound_children = [ NodePath("BoneAttachment 21") ]
+bones/69/bound_children = [ NodePath("BoneAttachment 23") ]
+bones/70/bound_children = [ NodePath("BoneAttachment 24") ]
+bones/71/bound_children = [ NodePath("BoneAttachment 25") ]
+
+[node name="TacticAmmo" type="Label3D" parent="Player_Weapon/Player_Weapon/Skeleton" index="0"]
+transform = Transform( 1, 0, 0, -8.77833e-16, 1, 0, 0, 0, 1, 0, 0.06, 0 )
+cast_shadow = 0
+pixel_size = 0.002
+modulate = Color( 1, 0, 0, 1 )
+text = "0
+"
+font = SubResource( 35 )
+uppercase = true
+
+[node name="BoneAttachment" parent="Player_Weapon/Player_Weapon/Skeleton" index="1"]
+transform = Transform( 1, -6.93877e-16, 9.97802e-18, 9.97802e-18, 0.0287543, 0.999586, -6.93877e-16, -0.999586, 0.0287543, 1.15049e-15, -0.0806323, 1.71585 )
+
+[node name="SKS" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment" index="1"]
+transform = Transform( 1, -3.25852e-07, -3.16472e-07, -3.07121e-07, 0.0283054, -0.9996, 3.3468e-07, 0.9996, 0.0283054, 4.47035e-08, 0.127192, 0.00491202 )
+material_override = SubResource( 4 )
+mesh = ExtResource( 53 )
+
+[node name="BoneAttachment 2" parent="Player_Weapon/Player_Weapon/Skeleton" index="2"]
+transform = Transform( 1, -6.93877e-16, 9.97802e-18, 9.97802e-18, 0.0287543, 0.999586, -6.93877e-16, -0.999586, 0.0287543, 1.11507e-15, -0.0831447, 1.46297 )
+
+[node name="BoneAttachment 3" parent="Player_Weapon/Player_Weapon/Skeleton" index="3"]
+transform = Transform( 1, 0, 0, 0, 0.00323975, 0.999995, 0, -0.999995, 0.00323975, 0.0360777, 0.108417, 3.1438 )
+
+[node name="BoneAttachment 4" parent="Player_Weapon/Player_Weapon/Skeleton" index="4"]
+transform = Transform( 1, -4.52462e-19, -1.40166e-17, 1.40169e-17, 0.000685036, 1, -4.4286e-19, -1, 0.000685036, 0.06544, -0.3582, 1.6961 )
+
+[node name="Pistol" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 4" index="0"]
+visible = false
+
+[node name="Dartgun" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 4" index="1"]
+transform = Transform( 1, 4.996e-16, 2.84217e-12, 2.84217e-12, -1.62923e-07, -1, 0, 1, -1.62923e-07, -0.0181554, 0.121306, 0.0324186 )
+visible = false
+material_override = SubResource( 5 )
+mesh = ExtResource( 28 )
+
+[node name="Particles" type="Particles" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 4/Dartgun"]
+transform = Transform( 1, 2.55795e-12, -2.498e-16, 1.38778e-17, -1.62865e-07, 1, 2.84217e-12, -1, -1.62865e-07, 0.000621766, -0.00447217, -0.235084 )
+material_override = SubResource( 6 )
+emitting = false
+amount = 20
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.38
+local_coords = false
+process_material = SubResource( 7 )
+draw_pass_1 = SubResource( 8 )
+
+[node name="Zippy" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 4" index="2"]
+transform = Transform( 1, 9.4369e-16, 3.75167e-12, 2.84217e-12, -1.62923e-07, -1, 0, 1, -1.62923e-07, -0.0128683, 0.0329427, -0.0385463 )
+visible = false
+material_override = SubResource( 9 )
+mesh = ExtResource( 36 )
+
+[node name="Vag72" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 4" index="3"]
+transform = Transform( 1, 1.02696e-15, 3.9222e-12, 2.84217e-12, -1.62923e-07, -1, 0, 1, -1.62923e-07, -0.0128682, 0.0494041, -0.0218652 )
+visible = false
+material_override = SubResource( 10 )
+mesh = ExtResource( 42 )
+
+[node name="Dna" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 4" index="4"]
+transform = Transform( 1, 1.19349e-15, 4.26326e-12, 2.84217e-12, -1.62923e-07, -1, 0, 1, -1.62923e-07, -0.0128681, 0.0846938, 0.0319956 )
+visible = false
+material_override = SubResource( 11 )
+mesh = ExtResource( 46 )
+
+[node name="Nailer" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 4" index="5"]
+transform = Transform( 1, 1.22125e-15, 4.3201e-12, 2.84217e-12, -1.62923e-07, -1, 0, 1, -1.62923e-07, -0.0128681, 0.0846864, 0.0211607 )
+visible = false
+material_override = SubResource( 12 )
+mesh = ExtResource( 55 )
+
+[node name="Shockwave" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 4" index="6"]
+transform = Transform( 1, 1.31839e-15, 4.51905e-12, 2.84217e-12, -1.62923e-07, -1, 0, 1, -1.62923e-07, -0.0128983, 0.0866222, 0.0211594 )
+visible = false
+material_override = SubResource( 13 )
+mesh = ExtResource( 59 )
+
+[node name="BoneAttachment 5" parent="Player_Weapon/Player_Weapon/Skeleton" index="5"]
+transform = Transform( 1, 0, 0, 0, -0.00414515, 0.999991, 0, -0.999991, -0.00414515, -0.237841, 0.759862, 1.83491 )
+
+[node name="BoneAttachment 6" parent="Player_Weapon/Player_Weapon/Skeleton" index="6"]
+transform = Transform( 1, 0, 0, 0, 0.00206232, 0.999998, 0, -0.999998, 0.00206232, -0.0552527, -0.140809, 2.92226 )
+
+[node name="BoneAttachment 7" parent="Player_Weapon/Player_Weapon/Skeleton" index="7"]
+transform = Transform( -0.000535011, 0.999998, -0.00206462, -0.00412663, 0.00206239, 0.999989, 0.999991, 0.000543557, 0.00412551, -0.00797842, -0.133718, 3.80156 )
+
+[node name="BoneAttachment 8" parent="Player_Weapon/Player_Weapon/Skeleton" index="8"]
+transform = Transform( 1, 0, 0, 0, 0.00206232, 0.999998, 0, -0.999998, 0.00206232, -0.0552527, -0.137405, 3.63365 )
+
+[node name="BoneAttachment 9" parent="Player_Weapon/Player_Weapon/Skeleton" index="9"]
+transform = Transform( 1, 0, 0, 0, -0.00354898, 0.999994, 0, -0.999994, -0.00354898, -0.218125, -0.381373, 3.26084 )
+
+[node name="AR" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 9" index="0"]
+visible = false
+
+[node name="MKR" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 9" index="1"]
+transform = Transform( 1, -3.1866e-07, -3.26919e-07, -3.20973e-07, 0.018482, -0.999831, 3.24649e-07, 0.999831, 0.018482, -0.00830667, -0.112426, -0.0486545 )
+visible = false
+material_override = SubResource( 14 )
+mesh = ExtResource( 19 )
+
+[node name="AN94" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 9" index="2"]
+transform = Transform( 1, -3.1866e-07, -3.26918e-07, -3.20973e-07, 0.018482, -0.999829, 3.24649e-07, 0.999829, 0.018482, 0.0020965, -0.0627684, -0.029803 )
+visible = false
+material_override = SubResource( 15 )
+mesh = ExtResource( 38 )
+
+[node name="STEYR" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 9" index="3"]
+transform = Transform( 1, -3.1866e-07, -3.26918e-07, -3.20973e-07, 0.018482, -0.999828, 3.24649e-07, 0.999828, 0.018482, 0.00444503, -0.122094, -0.039441 )
+visible = false
+material_override = SubResource( 16 )
+mesh = ExtResource( 44 )
+
+[node name="FLAMETHROWER" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 9" index="4"]
+transform = Transform( 1, -3.1866e-07, -3.26918e-07, -3.20973e-07, 0.018482, -0.999828, 3.24649e-07, 0.999828, 0.018482, 0.00444503, -0.114646, -0.047776 )
+visible = false
+material_override = SubResource( 17 )
+mesh = ExtResource( 50 )
+
+[node name="RADGUN" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 9" index="5"]
+transform = Transform( 1, -3.1866e-07, -3.26919e-07, -3.20973e-07, 0.018482, -0.999831, 3.24649e-07, 0.999831, 0.018482, -0.00830667, -0.112426, -0.0486545 )
+visible = false
+material_override = SubResource( 18 )
+mesh = ExtResource( 24 )
+
+[node name="cylinder" type="Position3D" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 9/RADGUN"]
+transform = Transform( 1, -3.46251e-13, -5.77316e-15, -2.30371e-15, 0.999999, 0, 0, 0, 0.999999, 0, 0.0232492, -0.380287 )
+
+[node name="cylinder" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 9/RADGUN/cylinder"]
+transform = Transform( 1, 2.7911e-13, 4.88498e-15, 2.61735e-14, 1, 0, -4.44089e-16, 0, 1, 0, -0.0232492, 0.380288 )
+material_override = SubResource( 18 )
+mesh = ExtResource( 25 )
+
+[node name="BoneAttachment 10" parent="Player_Weapon/Player_Weapon/Skeleton" index="10"]
+transform = Transform( 1, 0, 0, 0, -0.0123402, 0.999924, 0, -0.999924, -0.0123402, 0.017601, 0.534209, 3.42945 )
+
+[node name="BoneAttachment 11" parent="Player_Weapon/Player_Weapon/Skeleton" index="11"]
+transform = Transform( 1, 1.42109e-14, 4.76837e-07, 3.14059e-07, 0.752468, -0.658629, -3.58804e-07, 0.658629, 0.752467, 0.0563424, -0.244187, 3.06013 )
+
+[node name="BoneAttachment 12" parent="Player_Weapon/Player_Weapon/Skeleton" index="12"]
+transform = Transform( 1, 0, 0, 0, 0.014993, 0.999887, 0, -0.999887, 0.014993, 0.0563424, -0.244187, 3.0296 )
+
+[node name="BoneAttachment 13" parent="Player_Weapon/Player_Weapon/Skeleton" index="13"]
+transform = Transform( 1, 0, 0, 0, 0.014993, 0.999887, 0, -0.999887, 0.014993, 0.0563424, -0.275411, 3.09205 )
+
+[node name="BoneAttachment 14" parent="Player_Weapon/Player_Weapon/Skeleton" index="14"]
+transform = Transform( 1, 0, 0, 0, 0.014993, 0.999887, 0, -0.999887, 0.014993, 0.0563424, -0.275411, 3.09205 )
+
+[node name="BoneAttachment 15" parent="Player_Weapon/Player_Weapon/Skeleton" index="15"]
+transform = Transform( 1, 0, 0, 0, -7.15256e-07, 1, 0, -1, -7.15256e-07, 0.0428659, 0.27494, 3.36221 )
+
+[node name="BoneAttachment 16" parent="Player_Weapon/Player_Weapon/Skeleton" index="16"]
+transform = Transform( 1, 0, 0, 0, -7.15256e-07, 1, 0, -1, -7.15256e-07, 0.0428659, -0.431316, 3.71813 )
+
+[node name="BoneAttachment 17" parent="Player_Weapon/Player_Weapon/Skeleton" index="17"]
+transform = Transform( 1, 0, 0, 0, -7.15256e-07, 1, 0, -1, -7.15256e-07, 0.0428659, 0.221496, 3.32658 )
+
+[node name="BoneAttachment 18" parent="Player_Weapon/Player_Weapon/Skeleton" index="18"]
+transform = Transform( 1, 0, 0, 0, -7.15256e-07, 1, 0, -1, -7.15256e-07, 0.0428659, 0.222662, 3.50148 )
+
+[node name="BoneAttachment 19" parent="Player_Weapon/Player_Weapon/Skeleton" index="19"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0.017601, -0.522966, 2.95791 )
+
+[node name="BoneAttachment 20" parent="Player_Weapon/Player_Weapon/Skeleton" index="20"]
+transform = Transform( 1, 0, 0, 0, 0.00653475, 0.999979, 0, -0.999979, 0.00653476, 0.0421095, 0.973349, 3.84285 )
+
+[node name="BoneAttachment 21" parent="Player_Weapon/Player_Weapon/Skeleton" index="21"]
+transform = Transform( 0.999735, 0.0230164, 0, 0, 0, 1, 0.0230164, -0.999735, 0, 0.0287694, 0.740765, 3.48532 )
+
+[node name="BoneAttachment 22" parent="Player_Weapon/Player_Weapon/Skeleton" index="22"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0.0287694, 0.70594, 3.32309 )
+
+[node name="BoneAttachment 23" parent="Player_Weapon/Player_Weapon/Skeleton" index="23"]
+transform = Transform( 1, 0, 0, 0, 0.0130415, 0.999915, 0, -0.999915, 0.0130415, 0.0711293, 0.415238, 2.65265 )
+
+[node name="BoneAttachment 24" parent="Player_Weapon/Player_Weapon/Skeleton" index="24"]
+transform = Transform( 1, -9.08068e-17, -1.94171e-17, 9.08068e-17, 0.912553, 0.408958, -1.9417e-17, -0.408958, 0.912553, 0.0389594, 0.226018, 4.11538 )
+
+[node name="Rod" type="MeshInstance" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 24" index="1"]
+transform = Transform( 1, -3.3075e-07, 3.10498e-07, 3.20538e-07, 0.0308002, -0.999526, 3.2103e-07, 0.999526, 0.0308002, 0, 0.462964, -0.012262 )
+material_override = SubResource( 19 )
+mesh = ExtResource( 48 )
+
+[node name="RodPos" type="Position3D" parent="Player_Weapon/Player_Weapon/Skeleton/BoneAttachment 24/Rod"]
+transform = Transform( 1, 3.20538e-07, 3.2103e-07, -3.3075e-07, 0.0308002, 0.999526, 3.10498e-07, -0.999526, 0.0308002, 0.000187278, -0.0017693, -0.760768 )
+
+[node name="BoneAttachment 25" parent="Player_Weapon/Player_Weapon/Skeleton" index="25"]
+transform = Transform( 1, 0, 0, 0, 0.0134569, 0.99991, 0, -0.99991, 0.0134569, -0.0671038, 0.511947, 1.5166 )
+
+[node name="Left_Arm" parent="Player_Weapon/Player_Weapon/Skeleton" index="26"]
+material_override = ExtResource( 22 )
+
+[node name="Right_Arm" parent="Player_Weapon/Player_Weapon/Skeleton" index="27"]
+material_override = ExtResource( 22 )
+
+[node name="Flashlight" parent="Player_Weapon" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0579289, -0.0709092, -0.0941085 )
+
+[node name="ShellPosition" type="Position3D" parent="Player_Weapon"]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0.050724, 0.0164324, -0.090189 )
+
+[node name="AR_dot" type="MeshInstance" parent="Player_Weapon"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0446133, 0.0934427, 0.142404 )
+mesh = SubResource( 20 )
+material/0 = SubResource( 21 )
+
+[node name="Muzzleflash" parent="Player_Weapon" instance=ExtResource( 18 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0.0563456, -0.0351015, -0.419619 )
+visible = false
+
+[node name="LIGHT" type="MeshInstance" parent="Player_Weapon"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0185432, -0.162299, -0.115109 )
+material_override = SubResource( 22 )
+mesh = ExtResource( 63 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Player_Weapon/LIGHT"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04308e-07, 0.26804, -0.0557275 )
+material_override = SubResource( 23 )
+mesh = SubResource( 24 )
+
+[node name="Position3D" type="Position3D" parent="Player_Weapon/LIGHT"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000243485, 0.00966437, -0.538739 )
+
+[node name="Player_Leg" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183307, -0.634189, 0.148358 )
+
+[node name="Shotgun_Pump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+pitch_scale = 0.74
+
+[node name="No_Ammo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+pitch_scale = 3.52
+
+[node name="Reload" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = 8.0
+
+[node name="Alert" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape" type="CollisionShape" parent="Alert"]
+shape = SubResource( 25 )
+
+[node name="Laser_Dot" parent="." instance=ExtResource( 14 )]
+
+[node name="Front_Pos_Helper" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 55.3106 )
+
+[node name="Object_Hold_Pos" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.142 )
+
+[node name="Radiation_Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.86594 )
+collision_layer = 0
+collision_mask = 12
+
+[node name="CollisionShape" type="CollisionShape" parent="Radiation_Area"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 2.29949 )
+shape = SubResource( 26 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Radiation_Area"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, -0.173389, -0.148331, 2.28033 )
+visible = false
+material_override = ExtResource( 21 )
+mesh = SubResource( 27 )
+
+[node name="Radiation_Light" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179956, -0.0198434, 0.794565 )
+light_color = Color( 0, 0.25098, 1, 1 )
+light_energy = 16.0
+omni_range = 22.7
+
+[node name="ImmediateGeometry" type="ImmediateGeometry" parent="."]
+material_override = SubResource( 28 )
+
+[node name="ImmediateGeometry2" type="ImmediateGeometry" parent="."]
+material_override = SubResource( 29 )
+
+[node name="orbarms" parent="." instance=ExtResource( 57 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -0.207, 0 )
+
+[node name="Sphere003" parent="orbarms/R_Arm/Bone/Bone001/Bone002/Bone003/Bone004" index="0"]
+material_override = ExtResource( 58 )
+
+[node name="Sphere004" parent="orbarms/R_Arm/Bone/Bone001/Bone002/Bone003/Bone004" index="1"]
+material_override = ExtResource( 58 )
+
+[node name="R_Orb" type="Area" parent="orbarms/R_Arm/Bone/Bone001/Bone002/Bone003/Bone004/Sphere004" index="0"]
+transform = Transform( -0.162417, 9.64617e-07, -0.986722, -8.71332e-07, 1, 1.03118e-06, 0.986722, 9.69275e-07, -0.162417, 0.0104916, 1.41561e-06, 0.0262175 )
+collision_layer = 0
+collision_mask = 13
+
+[node name="CollisionShape" type="CollisionShape" parent="orbarms/R_Arm/Bone/Bone001/Bone002/Bone003/Bone004/Sphere004/R_Orb"]
+shape = SubResource( 30 )
+
+[node name="Sphere002" parent="orbarms/R_Arm/Bone/Bone001/Bone002/Bone003" index="1"]
+material_override = ExtResource( 58 )
+
+[node name="Sphere001" parent="orbarms/R_Arm/Bone/Bone001/Bone002" index="1"]
+material_override = ExtResource( 58 )
+
+[node name="Sphere" parent="orbarms/R_Arm/Bone/Bone001" index="1"]
+material_override = ExtResource( 58 )
+
+[node name="Sphere005" parent="orbarms/R_Arm/Bone" index="1"]
+material_override = ExtResource( 58 )
+
+[node name="Bone 2" parent="orbarms/L_Arm" index="0"]
+transform = Transform( 0.724525, -0.689143, 0.0120208, 8.9407e-08, 0.0174406, 0.999848, -0.689248, -0.724415, 0.0126362, -0.528533, -8.01537e-10, 0.0353908 )
+
+[node name="Bone001 2" parent="orbarms/L_Arm/Bone 2" index="0"]
+transform = Transform( 0.950489, 0.31075, -0.00235408, -0.310659, 0.950347, 0.0182087, 0.00789556, -0.0165759, 0.999831, -5.73108e-08, 0.367911, 1.03381e-09 )
+
+[node name="Bone002 2" parent="orbarms/L_Arm/Bone 2/Bone001 2" index="0"]
+transform = Transform( 0.889871, 0.456212, 0.000272842, -0.456212, 0.889871, 0.00112985, 0.000272657, -0.0011299, 0.999999, -1.16955e-07, 0.3548, -1.4964e-10 )
+
+[node name="Bone003 2" parent="orbarms/L_Arm/Bone 2/Bone001 2/Bone002 2" index="0"]
+transform = Transform( 0.903933, 0.427673, 0.000237652, -0.427673, 0.903933, 0.0010593, 0.000238214, -0.00105918, 0.999999, -6.04683e-08, 0.298927, 5.12358e-10 )
+
+[node name="Bone004 2" parent="orbarms/L_Arm/Bone 2/Bone001 2/Bone002 2/Bone003 2" index="0"]
+transform = Transform( 0.90352, 0.428546, 0.000239077, -0.428546, 0.90352, 0.00106141, 0.000238853, -0.00106146, 0.999999, 1.47247e-08, 0.308279, -5.82077e-10 )
+
+[node name="Sphere009" parent="orbarms/L_Arm/Bone 2/Bone001 2/Bone002 2/Bone003 2/Bone004 2" index="0"]
+material_override = ExtResource( 58 )
+
+[node name="Sphere010" parent="orbarms/L_Arm/Bone 2/Bone001 2/Bone002 2/Bone003 2/Bone004 2" index="1"]
+material_override = ExtResource( 58 )
+
+[node name="L_Orb" type="Area" parent="orbarms/L_Arm/Bone 2/Bone001 2/Bone002 2/Bone003 2/Bone004 2/Sphere010" index="0"]
+collision_layer = 0
+collision_mask = 13
+
+[node name="CollisionShape" type="CollisionShape" parent="orbarms/L_Arm/Bone 2/Bone001 2/Bone002 2/Bone003 2/Bone004 2/Sphere010/L_Orb"]
+shape = SubResource( 30 )
+
+[node name="Sphere008" parent="orbarms/L_Arm/Bone 2/Bone001 2/Bone002 2/Bone003 2" index="1"]
+material_override = ExtResource( 58 )
+
+[node name="Sphere007" parent="orbarms/L_Arm/Bone 2/Bone001 2/Bone002 2" index="1"]
+material_override = ExtResource( 58 )
+
+[node name="Sphere006" parent="orbarms/L_Arm/Bone 2/Bone001 2" index="1"]
+material_override = ExtResource( 58 )
+
+[node name="Sphere011" parent="orbarms/L_Arm/Bone 2" index="1"]
+material_override = ExtResource( 58 )
+
+[node name="AnimationPlayer2" parent="orbarms" instance=ExtResource( 60 )]
+
+[node name="AnimationPlayer" parent="orbarms" instance=ExtResource( 60 )]
+anims/Attack = SubResource( 31 )
+anims/AttackR = SubResource( 32 )
+anims/Idle = SubResource( 33 )
+anims/IdleR = SubResource( 34 )
+
+[node name="JetPack" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.74507, 0 )
+stream = ExtResource( 65 )
+
+[node name="Switch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 66 )
+
+[connection signal="timeout" from="Richochet_Timer" to="." method="_on_Richochet_Timer_timeout"]
+[connection signal="timeout" from="Player_Weapon/Player_Weapon/AmmoTimer" to="." method="_on_AmmoTimer_timeout"]
+
+[editable path="Player_Weapon"]
+[editable path="orbarms"]

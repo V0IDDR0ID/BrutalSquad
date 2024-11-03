@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Materials/heartbeat.tres" type="Material" id=1]
+
+[sub_resource type="SphereMesh" id=1]
+radius = 0.188
+height = 0.408
+
+[node name="Heartbeat_Indicator" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 1.12907, 0 )
+material_override = ExtResource( 1 )
+mesh = SubResource( 1 )
+material/0 = null

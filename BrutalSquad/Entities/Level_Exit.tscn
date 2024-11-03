@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Exit.gd" type="Script" id=1]
+[ext_resource path="res://Maps/textures/special/exit.tres" type="Material" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 2 )
+
+[sub_resource type="BoxShape" id=2]
+
+[node name="Level_Exit" type="Area"]
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )

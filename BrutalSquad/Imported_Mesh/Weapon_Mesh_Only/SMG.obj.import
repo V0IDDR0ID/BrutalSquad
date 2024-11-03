@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SMG.obj-f17668a8f0023ce001e9a60159665738.mesh"
+
+[deps]
+
+files=["res://.import/SMG.obj-f17668a8f0023ce001e9a60159665738.mesh"]
+source_file="res://Imported_Mesh/Weapon_Mesh_Only/SMG.obj"
+dest_files=["res://.import/SMG.obj-f17668a8f0023ce001e9a60159665738.mesh", "res://.import/SMG.obj-f17668a8f0023ce001e9a60159665738.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

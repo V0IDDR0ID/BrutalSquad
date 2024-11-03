@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Kinematic_Physics_Object.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Physics_Objects/coin.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Physics_Objects/flesh_sound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sfx/WeaponsPickups/ammo_shell_2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sfx/WeaponsPickups/ammo_shell_3.wav" type="AudioStream" id=5]
+
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 0.029
+bottom_radius = 0.029
+height = 0.006
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.639216, 1, 0, 1 )
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 0, 0.003, 0.029, 0.0205061, 0.003, 0.0205061, 0.029, 0.003, 1.77574e-18, 0.0205061, 0.003, -0.0205061, 3.55148e-18, 0.003, -0.029, -0.0205061, 0.003, -0.0205061, -0.029, 0.003, -5.32721e-18, -0.0205061, 0.003, 0.0205061, -7.10295e-18, 0.003, 0.029, 0, 0, 0.029, 0.0205061, 0, 0.0205061, 0.029, 0, 1.77574e-18, 0.0205061, 0, -0.0205061, 3.55148e-18, 0, -0.029, -0.0205061, 0, -0.0205061, -0.029, 0, -5.32721e-18, -0.0205061, 0, 0.0205061, -7.10295e-18, 0, 0.029, 0, -0.003, 0.029, 0.0205061, -0.003, 0.0205061, 0.029, -0.003, 1.77574e-18, 0.0205061, -0.003, -0.0205061, 3.55148e-18, -0.003, -0.029, -0.0205061, -0.003, -0.0205061, -0.029, -0.003, -5.32721e-18, -0.0205061, -0.003, 0.0205061, -7.10295e-18, -0.003, 0.029, 0, 0.003, 0, 0, 0.003, 0.029, 0.0205061, 0.003, 0.0205061, 0.029, 0.003, 1.77574e-18, 0.0205061, 0.003, -0.0205061, 3.55148e-18, 0.003, -0.029, -0.0205061, 0.003, -0.0205061, -0.029, 0.003, -5.32721e-18, -0.0205061, 0.003, 0.0205061, -7.10295e-18, 0.003, 0.029, 0, -0.003, 0, 0, -0.003, 0.029, 0.0205061, -0.003, 0.0205061, 0.029, -0.003, 1.77574e-18, 0.0205061, -0.003, -0.0205061, 3.55148e-18, -0.003, -0.029, -0.0205061, -0.003, -0.0205061, -0.029, -0.003, -5.32721e-18, -0.0205061, -0.003, 0.0205061, -7.10295e-18, -0.003, 0.029 )
+
+[sub_resource type="SphereShape" id=4]
+radius = 0.09
+
+[node name="Shell" type="KinematicBody"]
+collision_layer = 0
+script = ExtResource( 1 )
+particle = false
+mass = 3
+rotate_b = false
+shell = true
+sounds = true
+
+[node name="Sound1" parent="." instance=ExtResource( 3 )]
+
+[node name="Sound2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Sound3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 3 )
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 4 )

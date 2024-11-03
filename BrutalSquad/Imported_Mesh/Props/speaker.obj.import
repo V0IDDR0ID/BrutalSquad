@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/speaker.obj-b6bb72774ecd08e8aaab313308e28f2a.mesh"
+
+[deps]
+
+files=[ "res://.import/speaker.obj-b6bb72774ecd08e8aaab313308e28f2a.mesh" ]
+
+source_file="res://Imported_Mesh/Props/speaker.obj"
+dest_files=[ "res://.import/speaker.obj-b6bb72774ecd08e8aaab313308e28f2a.mesh", "res://.import/speaker.obj-b6bb72774ecd08e8aaab313308e28f2a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

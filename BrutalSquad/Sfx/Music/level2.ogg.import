@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/level2.ogg-87ab5f525f80d68185a93dc493dbb4f5.oggstr"
+
+[deps]
+
+source_file="res://Sfx/Music/level2.ogg"
+dest_files=[ "res://.import/level2.ogg-87ab5f525f80d68185a93dc493dbb4f5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

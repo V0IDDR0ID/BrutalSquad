@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Message_Area.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=483]
+extents = Vector3( 6.28471, 8.03419, 1 )
+
+[node name="Message_Area" type="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3171, 1.86336, -18.6888 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 1 )
+message = "Since it's your first day I dosed a special combat cocktail for you. Don't worry if you feel a little off. Well haha good luck."
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 483 )
+[connection signal="body_entered" from="." to="." method="_on_Message_Area_body_entered"]
