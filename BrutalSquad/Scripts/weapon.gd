@@ -987,8 +987,12 @@ func _process(delta)->void :
 					$Exploison.play()
 					missile_new.global_transform.origin = global_transform.origin
 			if glob.implants.arm_implant.fieldkit and grenade_ammo > 0:
-				grenade_ammo -= 1
-				Global.player.add_health(18)
+				if player:
+					grenade_ammo -= 1
+					Global.player.add_health(18)
+					magazine_ammo[0] += 3
+					magazine_ammo[1] += 3
+					
 		if current_weapon != null:
 			if Input.is_action_just_pressed("mouse_1") and magazine_ammo[current_weapon] <= 0:
 				if not $No_Ammo.playing:

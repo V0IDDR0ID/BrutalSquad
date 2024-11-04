@@ -183,7 +183,7 @@ var action = 0
 var action_lerp_value = 0
 var BORDERS = [preload("res://Textures/UI/border.png"), 
 preload("res://Textures/UI/UI_holy_border.tres"), 
-preload("res://Textures/UI/border3.png"), 
+preload("res://Textures/UI/UI_biorobot_border.tres"), 
 preload("res://Textures/UI/UI_nohope_border.tres")]
 var level_time: String = ""
 var level_time_raw: float = 0
@@ -374,7 +374,6 @@ func _deferred_goto_scene(path: String)->void :
 	wait_frames = 1
 
 func _process(time: float)->void :
-
 	if loader == null:
 		
 		set_process(false)

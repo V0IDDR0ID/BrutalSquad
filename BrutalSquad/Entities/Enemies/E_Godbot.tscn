@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Scripts/E_Grunt_Movement_New.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/EnemyHandler.gd" type="Script" id=2]
@@ -33,6 +33,9 @@
 [ext_resource path="res://Entities/Physics_Objects/ORG_Brain.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Entities/Physics_Objects/ORG_Kidney.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Entities/Physics_Objects/ORG_Intestine.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Sfx/Player/IED_armed_1.wav" type="AudioStream" id=34]
+[ext_resource path="res://Sfx/Player/IED_armed_2.wav" type="AudioStream" id=35]
+[ext_resource path="res://Sfx/Player/IED_drum.wav" type="AudioStream" id=36]
 
 [sub_resource type="AnimationNodeAnimation" id=1]
 animation = "Jump"
@@ -952,6 +955,7 @@ flee_health = 3
 gib_health = -500
 psychosis_inducer = true
 AMMO = ExtResource( 8 )
+squad_death = true
 DROPS = [ ExtResource( 28 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 27 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 25 ) ]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -1056,7 +1060,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93283e-05, 0, 59.3179 )
 transform = Transform( 0.109, 0, 0, 0, 0.243, 0, 0, 0, 38.557, 0, 0, -19.142 )
 visible = false
 mesh = SubResource( 8 )
-material/0 = null
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Body"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.292436, 0 )
@@ -1119,6 +1122,15 @@ unit_size = 10.0
 bus = "SFX"
 
 [node name="Gib" parent="Body/SFX" instance=ExtResource( 14 )]
+
+[node name="IED1" type="AudioStreamPlayer" parent="Body/SFX"]
+stream = ExtResource( 34 )
+
+[node name="IED2" type="AudioStreamPlayer" parent="Body/SFX"]
+stream = ExtResource( 35 )
+
+[node name="IED_alert" type="AudioStreamPlayer" parent="Body/SFX"]
+stream = ExtResource( 36 )
 
 [node name="Alert_Sphere" parent="Body" instance=ExtResource( 24 )]
 
@@ -1331,7 +1343,6 @@ bone_name = "bone_5"
 transform = Transform( -1.50598, -0.69865, -0.69564, 0.841187, -0.248105, -1.57189, 0.514229, -1.64022, 0.534076, 0.0805209, 0.320105, -0.28402 )
 material_override = SubResource( 14 )
 mesh = ExtResource( 18 )
-material/0 = null
 
 [node name="BoneAttachment 2" type="BoneAttachment" parent="Nemesis/Armature/Skeleton"]
 transform = Transform( 0.909911, -0.32065, -0.263146, 0.161035, -0.311565, 0.936479, -0.38227, -0.894489, -0.231861, -0.818083, -0.461705, -1.17272 )
@@ -1342,20 +1353,17 @@ transform = Transform( 1.5639, 0.647044, -0.612818, -0.542377, -0.291088, -1.691
 visible = false
 material_override = SubResource( 14 )
 mesh = ExtResource( 18 )
-material/0 = null
 
 [node name="Head_Mesh" type="MeshInstance" parent="Nemesis/Armature/Skeleton"]
 visible = false
 material_override = ExtResource( 16 )
 mesh = SubResource( 15 )
 skin = SubResource( 16 )
-material/0 = null
 
 [node name="Torso_Mesh" type="MeshInstance" parent="Nemesis/Armature/Skeleton"]
 material_override = ExtResource( 21 )
 mesh = SubResource( 17 )
 skin = SubResource( 18 )
-material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Nemesis"]
 anims/Death1 = SubResource( 19 )

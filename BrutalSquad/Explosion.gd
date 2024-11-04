@@ -15,8 +15,6 @@ func _ready():
 	particle = $Particle
 	c_shape = $CollisionShape
 	particle.emitting = true
-	if Global.implants.head_implant.noir_vision:
-		$Particle.draw_pass_1.material.albedo_color = Color(0, 1, 0, 1)
 
 
 

@@ -59,7 +59,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/qodot_plugin.gd"
 }, {
-"base": "Reference",
+"base": "Spatial",
 "class": "QodotSpatial",
 "language": "GDScript",
 "path": "res://addons/qodot/src/nodes/qodot_spatial.gd"
@@ -140,7 +140,7 @@ _global_script_class_icons={
 "QodotLight": "",
 "QodotMap": "",
 "QodotPlugin": "",
-"QodotSpatial": "",
+"QodotSpatial": "res://addons/qodot/icons/icon_qodot_spatial.svg",
 "QodotTextureLoader": "",
 "QodotUtil": "",
 "QodotWorldspawnLayer": "",

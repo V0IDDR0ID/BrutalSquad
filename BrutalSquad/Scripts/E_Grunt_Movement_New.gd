@@ -524,7 +524,7 @@ func find_path(delta)->void :
 				footstep.play()
 				footstep_counter = 0
 	
-	var next_position = path[0]
+	var next_position = path[0] if not path.empty() else global_transform.origin
 	var move_to
 	if player_distance < 50:
 		move_to = lerp(global_transform.origin, next_position, delta)

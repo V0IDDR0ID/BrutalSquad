@@ -359,9 +359,10 @@ func _ready():
 	IMPLANTS.append(new_implant)
 	
 	new_implant = Implant.new()
-	new_implant.i_name = "Field First Aid Kit"
-	new_implant.explanation = "Field first aid kit. With it, you can recover several times on the battlefield."
-	new_implant.price = 5000
+	new_implant.i_name = "Field Kit"
+	new_implant.explanation = "Field kit. With it, you can recover health and ammunition several times."
+	new_implant.hidden = true
+	new_implant.price = 0
 	new_implant.speed_bonus = 0
 	new_implant.arms = true
 	new_implant.fieldkit = true
