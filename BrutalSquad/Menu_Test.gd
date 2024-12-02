@@ -238,9 +238,9 @@ func _ready():
 	
 	
 
-	if Global.ending_3:
+	if Global.ending_3 and Global.implants.purchased_implants.has("Cluster of Chaos"):
 		$Level_Info_Grid / Level_Info_Vbox / Time_Panel / VBoxContainer / Chaos_Mode.show()
-	else :
+	else:
 		$Level_Info_Grid / Level_Info_Vbox / Time_Panel / VBoxContainer / Chaos_Mode.hide()
 	$Settings / GridContainer / PanelContainer6 / VBoxContainer3 / Timer.pressed = Global.timer
 	$Settings / GridContainer / PanelContainer6 / VBoxContainer3 / Highperformance.pressed = Global.high_performance
@@ -1103,9 +1103,9 @@ func update_level_info()->void :
 	var level_stime = $Level_Info_Grid / Level_Info_Vbox / Time_Panel / VBoxContainer / Best_STime
 	var level_hell_time = $Level_Info_Grid / Level_Info_Vbox / Time_Panel / VBoxContainer / Best_Hell_Time
 	var level_hell_stime = $Level_Info_Grid / Level_Info_Vbox / Time_Panel / VBoxContainer / Best_Hell_STime
-	if Global.ending_3:
+	if Global.ending_3 and Global.implants.purchased_implants.has("Cluster of Chaos"):
 		$Level_Info_Grid / Level_Info_Vbox / Time_Panel / VBoxContainer / Chaos_Mode.show()
-	else :
+	else:
 		$Level_Info_Grid / Level_Info_Vbox / Time_Panel / VBoxContainer / Chaos_Mode.hide()
 	if not Global.hell_discovered:
 		$Level_Info_Grid / Level_Info_Vbox / Time_Panel / VBoxContainer / HBoxContainer / HellRank_Image.hide()

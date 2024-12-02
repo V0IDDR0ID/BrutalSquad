@@ -18,7 +18,7 @@ func _ready():
 
 
 func damage(dmg, nrml, pos, shoot_pos):
-	Global.UI.set_boss_UI("res://Textures/UI/thumbnails/abraxas (1).png")
+	Global.UI.set_boss_UI("res://Textures/UI/thumbnails/abraxasboss.tres")
 	Global.UI.update_boss_UI(str(health))
 	if not active or not left_tail.destroyed or not right_tail.destroyed:
 		return 

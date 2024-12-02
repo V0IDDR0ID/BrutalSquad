@@ -8,13 +8,6 @@ var helltexture = preload("res://Textures/sky10.png")
 var helltexture2 = preload("res://Textures/sky11.png")
 
 func _ready():
-	if Global.hope_discarded and Global.CURRENT_LEVEL != 18:
-		environment.background_sky.panorama = helltexture
-		environment.fog_color = Color(1, 0, 0)
-		if Global.ending_2:
-			environment.fog_color = Color(0, 1, 0)
-			environment.background_sky.panorama = helltexture2
-		environment.background_color = environment.fog_color
 	if Global.reflections:
 		environment.ss_reflections_enabled = true
 	else :

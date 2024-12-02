@@ -21,7 +21,6 @@ particle = false
 [node name="MeshInstance" type="MeshInstance" parent="."]
 material_override = SubResource( 1 )
 mesh = ExtResource( 4 )
-material/0 = null
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]
 shape = SubResource( 2 )

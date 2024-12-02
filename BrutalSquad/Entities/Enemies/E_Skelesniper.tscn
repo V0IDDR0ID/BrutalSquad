@@ -170,7 +170,6 @@ pitch_scale = 0.74
 transform = Transform( 0.109, 0, 0, 0, 0.243, 0, 0, 0, 38.557, 0, 0, -19.142 )
 visible = false
 mesh = SubResource( 9 )
-material/0 = null
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Body"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.292436, 0 )

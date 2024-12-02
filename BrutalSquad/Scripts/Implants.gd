@@ -31,6 +31,7 @@ class Implant:
 	var nightvision: bool = false
 	var jump_bonus: float = 0
 	var terror = false
+	var puredeath: bool = false
 	var speedrun: bool = false
 	var pills_filter: bool = false
 	var double_jump: float = 0
@@ -39,7 +40,9 @@ class Implant:
 	var throw_bonus: float = 0
 	var zoom_bonus: float = 1
 	var shrink: bool = false
+	var skyscraper: bool = false
 	var slowfall: bool = false
+	var adrenaline: bool = false
 	var healing: float = 0
 	var sensor: bool = false
 	var instadeath: bool = false
@@ -194,7 +197,7 @@ func _ready():
 	new_implant.texture = load("res://Textures/Menu/Implants/golem.png")
 	
 	IMPLANTS.append(new_implant)
-
+	
 	new_implant = Implant.new()
 	new_implant.i_name = "Tactical Blast Shield"
 	new_implant.explanation = "Complete protection from explosives. Allows the use of advanced demolition techniques."
@@ -238,6 +241,19 @@ func _ready():
 	IMPLANTS.append(new_implant)
 	
 	new_implant = Implant.new()
+	new_implant.i_name = "Universal Suit"
+	new_implant.explanation = "Excellent protection. Forged in agony."
+	new_implant.price = 0
+	new_implant.hidden = true
+	new_implant.explosive_shield = true
+	new_implant.toxic_shield = true
+	new_implant.armor = 0.8
+	new_implant.torso = true
+	new_implant.texture = load("res://Textures/Menu/Implants/universalsuit.png")
+	
+	IMPLANTS.append(new_implant)
+	
+	new_implant = Implant.new()
 	new_implant.i_name = "Stealth Suit"
 	new_implant.explanation = "Uses a coating of newly developed chameleon bacteria to make the user practically invisible up to about 20 universal length units. Has an overbearing stench and because of this the special forces units that make use of these are widely known as shitmen."
 	new_implant.price = 12000
@@ -268,7 +284,19 @@ func _ready():
 	new_implant.texture = load("res://Textures/Menu/Implants/tux.png")
 	
 	IMPLANTS.append(new_implant)
-
+	
+	new_implant = Implant.new()
+	new_implant.i_name = "Sneaky System v2"
+	new_implant.explanation = "A system that creates a time bubble and makes its wearer practically invisible. Helps to hide from guards and slows down the reaction time of enemies."
+	new_implant.hidden = true
+	new_implant.stealth = true
+	new_implant.camo = 1.5
+	new_implant.armor = 1.5
+	new_implant.torso = true
+	new_implant.texture = load("res://Textures/Menu/Implants/sneakysystem.png")
+	
+	IMPLANTS.append(new_implant)
+	
 	new_implant = Implant.new()
 	new_implant.i_name = "Biothruster"
 	new_implant.explanation = "Propel yourself forwards with a powerful jet of sticky liquid from holes in your back. Replaces your kick."
@@ -281,7 +309,7 @@ func _ready():
 
 	new_implant = Implant.new()
 	new_implant.i_name = "Biojet"
-	new_implant.explanation = "A powerful steady stream of warm liquid smoothly lifts you up and lets you fly like a bird. Replaces your kick."
+	new_implant.explanation = "A powerful steady stream of your flesh smoothly lifts you up and lets you fly like a bird. Replaces your kick."
 	new_implant.price = 0
 	new_implant.hidden = true
 	new_implant.jetpack = true
@@ -289,7 +317,18 @@ func _ready():
 	new_implant.texture = load("res://Textures/Menu/Implants/jetpack.png")
 	
 	IMPLANTS.append(new_implant)
-
+	
+	new_implant = Implant.new()
+	new_implant.i_name = "Armscraper"
+	new_implant.explanation = "An upgraded version of the Gunkboosters that allows you to boost twice. Not very popular due to the large uncomfortable container sacks installed below the buttocks."
+	new_implant.price = 0
+	new_implant.legs = true
+	new_implant.hidden = true
+	new_implant.skyscraper = true
+	new_implant.texture = load("res://Textures/Menu/Implants/armscraper.png")
+	
+	IMPLANTS.append(new_implant)
+	
 	new_implant = Implant.new()
 	new_implant.i_name = "HE Grenade"
 	new_implant.explanation = "Regular high explosive hand grenade. Can be used to breach through some locked doors."
@@ -460,7 +499,18 @@ func _ready():
 	
 	IMPLANTS.append(new_implant)
 	
-
+	new_implant = Implant.new()
+	new_implant.i_name = "Cluster of Chaos"
+	new_implant.explanation = "A strange object that turns everything around into primeval chaos of life."
+	new_implant.price = 0
+	new_implant.speed_bonus = 0
+	new_implant.puredeath = true
+	new_implant.arms = true
+	new_implant.hidden = true
+	new_implant.texture = load("res://Textures/Menu/Implants/chaos.png")
+	
+	IMPLANTS.append(new_implant)
+	
 	new_implant = Implant.new()
 	new_implant.i_name = "Alien Leg Wetware"
 	new_implant.explanation = "Simple wetware upgrade to turn off the kick strength limiter. Pulverize your target with incredible power. Has side effects*. \n \n   *Removing the limitation on throwing power."
@@ -528,7 +578,7 @@ func _ready():
 	new_implant.texture = load("res://Textures/Menu/Implants/funkgrunters.png")
 	
 	IMPLANTS.append(new_implant)
-
+	
 	new_implant = Implant.new()
 	new_implant.i_name = "Microbial Oil Secretion Glands"
 	new_implant.explanation = "Squirt out special microbial oil that negates all friction and allows you to slide around freely. Surprisingly pleasant smell."
@@ -549,6 +599,17 @@ func _ready():
 	new_implant.head = true
 	new_implant.helmet = true
 	new_implant.texture = load("res://Textures/Menu/Implants/helmet.png")
+	
+	IMPLANTS.append(new_implant)
+	
+	new_implant = Implant.new()
+	new_implant.i_name = "Devouring infection"
+	new_implant.explanation = "An infection acquired during humane experiments involving the transfusion of fleshrat blood into humans. Immerses the carrier in some kind of protection. After the destruction of the protection, an adrenaline surge is stimulated."
+	new_implant.hidden = false
+	new_implant.price = 10000
+	new_implant.adrenaline = true
+	new_implant.head = true
+	new_implant.texture = load("res://Textures/Menu/Implants/adrenaline.png")
 	
 	IMPLANTS.append(new_implant)
 	
@@ -629,7 +690,7 @@ func _ready():
 	new_implant.texture = load("res://Textures/Menu/Implants/scaledown.png")
 	
 	IMPLANTS.append(new_implant)
-
+	
 	new_implant = Implant.new()
 	new_implant.i_name = "Tattered Rain Hat"
 	new_implant.explanation = "Old and worn. You've never seen it before but it feels nostalgic."

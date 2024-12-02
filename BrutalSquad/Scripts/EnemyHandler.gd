@@ -8,6 +8,7 @@ export  var npc_name = "Generic_NPC"
 export  var health = 100
 export  var armor = 0
 export  var armored = false
+export  var rubber = false
 export  var random_spawn = false
 export  var flee_health = 25
 export  var gib_health = - 50
@@ -33,6 +34,7 @@ var skeleton
 var torso
 var torso_mesh
 var stealth_random = false
+var darkling_random : bool = false
 var head
 var head_mesh
 var legs
@@ -55,6 +57,7 @@ var dead_head
 var dead_body
 export  var AMMO: PackedScene
 var stealthmat = preload("res://Materials/stealth_enemy.tres")
+var creepmat = preload("res://Materials/E_Creeper_Unlit.tres")
 var SELF_DESTRUCT = preload("res://Entities/Bullets/Poison_Gas.tscn")
 var DARK_DESTRUCT = preload("res://Entities/Bullets/Dark_footsep.tscn")
 var SELF_DESTRUCT_EXPLOSION = preload("res://Entities/Bullets/Self_Destruct_Explosion.tscn")
@@ -155,12 +158,15 @@ func _ready():
 			stealth_random = true
 		if chaos_objective:
 			objective = true
-		if rand_range(0, 100) < 10:
+		if rand_range(0,100) < 30:
 			poison_death = true
-		if rand_range(0, 100) < 10:
+		if rand_range(0,100) < 30:
 			healthy_random = true
-		if rand_range(0, 100) < 10:
+		if rand_range(0,100) < 20:
 			armored_random = true
+		if rand_range(0,100) < 10:
+			darkling_random = true
+			dark_death = true
 	if not civilian and glob.hope_discarded:
 		if health < 70 and health > 20:
 			health = 70
@@ -251,7 +257,8 @@ func _ready():
 			armor = 50
 		if stealth_random:
 			torso_mesh.material_override = stealthmat
-
+		if darkling_random:
+			torso_mesh.material_override = creepmat
 	if not creature:
 		head_mesh = $Nemesis / Armature / Skeleton / Head_Mesh
 		if stealth_random:

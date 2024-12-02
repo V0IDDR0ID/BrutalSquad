@@ -297,6 +297,12 @@ func _ready()->void :
 		weapon1 = glob.menu.weapon_1
 		weapon2 = glob.menu.weapon_2
 		weapon3 = W_BLACKJACK
+		if Global.chaos_mode:
+			weapon1 = randi()%29
+			randomize()
+			weapon2 = randi()%29
+			randomize()
+			weapon3 = randi()%29
 		ammo[weapon1] += MAX_MAG_AMMO[weapon1] * glob.implants.torso_implant.ammo_bonus
 		ammo[weapon2] += MAX_MAG_AMMO[weapon2] * glob.implants.torso_implant.ammo_bonus
 		current_weapon = weapon1
@@ -871,11 +877,11 @@ func _process(delta)->void :
 						glob.player.player_velocity += 5 * col_n * kick_multiplier
 						glob.player.player_view.fov *= 1.02
 						if collider.has_method("destroy"):
-							
 							collider.destroy(col_n, col_p)
-						elif collider.has_method("damage"):
-							
+						if collider.has_method("damage") and Global.implants.leg_implant.kick_improvement:
 							collider.damage(kick_damage, col_n, col_p, global_transform.origin)
+						elif collider.has_method("tranq_timeout"):
+							collider.tranq_timeout(false)
 						if collider.has_method("add_velocity"):
 							collider.add_velocity(40, col_n)
 			kickflag = false

@@ -56,17 +56,16 @@ void fragment(){
 	}
 	
 	if (scope == true) {
-		/*COLOR.r =  COLOR.r*1.5;
-		COLOR.g = COLOR.r;
-		COLOR.b = COLOR.r;*/
-		COLOR.r = 0.0;
-		COLOR.b = 0.0;
-		COLOR.g = step(COLOR.r+COLOR.b+COLOR.g, 0.2);
+		COLOR.r *= 0.1;
+		COLOR.g *= 10.0;
+		COLOR.b *= 0.1;
 	}
 	if (noir_vision == true) {
-		COLOR.r = COLOR.g;
+		/*COLOR.r = COLOR.g;
 		COLOR.g = COLOR.g;
-		COLOR.b = COLOR.g;
+		COLOR.b = COLOR.g;*/
+		float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+		COLOR.rgb = vec3(avg);
 	}
 	if (holy_mode == true) {
 		vec2 uv = SCREEN_UV;

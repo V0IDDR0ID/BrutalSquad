@@ -36,7 +36,10 @@ func player_use():
 	else :
 		last_weapon = null
 	var a = ammo
-	Global.player.weapon.magazine_ammo[current_weapon] = a
+	if Global.hope_discarded:
+		Global.player.weapon.magazine_ammo[current_weapon] = a/2
+	else:
+		Global.player.weapon.magazine_ammo[current_weapon] = a
 	Global.player.weapon.set_weapon(current_weapon)
 	Global.player.weapon.set_UI_ammo()
 	Global.player.weapon.player_weapon.show()

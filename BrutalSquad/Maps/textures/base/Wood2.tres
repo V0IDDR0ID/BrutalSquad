@@ -10,3 +10,6 @@ metallic = 0.22
 metallic_specular = 1.0
 roughness = 0.0
 roughness_texture_channel = 1
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0

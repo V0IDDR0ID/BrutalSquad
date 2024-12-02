@@ -261,7 +261,7 @@ __meta__ = {
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
 margin_right = 160.0
-margin_bottom = 65.0
+margin_bottom = 78.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -271,7 +271,7 @@ __meta__ = {
 [node name="Subtitle" type="Label" parent="MarginContainer/CenterContainer"]
 margin_left = 80.0
 margin_right = 80.0
-margin_bottom = 65.0
+margin_bottom = 78.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
@@ -288,9 +288,7 @@ pitch_scale = 2.72
 
 [node name="Cameras" type="Node" parent="."]
 
-[node name="QodotMap" type="Spatial" parent="." groups=[
-"world_nav",
-]]
+[node name="QodotMap" type="Spatial" parent="." groups=["world_nav"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27563, -2.88806, -7.68102 )
 script = ExtResource( 7 )
 map_file = "C:/Users/Ville/Documents/gamedev/csquad/Maps/cutscene_ending3.map"
@@ -315,9 +313,6 @@ set_owner_batch_size = 16
 [node name="entity_0_mesh_instance" type="MeshInstance" parent="QodotMap/entity_0_worldspawn"]
 use_in_baked_light = true
 mesh = SubResource( 6 )
-material/0 = null
-material/1 = null
-material/2 = null
 
 [node name="entity_0_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
 shape = SubResource( 7 )
@@ -349,7 +344,6 @@ script = ExtResource( 17 )
 
 [node name="entity_1_mesh_instance" type="MeshInstance" parent="QodotMap/entity_1_Water"]
 mesh = SubResource( 15 )
-material/0 = null
 
 [node name="entity_1_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_Water"]
 shape = SubResource( 16 )
@@ -398,7 +392,6 @@ script = ExtResource( 15 )
 transform = Transform( 1, -4.65661e-10, -3.72529e-09, 1.16415e-10, 1, 0, 0, 0, 1, 0, 0, -1.327 )
 material_override = SubResource( 20 )
 mesh = SubResource( 21 )
-material/0 = null
 script = ExtResource( 28 )
 images = [ ExtResource( 64 ), ExtResource( 59 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 65 ), ExtResource( 69 ) ]
 cycle_speed = 250
@@ -407,7 +400,6 @@ cycle_speed = 250
 transform = Transform( 3.302, -1.16415e-10, 1.00974e-28, 3.84402e-10, 1, 1.03398e-25, -3.33415e-28, -1.03398e-25, 1, 5.15, 2.564, -4.315 )
 material_override = SubResource( 22 )
 mesh = SubResource( 23 )
-material/0 = null
 script = ExtResource( 28 )
 images = [ ExtResource( 43 ), ExtResource( 59 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 65 ) ]
 sphere = true
@@ -416,7 +408,6 @@ sphere = true
 transform = Transform( 1, -9.31323e-10, -7.45058e-09, 1.16415e-10, 1, 0, 0, 0, 1, 0, 0, -0.919 )
 material_override = SubResource( 24 )
 mesh = SubResource( 21 )
-material/0 = null
 script = ExtResource( 28 )
 images = [ ExtResource( 64 ), ExtResource( 58 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 68 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 70 ), ExtResource( 71 ) ]
 cycle_speed = 500
@@ -425,7 +416,6 @@ cycle_speed = 500
 transform = Transform( 1, -4.19095e-09, -7.45058e-09, 1.16415e-10, 1, 0, 0, 0, 1, 0, 0, -2.009 )
 material_override = SubResource( 25 )
 mesh = SubResource( 21 )
-material/0 = null
 script = ExtResource( 28 )
 images = [ ExtResource( 31 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 44 ), ExtResource( 32 ), ExtResource( 40 ), ExtResource( 29 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 34 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 53 ), ExtResource( 45 ), ExtResource( 56 ), ExtResource( 55 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 54 ) ]
 cycle_speed = 2

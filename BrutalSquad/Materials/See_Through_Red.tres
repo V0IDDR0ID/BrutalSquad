@@ -8,5 +8,4 @@ flags_unshaded = true
 flags_no_depth_test = true
 flags_fixed_size = true
 params_billboard_mode = 1
-albedo_color = Color( 1, 0, 0, 1 )
 albedo_texture = ExtResource( 1 )

@@ -26,7 +26,7 @@ func _ready():
 	if music != "":
 		if music == "NO":
 			Global.music.stop()
-		else :
+		else:
 			Global.music.stream = load(music)
 			Global.music.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -54,7 +54,7 @@ func _process(delta):
 		if not instant:
 			SUBTITLE.speech()
 		else :
-			SUBTITLE.visible_characters = - 1
+			SUBTITLE.visible_characters = -1
 		current_scene += 1
 		TIMER.start()
 	if TIMER.is_stopped() and current_scene == LINES.size():

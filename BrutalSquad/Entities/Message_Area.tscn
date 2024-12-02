@@ -14,4 +14,5 @@ message = "Since it's your first day I dosed a special combat cocktail for you. 
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 483 )
+
 [connection signal="body_entered" from="." to="." method="_on_Message_Area_body_entered"]

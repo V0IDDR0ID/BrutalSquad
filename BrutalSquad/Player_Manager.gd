@@ -13,7 +13,6 @@ func _ready():
 	if Global.implants.head_implant.shrink:
 		scale = Vector3(0.1, 0.1, 0.1)
 
-
 func _process(delta):
 	
 	if Input.is_action_just_pressed("Stocks"):

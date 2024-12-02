@@ -23,6 +23,7 @@ var hazmat = false
 var grapple_orb = preload("res://Entities/grappleorb.tscn")
 var grapple_orbs: Array
 var helmet_flag = false
+var adrenaline_flag = false
 var toxic_damage_count = 0
 var local_money = 0
 var in_air = false
@@ -233,6 +234,9 @@ func _ready():
 	cmd = Cmd.new()
 	shader_screen.material.set_shader_param("amplitude", amp)
 	shader_screen.material.set_shader_param("intro", true)
+	if Global.hope_discarded:
+		$SFX / Intro_Laugh.volume_db = 20
+		$SFX / Intro_Laugh.pitch_scale = 0.5
 	$SFX / Intro_Laugh.play()
 	var leg_implant = GLOBAL.implants.leg_implant
 	var arm_implant = GLOBAL.implants.arm_implant
@@ -264,16 +268,19 @@ func _ready():
 		shader_screen.material.set_shader_param("scope", true)
 	if GLOBAL.hope_discarded:
 		GLOBAL.music.pitch_scale = 0.75
+	else:
+		GLOBAL.music.pitch_scale = 1
 	if Global.implants.leg_implant.speedrun:
 		GLOBAL.music.pitch_scale = 1.25
-	else :
-		GLOBAL.music.pitch_scale = 1
 	
 	yield (get_tree(), "idle_frame")
 	if Global.CURRENT_LEVEL == 18:
 		Global.objective_complete = true
 		Global.objectives = 0
 	set_move_speed()
+	
+	if Global.implants.arm_implant.puredeath:
+		instadie()
 	
 func set_psychosis(value):
 	psychocounter += 1
@@ -353,11 +360,10 @@ func _physics_process(delta):
 		player_velocity.y = clamp(player_velocity.y, - 3, 100000)
 		if drug_slowfall > 0:
 			drug_slowfall -= 10 * delta
-
-
-
-
-
+	
+	if Input.is_action_pressed("kick") and Global.implants.torso_implant.jetpack:
+		damage(0.5, Vector3.ZERO, Vector3.ZERO, global_transform.origin)
+	
 	if start_flag:
 		UI.time_now = OS.get_system_time_msecs()
 		current_time = OS.get_system_time_msecs()
@@ -895,6 +901,8 @@ func air_move(delta):
 			var new_vomit = VOMIT.instance()
 			result.collider.add_child(new_vomit)
 			new_vomit.global_transform.origin = result.position
+		if randi() == 0:
+			$AudioStreamPlayer.play()
 		$Gunksound.play()
 		$Particles.emitting = true
 		player_velocity.y *= 0.5
@@ -995,13 +1003,16 @@ func ground_move(delta):
 		if max_gravity < 0:
 			j *= - 1
 		player_velocity.y = j
+		if Global.implants.leg_implant.skyscraper:
+			player_velocity.y += 5
+			accelerate(wishdir, wishspeed + 50, run_acceleration, delta)
 		player_velocity += get_floor_velocity()
 		wish_jump = false
 
 
 func apply_friction(t, delta):
 	if GLOBAL.implants.leg_implant.ski or friction_disabled:
-		return 
+		return
 	var vec = player_velocity
 	var vel
 	var speed
@@ -1073,12 +1084,22 @@ func damage(damage, collision_n, collision_p, shooter_pos):
 		damage *= 2
 	damage = damage * armor
 	$Reticle.set_shooter_pos((global_transform.origin - shooter_pos).rotated(Vector3(0, 1, 0), - rotation.y))
-	player_velocity -= collision_n * damage * 0.2
-	if not helmet_flag and GLOBAL.implants.head_implant.helmet and damage < 50:
-		if randi() % 2 == 0:
+	if not armor <= 0.8 and not Global.implants.torso_implant.bouncy and not Global.implants.leg_implant.skyscraper:
+		player_velocity -= collision_n * damage * 0.2
+	if not helmet_flag and GLOBAL.implants.head_implant.helmet and damage <= 50:
+		if randi() % 6 == 0:
 			helmet_flag = true
 		$Armorsound.play()
-		return 
+		return
+	if not adrenaline_flag and GLOBAL.implants.head_implant.adrenaline and damage <= 50:
+		if randi() % 3 == 0:
+			adrenaline_flag = true
+			$Ragesound.play()
+			speed_bonus += 3
+			silent_regen(30)
+		silent_regen(5)
+		$Mechsound.play()
+		return
 	if Global.implants.torso_implant.instadeath or Global.implants.head_implant.shrink:
 		damage = health
 	health -= damage
@@ -1087,7 +1108,10 @@ func damage(damage, collision_n, collision_p, shooter_pos):
 	
 	UI.set_health(health)
 	if damage > 5:
-		pain_sound.play()
+		if Global.hope_discarded:
+			$SFX/Beast_Damage.play()
+		else:
+			pain_sound.play()
 	if health <= 0 and not dead and not died:
 		die(damage, collision_n, collision_p, shooter_pos)
 	if health < - 40 and not dead or Global.implants.leg_implant.speedrun:

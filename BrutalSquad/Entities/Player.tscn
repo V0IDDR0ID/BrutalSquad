@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Imported_Mesh/intro_guy.glb" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Sfx/Player/IED_armed_1.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sfx/Player/IED_drum.wav" type="AudioStream" id=9]
 [ext_resource path="res://Sfx/WeaponsPickups/Rocket launcher/missile_explosion.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sfx/NPCs/Military grunt/grunt_pain_2.wav" type="AudioStream" id=11]
 [ext_resource path="res://Entities/UI.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Imported_Mesh/UI_MESH.obj" type="ArrayMesh" id=13]
 [ext_resource path="res://Sfx/Player/player_pain_1.wav" type="AudioStream" id=14]
@@ -20,14 +21,16 @@
 [ext_resource path="res://Textures/Menu/Grab_Hand_Anim/hand1.png" type="Texture" id=19]
 [ext_resource path="res://Textures/Menu/Grab_Hand_Anim/hand2.png" type="Texture" id=20]
 [ext_resource path="res://Sfx/wood01.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sfx/mechsound.wav" type="AudioStream" id=22]
 [ext_resource path="res://Sfx/Flesh/flesh_chunk_impact_2.wav" type="AudioStream" id=23]
 [ext_resource path="res://Textures/Decals/vomit.png" type="Texture" id=24]
 [ext_resource path="res://Entities/Particles/Water1.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Sfx/Player/Jumpboost.wav" type="AudioStream" id=26]
+[ext_resource path="res://Sfx/Other/Bullshit/meme_sound_1.wav" type="AudioStream" id=26]
 [ext_resource path="res://Kicksound.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Sfx/NPCs/applause-clapping-church-crowd-immersive.wav" type="AudioStream" id=28]
 [ext_resource path="res://Sfx/bullet_impact_metal.wav" type="AudioStream" id=29]
 [ext_resource path="res://Textures/UI/terrorsuit.png" type="Texture" id=30]
+[ext_resource path="res://Sfx/UI/Tyrannosaurus Rex -SoundBible.com-45786848.wav" type="AudioStream" id=31]
 [ext_resource path="res://Entities/Rain_Spawner.gd" type="Script" id=32]
 
 [sub_resource type="SphereShape" id=1]
@@ -242,6 +245,11 @@ volume_db = 1.0
 pitch_scale = 0.75
 bus = "SFX"
 
+[node name="Beast_Damage" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 11 )
+volume_db = 8.0
+pitch_scale = 0.75
+
 [node name="IED1" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 8 )
 bus = "SFX"
@@ -268,9 +276,6 @@ volume_db = 0.464
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Scope" type="Control" parent="."]
 visible = false
@@ -302,8 +307,11 @@ stream = ExtResource( 23 )
 unit_size = 2.0
 pitch_scale = 0.28
 
-[node name="Boostjump" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 26 )
+volume_db = 14.0
+
+[node name="Boostjump" type="AudioStreamPlayer3D" parent="."]
 unit_size = 2.0
 pitch_scale = 1.61
 
@@ -330,12 +338,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76025, 0 )
 stream = ExtResource( 29 )
 pitch_scale = 0.69
 
+[node name="Mechsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+pitch_scale = 5.0
+
+[node name="Ragesound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 31 )
+volume_db = 10.0
+
 [node name="Soundrotator" type="Position3D" parent="."]
 
 [node name="Psychosound" type="AudioStreamPlayer3D" parent="Soundrotator"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57397, -1.26881 )
 stream = ExtResource( 28 )
-pitch_scale = 1.03
+unit_db = 15.0
+pitch_scale = 0.5
 
 [node name="Terrorsuit" type="TextureRect" parent="."]
 visible = false
