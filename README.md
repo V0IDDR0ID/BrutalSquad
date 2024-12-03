@@ -17,3 +17,4 @@
 
  ## Copyright
  This edition uses a decompiled version of the game. We do not support piracy, so please purchase Cruelty Squad on Steam first.
+ Thanks DX for Sanitizer Enemy
