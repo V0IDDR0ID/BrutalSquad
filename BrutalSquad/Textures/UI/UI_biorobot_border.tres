@@ -6,7 +6,6 @@
 [ext_resource path="res://Textures/UI/biorobot/biorobot_border_1.png" type="Texture" id=4]
 
 [resource]
-flags = 2
 frames = 6
 fps = 10.0
 frame_0/texture = ExtResource( 2 )

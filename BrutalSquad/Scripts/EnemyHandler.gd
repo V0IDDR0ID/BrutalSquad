@@ -63,6 +63,7 @@ var DARK_DESTRUCT = preload("res://Entities/Bullets/Dark_footsep.tscn")
 var SELF_DESTRUCT_EXPLOSION = preload("res://Entities/Bullets/Self_Destruct_Explosion.tscn")
 var HEARTBEAT_INDICATOR = preload("res://Entities/Enemies/Heartbeat_Indicator.tscn")
 var heartbeat
+export  var hurt_maker: bool = false
 export  var poison_death: bool = false
 export  var dark_death: bool = false
 export  var squad_death: bool = false
@@ -369,6 +370,8 @@ func alert_body_exited(b):
 	nearby.remove(nearby.find(b))
 
 func damage(damage, collision_n, collision_p, shooter_pos):
+	if hurt_maker:
+		Global.player.damage(5, Vector3.ZERO, global_transform.origin, global_transform.origin)
 	if on_fire and not grilled_flag:
 		if head_mesh:
 			head_mesh.material_override = grilled_material
@@ -423,7 +426,7 @@ func damage(damage, collision_n, collision_p, shooter_pos):
 		
 		
 		for gib in GIBS:
-			if head.get_head_health() > 0 and gib == G_HEAD:
+			if not hurt_maker and head.get_head_health() > 0 and gib == G_HEAD:
 				spawn_gib(gib, 1, damage, collision_n, collision_p)
 			elif gib != G_HEAD:
 				spawn_gib(gib, 1, damage, collision_n, collision_p)
@@ -520,8 +523,8 @@ func die(damage, collision_n, collision_p):
 		for particle in all_particles:
 			particle.queue_free()
 		body.set_dead()
-		
-		colliders.get_node("Head/CollisionShape").disabled = true
+		if not hurt_maker:
+			colliders.get_node("Head/CollisionShape").disabled = true
 		colliders.get_node("Torso/CollisionShape").disabled = true
 		colliders.get_node("Legs/CollisionShape").disabled = true
 		if not poison_death and not dark_death and not squad_death:

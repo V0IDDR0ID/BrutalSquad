@@ -13,8 +13,6 @@ var t = 0
 
 func _ready():
 	material_override.albedo_texture = images[0]
-	if Global.high_performance:
-		cycle_speed *= 0.5
 
 func _physics_process(delta):
 	t += 1

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player_Manager.gd" type="Script" id=2]
 [ext_resource path="res://Entities/Rotation_Helper.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menu/Stock_Menu2.tscn" type="PackedScene" id=4]
+
+[sub_resource type="OccluderShapePolygon" id=1]
 
 [node name="Player" type="Spatial"]
 script = ExtResource( 2 )
@@ -112,6 +114,14 @@ margin_bottom = 23.0
 margin_left = 108.0
 margin_right = 144.0
 margin_bottom = 23.0
+
+[node name="Occluder" type="Occluder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1 )
+shape = SubResource( 1 )
+
+[node name="Occluder2" type="Occluder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
 
 [connection signal="timeout" from="Player/HealTimer" to="Player" method="_on_HealTimer_timeout"]
 [connection signal="timeout" from="Player/Cancer_Timer" to="Player" method="_on_Cancer_Timer_timeout"]

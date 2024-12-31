@@ -49,6 +49,12 @@ const CIV_FRAMES: Array = [preload("res://Textures/Menu/Civ_Mouth/1.png"),
 								preload("res://Textures/Menu/Civ_Mouth/2.png"), 
 								preload("res://Textures/Menu/Civ_Mouth/3.png"), 
 								preload("res://Textures/Menu/Civ_Mouth/4.png")]
+const ABR_FRAMES: Array = [preload("res://Textures/UI/thumbnails/abraxas (1).png"),
+								preload("res://Textures/UI/thumbnails/abraxas (2).png"),
+								preload("res://Textures/UI/thumbnails/abraxas (3).png"),
+								preload("res://Textures/UI/thumbnails/abraxas (4).png"),
+								preload("res://Textures/UI/thumbnails/abraxas (5).png"),
+								preload("res://Textures/UI/thumbnails/abraxas (6).png")]
 
 var time_start
 var time_now
@@ -103,7 +109,7 @@ func _ready():
 	if Global.implants.arm_implant.zippy_fingers:
 		$Ammovbox/HBoxContainer.hide()
 
-func message(msg: String, npc: bool):
+func message(msg: String, npc: bool, spkr = null):
 	stop = true
 	comms_color = Color(1, 1, 1, 0)
 	yield (get_tree(), "idle_frame")
@@ -111,9 +117,12 @@ func message(msg: String, npc: bool):
 	if npc:
 		current_speaker = 0
 		$UI_COMMS_CONTAINER / UI_COMMS / ScrollContainer / Message_Label / AudioStreamPlayer.pitch_scale = 2
-	else :
+	else:
 		$UI_COMMS_CONTAINER / UI_COMMS / ScrollContainer / Message_Label / AudioStreamPlayer.pitch_scale = 1.3
 		current_speaker = 1
+	if spkr != null:
+		$UI_COMMS_CONTAINER / UI_COMMS / ScrollContainer / Message_Label / AudioStreamPlayer.pitch_scale = 0.5
+		current_speaker = spkr
 	comms_color = Color(1, 1, 1, 1)
 	message_box.text = msg
 	message_box.speech()
@@ -403,6 +412,11 @@ func set_death_timer(tim):
 
 func _on_Message_Label_character_speak():
 	if current_speaker == 1:
+		$UI_COMMS_CONTAINER / UI_COMMS / Character_Portrait.modulate = Color(0,0.996078,1,0.776471)
 		$UI_COMMS_CONTAINER / UI_COMMS / Character_Portrait.texture = HANDLER_FRAMES[randi() % 3]
-	else :
+	if current_speaker == 666:
+		$UI_COMMS_CONTAINER / UI_COMMS / Character_Portrait.modulate = Color(1,0.5,0.5,1)
+		$UI_COMMS_CONTAINER / UI_COMMS / Character_Portrait.texture = ABR_FRAMES[randi() % 5]
+	if current_speaker == 0 :
+		$UI_COMMS_CONTAINER / UI_COMMS / Character_Portrait.modulate = Color(1,1,1,1)
 		$UI_COMMS_CONTAINER / UI_COMMS / Character_Portrait.texture = CIV_FRAMES[randi() % 3]

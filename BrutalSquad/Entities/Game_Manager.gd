@@ -896,7 +896,7 @@ func load_game()->void :
 	if hiperf != null:
 		high_performance = hiperf
 		if high_performance:
-			Engine.iterations_per_second = 15
+			Engine.iterations_per_second = 30
 		else :
 			Engine.iterations_per_second = 30
 	if parsedJSON.get("gamma") != null:

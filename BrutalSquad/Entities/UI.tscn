@@ -909,20 +909,20 @@ text = "100"
 [node name="Toxic" type="VBoxContainer" parent="UI_HBOX"]
 visible = false
 margin_left = 256.0
-margin_right = 796.0
+margin_right = 931.0
 margin_bottom = 256.0
 
 [node name="Toxic" type="Label" parent="UI_HBOX/Toxic"]
-margin_right = 540.0
-margin_bottom = 83.0
+margin_right = 675.0
+margin_bottom = 101.0
 custom_colors/font_color = Color( 0.658824, 0.988235, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "TOXIC CRISIS"
 
 [node name="Toxic2" type="Label" parent="UI_HBOX/Toxic"]
-margin_top = 83.0
-margin_right = 540.0
-margin_bottom = 123.0
+margin_top = 101.0
+margin_right = 675.0
+margin_bottom = 149.0
 custom_colors/font_color = Color( 0.682353, 0.360784, 0, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "FLUSHING BIOLOGICAL SYSTEMS"
@@ -985,7 +985,6 @@ script = ExtResource( 45 )
 pitch_scale = 1.3
 
 [node name="Character_Portrait" type="TextureRect" parent="UI_COMMS_CONTAINER/UI_COMMS"]
-modulate = Color( 0, 0.996078, 1, 0.776471 )
 margin_left = 867.0
 margin_right = 1023.0
 margin_bottom = 226.0

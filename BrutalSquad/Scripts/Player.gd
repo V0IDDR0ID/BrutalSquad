@@ -734,7 +734,7 @@ func move(delta):
 		if not Global.high_performance:
 			gravity = max_gravity * 2
 		else :
-			gravity = max_gravity
+			gravity = max_gravity * 2
 	
 
 	if dead:

@@ -79,7 +79,7 @@ func speech():
 		if speech_break:
 			return 
 		if Global.high_performance:
-			visible_characters += 2
+			visible_characters += 1
 		else :
 			visible_characters += 1
 		if c.ord_at(0) >= 97 and c.ord_at(0) <= 122:

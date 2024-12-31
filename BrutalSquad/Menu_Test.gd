@@ -1528,7 +1528,7 @@ func _on_Gamma_value_changed(value):
 func _on_Hiperf_toggled(value):
 	Global.high_performance = value
 	if value:
-		Engine.iterations_per_second = 15
+		Engine.iterations_per_second = 30
 	else :
 		Engine.iterations_per_second = 30
 
