@@ -12,6 +12,7 @@ radius = 0.19
 collision_layer = 64
 script = ExtResource( 1 )
 grillable = true
+damageable = false
 mass = 5
 flesh = true
 sounds = true

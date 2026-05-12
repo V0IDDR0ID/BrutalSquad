@@ -40,7 +40,10 @@ func _physics_process(delta):
 			
 				
 			if overlap_body.has_method("damage"):
-				overlap_body.damage(damage, Vector3.ZERO, overlap_body.global_transform.origin, global_transform.origin)
+				if overlap_body == Global.player and Global.implants.torso_implant.toxic_shield:
+					pass
+				else:
+					overlap_body.damage(damage, Vector3.ZERO, overlap_body.global_transform.origin, global_transform.origin)
 
 func _on_Explosion_area_entered(area):
 	do_damage(area)

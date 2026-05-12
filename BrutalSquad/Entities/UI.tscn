@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Menu/menu_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/UI.gd" type="Script" id=2]
@@ -628,6 +628,38 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 46 )
 
+[sub_resource type="Animation" id=34]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "PLEASE" ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "anim_1"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "PLEASE", "I WON'T DIE", "WHY", "I DESERVED THAT", "FUUUUUUUUUUUUUUCK", "GOD, ANSWER ME" ]
+}
+
 [node name="UI" type="MarginContainer"]
 margin_left = 126.0
 margin_top = 90.0
@@ -680,7 +712,7 @@ text = "1000"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Ammovbox"]
 margin_top = 473.0
-margin_right = 154.0
+margin_right = 186.0
 margin_bottom = 537.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -728,9 +760,31 @@ custom_fonts/font = SubResource( 1 )
 text = "100"
 uppercase = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Ammovbox/HBoxContainer"]
+[node name="Separator" type="Label" parent="Ammovbox/HBoxContainer"]
+modulate = Color( 0.556863, 0.678431, 0.223529, 1 )
 margin_left = 154.0
-margin_right = 154.0
+margin_top = 17.0
+margin_right = 170.0
+margin_bottom = 47.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "|"
+uppercase = true
+
+[node name="GrenadeAmmo" type="Label" parent="Ammovbox/HBoxContainer"]
+modulate = Color( 0.556863, 0.678431, 0.223529, 1 )
+margin_left = 170.0
+margin_top = 17.0
+margin_right = 186.0
+margin_bottom = 47.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "3"
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ammovbox/HBoxContainer"]
+margin_left = 186.0
+margin_right = 186.0
 margin_bottom = 64.0
 
 [node name="FPS_label" type="Label" parent="Ammovbox/HBoxContainer/VBoxContainer"]
@@ -1006,5 +1060,20 @@ size_flags_stretch_ratio = 0.0
 [node name="Sniper_Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 52 )
 bus = "SFX"
+
+[node name="DeathLabel" type="Label" parent="."]
+visible = false
+margin_top = 249.0
+margin_right = 1023.0
+margin_bottom = 288.0
+custom_fonts/font = ExtResource( 53 )
+text = "PLEASE"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeathLabel"]
+autoplay = "anim_1"
+anims/RESET = SubResource( 34 )
+anims/anim_1 = SubResource( 33 )
 
 [connection signal="character_speak" from="UI_COMMS_CONTAINER/UI_COMMS/ScrollContainer/Message_Label" to="." method="_on_Message_Label_character_speak"]

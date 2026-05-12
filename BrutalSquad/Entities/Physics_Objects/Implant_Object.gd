@@ -8,6 +8,9 @@ export  var implant_name = "Hazmat Suit"
 
 
 func _ready():
+	if Global.implants.arm_implant.implant_search:
+		$"../Objective_Indicator".show()
+	
 	if Global.implants.purchased_implants.find(implant_name) == - 1:
 		for i in Global.implants.IMPLANTS:
 			if i.i_name == implant_name:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Imported_Mesh/intro_guy.glb" type="PackedScene" id=2]
@@ -32,6 +32,8 @@
 [ext_resource path="res://Textures/UI/terrorsuit.png" type="Texture" id=30]
 [ext_resource path="res://Sfx/UI/Tyrannosaurus Rex -SoundBible.com-45786848.wav" type="AudioStream" id=31]
 [ext_resource path="res://Entities/Rain_Spawner.gd" type="Script" id=32]
+[ext_resource path="res://Entities/Particles/Spark_1.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Textures/Particles/Explosion1.png" type="Texture" id=34]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.402745
@@ -114,6 +116,51 @@ rings = 4
 
 [sub_resource type="AudioStreamRandomPitch" id=18]
 audio_stream = ExtResource( 14 )
+
+[sub_resource type="GDScript" id=23]
+resource_name = "PlayerGas"
+script/source = "extends Area
+
+
+var active:bool = false
+
+
+func _physics_process(delta):
+	if active:
+		for overlap_body in get_overlapping_bodies():
+			if overlap_body.has_method(\"damage\") and overlap_body != get_parent():
+				overlap_body.damage(2, Vector3.ZERO, overlap_body.global_transform.origin, global_transform.origin)
+"
+
+[sub_resource type="SphereShape" id=19]
+radius = 2.48024
+
+[sub_resource type="ParticlesMaterial" id=24]
+lifetime_randomness = 0.09
+emission_shape = 1
+emission_sphere_radius = 0.82
+flag_rotate_y = true
+direction = Vector3( 0, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 9.19
+initial_velocity_random = 0.93
+scale = 3.44
+
+[sub_resource type="SpatialMaterial" id=25]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 1
+params_billboard_keep_scale = true
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_color = Color( 0.00392157, 0.65098, 0, 1 )
+albedo_texture = ExtResource( 34 )
+
+[sub_resource type="QuadMesh" id=26]
+material = SubResource( 25 )
+size = Vector2( 0.1, 0.1 )
 
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
@@ -411,9 +458,35 @@ omni_range = 500.0
 [node name="Aim_Point" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17827, 0 )
 
+[node name="GasArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+collision_layer = 0
+collision_mask = 15
+script = SubResource( 23 )
+
+[node name="CollisionShape" type="CollisionShape" parent="GasArea"]
+shape = SubResource( 19 )
+
+[node name="Particle" type="Particles" parent="GasArea"]
+emitting = false
+amount = 50
+lifetime = 0.5
+randomness = 1.0
+fract_delta = false
+local_coords = false
+process_material = SubResource( 24 )
+draw_pass_1 = SubResource( 26 )
+
+[node name="Particles" parent="GasArea/Particle" instance=ExtResource( 33 )]
+
+[node name="GrenadeRecharge" type="Timer" parent="."]
+wait_time = 120.0
+autostart = true
+
 [connection signal="body_entered" from="Top_Check" to="." method="_on_Top_Check_body_entered"]
 [connection signal="body_exited" from="Top_Check" to="." method="_on_Top_Check_body_exited"]
 [connection signal="body_entered" from="Ray_Rotation/Stair_Check" to="." method="_on_Stair_Check_body_entered"]
 [connection signal="body_exited" from="Ray_Rotation/Stair_Check" to="." method="_on_Stair_Check_body_exited"]
+[connection signal="timeout" from="GrenadeRecharge" to="." method="_on_GrenadeRecharge_timeout"]
 
 [editable path="Body_Mesh"]

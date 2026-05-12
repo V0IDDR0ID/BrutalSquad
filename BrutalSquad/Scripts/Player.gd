@@ -140,7 +140,6 @@ func _enter_tree():
 	GLOBAL.objective_complete = false
 	GLOBAL.objectives = 0
 
-	
 func cancer():
 	UI.notify("Your body feels weird.", Color(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1)))
 	cancer_count += 1
@@ -169,6 +168,8 @@ func _ready():
 		orb = true
 	else:
 		orb = false
+	if Global.implants.leg_implant.tertiary_gland:
+		$GrenadeRecharge.wait_time = 60
 	get_parent().get_node("Position3D/Rotation_Helper/Water_Check").connect("area_entered", self, "_on_Water_Check_area_entered")
 	get_parent().get_node("Position3D/Rotation_Helper/Water_Check").connect("area_exited", self, "_on_Water_Check_area_exited")
 	terrorsuit.rect_scale.x = GLOBAL.resolution[0] / 1280
@@ -176,7 +177,9 @@ func _ready():
 	health *= get_parent().scale.x
 	UI.set_health(health)
 	last_height = global_transform.origin.y
-
+	if Global.implants.head_implant.gas_gland:
+		$GasArea.active = true
+		$GasArea/Particle.emitting = true
 	pain_sound = $Pain
 	ray_rotation = $Ray_Rotation
 	floor_ray = $Ray_Rotation / Floor_Ray
@@ -1136,6 +1139,8 @@ func die(damage, collision_n, collision_p, shooter_pos):
 	death_timer.one_shot = true
 	death_timer.connect("timeout", self, "instadie", [damage, collision_n, collision_p, shooter_pos])
 	death_timer.start()
+	UI.get_node("UI_HBOX").hide()
+	Global.border.hide()
 
 
 
@@ -1160,6 +1165,7 @@ func die(damage, collision_n, collision_p, shooter_pos):
 
 
 func instadie(damage = 0, collision_n = Vector3.ZERO, collision_p = Vector3.ZERO, shooter_pos = Vector3.ZERO):
+	Global.border.show()
 	if dead:
 		$SFX / IED1.stop()
 		$SFX / IED2.stop()
@@ -1324,3 +1330,8 @@ func _on_HealTimer_timeout():
 
 func _on_Cancer_Timer_timeout():
 	cancer_count -= 2
+
+func _on_GrenadeRecharge_timeout():
+	if weapon.grenade_ammo < 3:
+		weapon.grenade_ammo += 1
+		$UI.update_grenade_counter(weapon.grenade_ammo)

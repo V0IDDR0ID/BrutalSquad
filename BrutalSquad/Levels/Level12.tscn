@@ -4898,6 +4898,9 @@ fog_color = Color( 0.898039, 0, 1, 1 )
 fog_depth_begin = 22.9
 fog_depth_end = 162.4
 fog_transmit_enabled = true
+adjustment_enabled = true
+adjustment_contrast = 3.0
+adjustment_saturation = 3.0
 
 [sub_resource type="BoxShape" id=991]
 extents = Vector3( 6.28471, 8.03419, 1 )

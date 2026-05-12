@@ -19,7 +19,6 @@ height = 4.081
 collision_layer = 0
 collision_mask = 15
 script = ExtResource( 1 )
-damage = 100
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 4 )
@@ -31,7 +30,6 @@ autostart = true
 [node name="MeshInstance" type="MeshInstance" parent="."]
 visible = false
 mesh = SubResource( 3 )
-material/0 = null
 
 [node name="Particle" parent="." instance=ExtResource( 2 )]
 
@@ -41,5 +39,6 @@ unit_size = 20.0
 max_db = 2.0
 autoplay = true
 bus = "SFX"
+
 [connection signal="area_entered" from="." to="." method="_on_Explosion_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Explosion_body_entered"]

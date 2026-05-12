@@ -918,7 +918,7 @@ func _process(delta)->void :
 				item_consumed = true
 				glob.player.add_health(glob.implants.arm_implant.healing)
 			if glob.implants.arm_implant.he_grenade and grenade_ammo > 0:
-				grenade_ammo -= 1
+				consume_grenade()
 				var missile_new = GRENADE.instance()
 				if player:
 					get_parent().get_parent().get_parent().add_child(missile_new)
@@ -933,7 +933,7 @@ func _process(delta)->void :
 				missile_new.set_velocity(20, (global_transform.origin - $Front_Pos_Helper.global_transform.origin).normalized(), global_transform.origin)
 				missile_new.velocity += glob.player.player_velocity
 			if glob.implants.arm_implant.flechette_grenade and grenade_ammo > 0:
-				grenade_ammo -= 1
+				consume_grenade()
 				var missile_new = FLECHETTE_GRENADE.instance()
 				if player:
 					get_parent().get_parent().get_parent().add_child(missile_new)
@@ -948,7 +948,7 @@ func _process(delta)->void :
 				missile_new.set_velocity(20, (global_transform.origin - $Front_Pos_Helper.global_transform.origin).normalized(), global_transform.origin)
 				missile_new.velocity += glob.player.player_velocity
 			if glob.implants.arm_implant.sleep_grenade and grenade_ammo > 0:
-				grenade_ammo -= 1
+				consume_grenade()
 				var missile_new = SLEEP_GRENADE.instance()
 				if player:
 					get_parent().get_parent().get_parent().add_child(missile_new)
@@ -963,7 +963,7 @@ func _process(delta)->void :
 				missile_new.set_velocity(20, (global_transform.origin - $Front_Pos_Helper.global_transform.origin).normalized(), global_transform.origin)
 				missile_new.velocity += glob.player.player_velocity
 			if glob.implants.arm_implant.pills_consumable and grenade_ammo > 0:
-				grenade_ammo -= 1
+				consume_grenade()
 				var missile_new = PILLS.instance()
 				if player:
 					get_parent().get_parent().get_parent().add_child(missile_new)
@@ -986,7 +986,7 @@ func _process(delta)->void :
 				radio.velocity -= (global_transform.origin - $Front_Pos_Helper.global_transform.origin).normalized() * 5
 				radio.velocity -= glob.player.player_velocity
 			if glob.implants.arm_implant.exploisoncore and grenade_ammo > 0:
-				grenade_ammo -= 1
+				consume_grenade()
 				var missile_new = EXPLOISONCORE.instance()
 				if player:
 					get_parent().get_parent().get_parent().add_child(missile_new)
@@ -994,7 +994,7 @@ func _process(delta)->void :
 					missile_new.global_transform.origin = global_transform.origin
 			if glob.implants.arm_implant.fieldkit and grenade_ammo > 0:
 				if player:
-					grenade_ammo -= 1
+					consume_grenade()
 					Global.player.add_health(18)
 					magazine_ammo[0] += 3
 					magazine_ammo[1] += 3
@@ -2607,3 +2607,7 @@ func _on_AmmoTimer_timeout():
 
 func _on_Richochet_Timer_timeout():
 	$Ricochet_Sound.play()
+
+func consume_grenade():
+	grenade_ammo -= 1
+	Global.player.get_node("UI").update_grenade_counter(grenade_ammo)

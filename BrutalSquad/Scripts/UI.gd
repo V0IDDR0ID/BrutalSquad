@@ -204,9 +204,13 @@ func _draw():
 
 func draw_reload(pos, color):
 	pass
-	
+
+func update_grenade_counter(gr:int):
+	$Ammovbox/HBoxContainer/GrenadeAmmo.text = str(gr)
+
 func set_dead():
 	$Died.visible = true
+	$DeathLabel.hide()
 
 func set_shooter_pos(shotpos):
 		shooter_line_length = 50
@@ -409,6 +413,7 @@ func update_boss_UI(health_value: String):
 func set_death_timer(tim):
 	$Death_Timer.start(tim)
 	$CenterContainer2 / Death_Timer_Label.show()
+	$DeathLabel.show()
 
 func _on_Message_Label_character_speak():
 	if current_speaker == 1:

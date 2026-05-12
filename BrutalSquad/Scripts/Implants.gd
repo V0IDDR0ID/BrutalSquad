@@ -21,6 +21,7 @@ class Implant:
 	var armor: float = 1
 	var ricochet: bool = false
 	var grav: bool = false
+	var tertiary_gland: bool = false
 	var orbsuit: bool = false
 	var speed_bonus: float = 0
 	var ammo_bonus: int = 0
@@ -31,6 +32,7 @@ class Implant:
 	var nightvision: bool = false
 	var jump_bonus: float = 0
 	var terror = false
+	var gas_gland:bool = false
 	var puredeath: bool = false
 	var speedrun: bool = false
 	var pills_filter: bool = false
@@ -47,6 +49,7 @@ class Implant:
 	var sensor: bool = false
 	var instadeath: bool = false
 	var stealth: bool = false
+	var implant_search: bool = false
 	var climb: bool = false
 	var explosive_shield: bool = false
 	var nightmare: bool = false
@@ -320,7 +323,7 @@ func _ready():
 	
 	new_implant = Implant.new()
 	new_implant.i_name = "Armscraper"
-	new_implant.explanation = "An upgraded version of the Gunkboosters that allows you to boost twice. Not very popular due to the large uncomfortable container sacks installed below the buttocks."
+	new_implant.explanation = "An extra pair of hands. Allows you to make semi-vertical jumps."
 	new_implant.price = 0
 	new_implant.legs = true
 	new_implant.hidden = true
@@ -757,6 +760,40 @@ func _ready():
 	new_implant.head = true
 	new_implant.noir_vision = true
 	new_implant.texture = load("res://Textures/Menu/Implants/noir_glasses.png")
+	
+	IMPLANTS.append(new_implant)
+	
+	new_implant = Implant.new()
+	new_implant.i_name = "Implant Detector"
+	new_implant.explanation = "The name speaks for itself. \n\n -CEO of Implant detectors, inc."
+	new_implant.speed_bonus = 0
+	new_implant.price = 1500
+	new_implant.arms = true
+	new_implant.implant_search = true
+	new_implant.texture = load("res://Textures/Menu/Implants/implant_detector.png")
+	
+	IMPLANTS.append(new_implant)
+	
+	new_implant = Implant.new()
+	new_implant.i_name = "Gas Gland"
+	new_implant.explanation = "Gland that produces poison gas. Guarantee of intimidating aura."
+	new_implant.speed_bonus = 0
+	new_implant.price = 0
+	new_implant.hidden = true
+	new_implant.head = true
+	new_implant.gas_gland = true
+	new_implant.texture = load("res://Textures/Menu/Implants/gasgland.png")
+	
+	IMPLANTS.append(new_implant)
+	
+	new_implant = Implant.new()
+	new_implant.i_name = "Grenade gland"
+	new_implant.explanation = "Your weapons regenerate tertiary ammunition (grenades, pills, etc.) faster."
+	new_implant.speed_bonus = 0
+	new_implant.price = 15000
+	new_implant.legs = true
+	new_implant.tertiary_gland = true
+	new_implant.texture = load("res://Textures/Menu/Implants/tertiarygland.png")
 	
 	IMPLANTS.append(new_implant)
 	

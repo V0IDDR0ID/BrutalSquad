@@ -13,6 +13,7 @@ height = 0.371905
 collision_layer = 4
 script = ExtResource( 1 )
 grillable = true
+damageable = false
 mass = 3
 flesh = true
 sounds = true

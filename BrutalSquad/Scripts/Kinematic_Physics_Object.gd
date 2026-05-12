@@ -9,6 +9,7 @@ var gravity = 22
 var held = false
 var alerter = false
 export  var grillable = false
+export var damageable: bool = true
 var grill = false
 var grill_health = 50
 var grill_flag = false
@@ -216,6 +217,7 @@ func player_use():
 	glob.player.weapon.hold(self)
 
 func damage(damage, collision_n, collision_p, shooter_pos):
+	if not damageable: return
 	if gas:
 		var new_gas_cloud = gas_cloud.instance()
 		get_parent().add_child(new_gas_cloud)

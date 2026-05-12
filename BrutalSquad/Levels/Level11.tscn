@@ -1,4 +1,4 @@
-[gd_scene load_steps=2260 format=2]
+[gd_scene load_steps=2261 format=2]
 
 [ext_resource path="res://Maps/textures/office/skyscraperwindow.tres" type="Material" id=1]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
@@ -72,6 +72,7 @@
 [ext_resource path="res://Scripts/Office_Elevator.gd" type="Script" id=70]
 [ext_resource path="res://Entities/Enemies/E_Squad_Sniper.tscn" type="PackedScene" id=71]
 [ext_resource path="res://Entities/Enemies/E_Squad_Hunter.tscn" type="PackedScene" id=72]
+[ext_resource path="res://Entities/Enemies/Sanitizer.scn" type="PackedScene" id=73]
 [ext_resource path="res://Scripts/Navigation.gd" type="Script" id=76]
 
 [sub_resource type="NavigationMesh" id=1]
@@ -11104,6 +11105,9 @@ fog_depth_begin = 5.0
 fog_depth_end = 356.9
 fog_transmit_enabled = true
 ss_reflections_enabled = true
+glow_enabled = true
+glow_intensity = 1.0
+glow_blend_mode = 0
 
 [sub_resource type="BoxShape" id=2156]
 extents = Vector3( 6.28471, 8.03419, 1 )
@@ -22185,6 +22189,7 @@ shape = SubResource( 2126 )
 [node name="entity_254_Destructible" type="KinematicBody" parent="QodotMap"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -96.25, 92, -4 )
 script = ExtResource( 35 )
+door_health = 9999999999
 
 [node name="entity_254_mesh_instance" type="MeshInstance" parent="QodotMap/entity_254_Destructible"]
 mesh = SubResource( 2127 )
@@ -22195,6 +22200,7 @@ shape = SubResource( 2128 )
 [node name="entity_255_Destructible" type="KinematicBody" parent="QodotMap"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -96.25, 92, -12 )
 script = ExtResource( 35 )
+door_health = 9999999999
 
 [node name="entity_255_mesh_instance" type="MeshInstance" parent="QodotMap/entity_255_Destructible"]
 mesh = SubResource( 2129 )
@@ -22205,6 +22211,7 @@ shape = SubResource( 2130 )
 [node name="entity_256_Destructible" type="KinematicBody" parent="QodotMap"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -96.25, 100, -4 )
 script = ExtResource( 35 )
+door_health = 9999999999
 
 [node name="entity_256_mesh_instance" type="MeshInstance" parent="QodotMap/entity_256_Destructible"]
 mesh = SubResource( 2131 )
@@ -22215,6 +22222,7 @@ shape = SubResource( 2132 )
 [node name="entity_257_Destructible" type="KinematicBody" parent="QodotMap"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -96.25, 100, -12 )
 script = ExtResource( 35 )
+door_health = 9999999999
 
 [node name="entity_257_mesh_instance" type="MeshInstance" parent="QodotMap/entity_257_Destructible"]
 mesh = SubResource( 2133 )
@@ -22740,6 +22748,14 @@ random_spawn = true
 
 [node name="Grunt6" parent="." instance=ExtResource( 72 )]
 transform = Transform( -1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -27.2535, 2.04072, -37.0102 )
+random_spawn = true
+
+[node name="Sanitizer3" parent="." instance=ExtResource( 73 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -55.5, 2, 33 )
+random_spawn = true
+
+[node name="Sanitizer4" parent="." instance=ExtResource( 73 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, 2, -48 )
 random_spawn = true
 
 [connection signal="body_entered" from="Message_Area" to="Message_Area" method="_on_Message_Area_body_entered"]

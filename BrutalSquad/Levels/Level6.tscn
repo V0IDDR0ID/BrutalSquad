@@ -7654,6 +7654,7 @@ fog_color = Color( 0.137255, 0.176471, 0.0666667, 1 )
 fog_depth_begin = 5.0
 fog_depth_end = 57.5
 fog_transmit_enabled = true
+auto_exposure_enabled = true
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1649]
 

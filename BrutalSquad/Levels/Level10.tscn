@@ -1,4 +1,4 @@
-[gd_scene load_steps=2482 format=2]
+[gd_scene load_steps=2479 format=2]
 
 [ext_resource path="res://Maps/textures/base/greenplank.png" type="Texture" id=1]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Maps/textures/base/Marble1red.tres" type="Material" id=7]
 [ext_resource path="res://Maps/textures/swamp/swampground3.png" type="Texture" id=8]
 [ext_resource path="res://Player_Test.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scripts/Rotator_Y.gd" type="Script" id=10]
 [ext_resource path="res://Maps/textures/base/star_tile.png" type="Texture" id=11]
 [ext_resource path="res://Maps/textures/base/psycho_tile.png" type="Texture" id=12]
 [ext_resource path="res://Scripts/remote_destroyer.gd" type="Script" id=13]
@@ -66,6 +65,7 @@
 [ext_resource path="res://Materials/stealth_enemy.tres" type="Material" id=64]
 [ext_resource path="res://Maps/textures/base/Stone4.png" type="Texture" id=65]
 [ext_resource path="res://Scripts/Night_Cycle.gd" type="Script" id=66]
+[ext_resource path="res://Entities/Enemies/E_Hurt_Maker.tscn" type="PackedScene" id=67]
 [ext_resource path="res://Maps/textures/base/chessboard.png" type="Texture" id=69]
 [ext_resource path="res://Entities/Enemies/Chaos_Objective.tscn" type="PackedScene" id=70]
 [ext_resource path="res://Scripts/Navigation.gd" type="Script" id=76]
@@ -1103,9 +1103,6 @@ points = PoolVector3Array( 7.5, -13, 72, 7.5, -15, 72, 8, -15, 72, 8, -13, 72, 7
 
 [sub_resource type="ConvexPolygonShape" id=250]
 points = PoolVector3Array( -8, -13, 72, -8, -15, 72, -7.5, -15, 72, -7.5, -13, 72, -8, -13, 73, -8, -15, 73, -7.5, -15, 73, -7.5, -13, 73 )
-
-[sub_resource type="ConvexPolygonShape" id=251]
-points = PoolVector3Array( -1, -14, 32, -1, -14.5, 32, 0.5, -14.5, 32, 0.5, -14, 32, -1, -14, 64, -1, -14.5, 64, 0.5, -14.5, 64, 0.5, -14, 64 )
 
 [sub_resource type="ConvexPolygonShape" id=252]
 points = PoolVector3Array( 25.3284, -7, 25.5503, 22.5, -7, 28.3787, 22.5, -7.5, 28.3787, 25.3284, -7.5, 25.5503, 27.8033, -7.5, 28.0251, 27.8033, -7, 28.0251, 24.9749, -7.5, 30.8536, 24.9749, -7, 30.8536 )
@@ -6215,35 +6212,6 @@ surfaces/2 = {
 [sub_resource type="ConvexPolygonShape" id=1888]
 points = PoolVector3Array( -2, 2.5, -0.5, -2, -2.5, -0.5, 2, -2.5, -0.5, 2, 2.5, -0.5, -2, 2.5, 0.5, -2, -2.5, 0.5, 2, -2.5, 0.5, 2, 2.5, 0.5 )
 
-[sub_resource type="ArrayMesh" id=1889]
-surfaces/0 = {
-"aabb": AABB( -16, -0.25, -0.75, 32, 0.50001, 1.5 ),
-"array_data": PoolByteArray( 0, 0, 128, 193, 0, 0, 128, 62, 0, 0, 64, 191, 0, 0, 129, 0, 0, 129, 0, 129, 192, 77, 0, 76, 0, 0, 128, 193, 0, 0, 128, 190, 0, 0, 64, 191, 0, 0, 129, 0, 0, 129, 0, 129, 224, 77, 0, 76, 0, 0, 128, 65, 0, 0, 128, 190, 0, 0, 64, 191, 0, 0, 129, 0, 0, 129, 0, 129, 224, 77, 0, 204, 0, 0, 128, 65, 0, 0, 128, 62, 0, 0, 64, 191, 0, 0, 129, 0, 0, 129, 0, 129, 192, 77, 0, 204, 0, 0, 128, 65, 0, 0, 128, 190, 0, 0, 64, 191, 0, 129, 0, 0, 0, 0, 127, 129, 240, 81, 0, 204, 0, 0, 128, 193, 0, 0, 128, 190, 0, 0, 64, 191, 0, 129, 0, 0, 0, 0, 127, 129, 240, 81, 0, 76, 0, 0, 128, 193, 0, 0, 128, 190, 0, 0, 64, 63, 0, 129, 0, 0, 0, 0, 127, 129, 32, 82, 0, 76, 0, 0, 128, 65, 0, 0, 128, 190, 0, 0, 64, 63, 0, 129, 0, 0, 0, 0, 127, 129, 32, 82, 0, 204, 0, 0, 128, 193, 0, 0, 128, 62, 0, 0, 64, 63, 0, 0, 127, 0, 0, 127, 0, 129, 160, 205, 0, 76, 0, 0, 128, 65, 0, 0, 128, 62, 0, 0, 64, 63, 0, 0, 127, 0, 0, 127, 0, 129, 160, 205, 0, 204, 0, 0, 128, 65, 0, 0, 128, 190, 0, 0, 64, 63, 0, 0, 127, 0, 0, 127, 0, 129, 192, 205, 0, 204, 0, 0, 128, 193, 0, 0, 128, 190, 0, 0, 64, 63, 0, 0, 127, 0, 0, 127, 0, 129, 192, 205, 0, 76 ),
-"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0 ),
-"blend_shape_data": [  ],
-"format": 97559,
-"index_count": 18,
-"material": SubResource( 17 ),
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 12
-}
-surfaces/1 = {
-"aabb": AABB( -16, -0.25, -0.75, 32, 0.50001, 1.5 ),
-"array_data": PoolByteArray( 0, 0, 128, 193, 0, 0, 128, 62, 0, 0, 64, 191, 129, 0, 0, 0, 0, 0, 127, 129, 240, 81, 192, 205, 0, 0, 128, 193, 0, 0, 128, 62, 0, 0, 64, 63, 129, 0, 0, 0, 0, 0, 127, 129, 32, 82, 192, 205, 0, 0, 128, 193, 0, 0, 128, 190, 0, 0, 64, 63, 129, 0, 0, 0, 0, 0, 127, 129, 32, 82, 224, 205, 0, 0, 128, 193, 0, 0, 128, 190, 0, 0, 64, 191, 129, 0, 0, 0, 0, 0, 127, 129, 240, 81, 224, 205, 0, 0, 128, 65, 0, 0, 128, 62, 0, 0, 64, 191, 0, 127, 0, 0, 0, 0, 127, 127, 240, 81, 0, 204, 0, 0, 128, 65, 0, 0, 128, 62, 0, 0, 64, 63, 0, 127, 0, 0, 0, 0, 127, 127, 32, 82, 0, 204, 0, 0, 128, 193, 0, 0, 128, 62, 0, 0, 64, 63, 0, 127, 0, 0, 0, 0, 127, 127, 32, 82, 0, 76, 0, 0, 128, 193, 0, 0, 128, 62, 0, 0, 64, 191, 0, 127, 0, 0, 0, 0, 127, 127, 240, 81, 0, 76, 0, 0, 128, 65, 0, 0, 128, 62, 0, 0, 64, 191, 127, 0, 0, 0, 0, 0, 127, 129, 240, 81, 192, 77, 0, 0, 128, 65, 0, 0, 128, 190, 0, 0, 64, 191, 127, 0, 0, 0, 0, 0, 127, 129, 240, 81, 224, 77, 0, 0, 128, 65, 0, 0, 128, 190, 0, 0, 64, 63, 127, 0, 0, 0, 0, 0, 127, 129, 32, 82, 224, 77, 0, 0, 128, 65, 0, 0, 128, 62, 0, 0, 64, 63, 127, 0, 0, 0, 0, 0, 127, 129, 32, 82, 192, 77 ),
-"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0 ),
-"blend_shape_data": [  ],
-"format": 97559,
-"index_count": 18,
-"material": SubResource( 18 ),
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 12
-}
-
-[sub_resource type="ConvexPolygonShape" id=1890]
-points = PoolVector3Array( -16, 0.25, -0.75, -16, -0.25, -0.75, 16, -0.25, -0.75, 16, 0.25, -0.75, -16, 0.25, 0.75, -16, -0.25, 0.75, 16, -0.25, 0.75, 16, 0.25, 0.75 )
-
 [sub_resource type="SpatialMaterial" id=1891]
 albedo_texture = ExtResource( 22 )
 
@@ -8533,6 +8501,8 @@ fog_color = Color( 0, 0, 0, 1 )
 fog_depth_begin = 5.0
 fog_depth_end = 68.6
 fog_transmit_enabled = true
+adjustment_enabled = true
+adjustment_saturation = 0.3
 
 [sub_resource type="BoxShape" id=2405]
 extents = Vector3( 6.28471, 8.03419, 1 )
@@ -9331,9 +9301,6 @@ shape = SubResource( 249 )
 
 [node name="entity_0_brush_230_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
 shape = SubResource( 250 )
-
-[node name="entity_0_brush_231_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
-shape = SubResource( 251 )
 
 [node name="entity_0_brush_232_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
 shape = SubResource( 252 )
@@ -14272,16 +14239,6 @@ mesh = SubResource( 1887 )
 [node name="entity_8_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_8_Elevator_Door"]
 shape = SubResource( 1888 )
 
-[node name="entity_9_Env_Rotation_Y" type="KinematicBody" parent="QodotMap"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.25, 48.25 )
-script = ExtResource( 10 )
-
-[node name="entity_9_mesh_instance" type="MeshInstance" parent="QodotMap/entity_9_Env_Rotation_Y"]
-mesh = SubResource( 1889 )
-
-[node name="entity_9_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_9_Env_Rotation_Y"]
-shape = SubResource( 1890 )
-
 [node name="entity_10_Destructible" type="KinematicBody" parent="QodotMap"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, -6.98438, 69 )
 script = ExtResource( 35 )
@@ -16420,6 +16377,26 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.745354, 2.00043, -29.5405 )
 
 [node name="Grunt5" parent="." instance=ExtResource( 54 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.34171, -53.9589, 40.073 )
+
+[node name="Swamp_Revolver" parent="." instance=ExtResource( 67 )]
+transform = Transform( -1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 0.0232177, 2.04938, 27.3367 )
+random_spawn = true
+
+[node name="Swamp_Revolver2" parent="." instance=ExtResource( 67 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225727, 2.04013, 101.04 )
+random_spawn = true
+
+[node name="Swamp_Revolver4" parent="." instance=ExtResource( 67 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.08861, -51.9532, -9.87073 )
+random_spawn = true
+
+[node name="Swamp_Revolver5" parent="." instance=ExtResource( 67 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0886101, -51.9532, -9.87073 )
+random_spawn = true
+
+[node name="Swamp_Revolver6" parent="." instance=ExtResource( 67 )]
+transform = Transform( -1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -0.91139, -51.9532, -9.87073 )
+random_spawn = true
 
 [connection signal="body_entered" from="Message_Area" to="Message_Area" method="_on_Message_Area_body_entered"]
 [connection signal="body_entered" from="telepoorter" to="telepoorter" method="_on_telepoorter_body_entered"]

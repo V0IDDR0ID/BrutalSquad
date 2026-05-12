@@ -57,7 +57,7 @@ void fragment(){
 	
 	if (scope == true) {
 		COLOR.r *= 0.1;
-		COLOR.g *= 10.0;
+		COLOR.g *= 1.0;
 		COLOR.b *= 0.1;
 	}
 	if (noir_vision == true) {

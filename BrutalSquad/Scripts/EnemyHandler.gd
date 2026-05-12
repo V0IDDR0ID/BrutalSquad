@@ -371,7 +371,7 @@ func alert_body_exited(b):
 
 func damage(damage, collision_n, collision_p, shooter_pos):
 	if hurt_maker:
-		Global.player.damage(5, Vector3.ZERO, global_transform.origin, global_transform.origin)
+		Global.player.damage(10, Vector3.ZERO, global_transform.origin, global_transform.origin)
 	if on_fire and not grilled_flag:
 		if head_mesh:
 			head_mesh.material_override = grilled_material
